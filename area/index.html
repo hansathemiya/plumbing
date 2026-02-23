@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <!-- DEV NOTES:
+    - Full Service Areas page for SIX7 Plumbing
+    - Covers Colombo 1-15, Kotte, Dehiwala, Mount Lavinia, Nugegoda, Maharagama, Piliyandala, Battaramulla, Rajagiriya, Moratuwa, Kelaniya, Negombo
+    - Each suburb linked to individual area page (for future expansion)
+    - Cross-links to homepage, services, pricing, commercial, FAQ
+    - Sticky mobile call & WhatsApp buttons (exactly as approved)
+    - LocalBusiness schema includes all areas
+    - FAQ schema for area-specific questions
+    - Brand colors: #0b3b4f, #ff8a4c, #b13e3e, #25D366
+  -->
+  <title>Plumbing Service Areas Colombo | 24/7 Plumber Near You | SIX7 Plumbing</title>
+  <meta name="description" content="SIX7 Plumbing covers all Colombo suburbs: Colombo 1-15, Kotte, Dehiwala, Mount Lavinia, Nugegoda, Maharagama, Battaramulla, Moratuwa & more. 60-min arrival guarantee. Call +94 75 824 4216.">
+  <meta name="keywords" content="plumber colombo, planner near me, plumbing service areas colombo, emergency plumber kotte, plumber dehiwala, plumber mount lavinia">
+  <meta name="author" content="SIX7 Plumbing">
+  <link rel="canonical" href="https://plumbing.six7.lk/areas">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Plumbing Service Areas Colombo | SIX7 Plumbing">
+  <meta property="og:description" content="Find a plumber near you in Colombo. 24/7 emergency service in all suburbs.">
+  <meta property="og:image" content="https://plumbing.six7.lk/assets/six7-og.jpg">
+  <meta property="og:url" content="https://plumbing.six7.lk/areas">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #0b3b4f;
+      --primary-dark: #072a38;
+      --accent: #ff8a4c;
+      --accent-hover: #ff9f5c;
+      --success: #25D366;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-primary: #13294b;
+      --text-muted: #5e717f;
+      --border: #e2ecf5;
+      --emergency: #b13e3e;
+    }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* emergency ribbon */
+    .emergency-ribbon {
+      background: var(--emergency);
+      color: white;
+      padding: 12px 0;
+      font-weight: 600;
+    }
+    .emergency-ribbon .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .emergency-ribbon a {
+      background: #1f2f3f;
+      color: white;
+      padding: 8px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+    .emergency-ribbon a:hover { background: #14212b; }
+    /* header */
+    header {
+      background: var(--card-bg);
+      box-shadow: 0 6px 18px rgba(0,35,50,0.05);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(150deg, var(--primary), #226277);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .logo span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      -webkit-text-fill-color: var(--text-muted);
+      margin-left: 4px;
+    }
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+    }
+    .btn-sm {
+      padding: 10px 22px;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    .btn-wa { background: var(--success); color: white; }
+    .btn-wa:hover { background: #20b85a; }
+    .btn-call { background: var(--primary); color: white; }
+    .btn-call:hover { background: var(--primary-dark); }
+
+    /* page header */
+    .page-header {
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+    .page-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    .page-header p {
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .breadcrumb {
+      margin-bottom: 20px;
+      color: var(--text-muted);
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* area grid – main list */
+    .area-section {
+      margin: 50px 0;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      border-left: 8px solid var(--accent);
+      padding-left: 20px;
+      margin-bottom: 30px;
+    }
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .area-card {
+      background: white;
+      border-radius: 30px;
+      padding: 24px 16px;
+      text-align: center;
+      box-shadow: 0 8px 18px rgba(11,59,79,0.05);
+      border: 1px solid var(--border);
+      transition: 0.2s;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      display: block;
+    }
+    .area-card i {
+      font-size: 2.2rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .area-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px rgba(11,59,79,0.1);
+      border-color: var(--accent);
+    }
+    .area-card .time-badge {
+      background: #e1f0fa;
+      color: var(--primary-dark);
+      border-radius: 40px;
+      padding: 5px 12px;
+      font-size: 0.85rem;
+      margin-top: 12px;
+      display: inline-block;
+    }
+
+    /* map placeholder */
+    .map-container {
+      background: #cde1f0;
+      border-radius: 60px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.3rem;
+      border: 2px dashed var(--primary);
+    }
+    .map-container i {
+      font-size: 3rem;
+      margin-right: 15px;
+      opacity: 0.7;
+    }
+
+    /* cross-links to other pages */
+    .cross-links {
+      background: white;
+      border-radius: 60px;
+      padding: 40px;
+      margin: 40px 0;
+      border: 2px solid var(--border);
+    }
+    .cross-links h3 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+    .link-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .pill {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      padding: 12px 30px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .pill:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .pill i { margin-right: 8px; }
+
+    /* area FAQ mini */
+    .area-faq {
+      background: white;
+      border-radius: 50px;
+      padding: 40px;
+      margin: 40px 0;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 30px;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    .faq-q {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    .faq-a a {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* help box */
+    .help-box {
+      background: var(--primary);
+      color: white;
+      border-radius: 60px;
+      padding: 40px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    .help-box h2 { font-size: 2.2rem; margin-bottom: 20px; }
+    .help-box .btn-primary {
+      background: var(--accent);
+      color: var(--text-primary);
+      padding: 16px 40px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-decoration: none;
+      display: inline-block;
+      margin: 20px 0 10px;
+    }
+
+    /* footer */
+    footer {
+      background: #10242f;
+      color: #bcd3e3;
+      padding: 50px 0 30px;
+      margin-top: 60px;
+    }
+    .footer-links a {
+      color: #ffd58c;
+      text-decoration: none;
+      margin: 0 14px;
+    }
+
+    /* sticky mobile buttons */
+    .sticky-mobile {
+      display: none;
+    }
+    @media (max-width: 700px) {
+      .faq-grid { grid-template-columns: 1fr; }
+      .page-header h1 { font-size: 2.2rem; }
+      .section-title { font-size: 1.8rem; }
+      .nav-actions .btn-sm span { display: none; }
+      .nav-actions .btn-sm i { margin: 0; }
+      
+      .sticky-mobile {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background: white;
+        border-top: 2px solid var(--border);
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+      }
+      .sticky-mobile a {
+        flex: 1;
+        text-align: center;
+        padding: 16px 0;
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+      .sticky-call-btn {
+        background: var(--emergency);
+        color: white;
+      }
+      .sticky-wa-btn {
+        background: var(--success);
+        color: white;
+      }
+      body { padding-bottom: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- EMERGENCY RIBBON -->
+  <div class="emergency-ribbon">
+    <div class="container">
+      <span><i class="fas fa-exclamation-triangle"></i> 24/7 EMERGENCY · We answer at 1AM</span>
+      <a href="tel:+94758244216"><i class="fas fa-phone-alt"></i> +94 75 824 4216</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <a href="/" style="text-decoration: none;"><div class="logo">SIX7<span>Plumbing</span></div></a>
+      <div class="nav-actions">
+        <a href="https://wa.me/94758244216" class="btn-sm btn-wa"><i class="fab fa-whatsapp"></i><span> WhatsApp</span></a>
+        <a href="tel:+94758244216" class="btn-sm btn-call"><i class="fas fa-phone"></i><span> Call</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB & PAGE HEADER -->
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.8rem; margin:0 8px;"></i> Service Areas
+    </div>
+    <div class="page-header">
+      <h1><i class="fas fa-map-marked-alt" style="color: var(--accent);"></i> Plumbing Service Areas – Colombo & Western Province</h1>
+      <p>60-minute arrival guarantee. 24/7 emergency plumber near you.</p>
+    </div>
+  </div>
+
+  <!-- MAIN AREA GRID (all suburbs) -->
+  <div class="container">
+    <div class="area-section">
+      <div class="section-title"><i class="fas fa-city"></i> Colombo City (1–15)</div>
+      <div class="area-grid">
+        <a href="/areas/colombo-1" class="area-card"><i class="fas fa-map-pin"></i> Colombo 1 <span class="time-badge"><i class="fas fa-clock"></i> 30 min</span></a>
+        <a href="/areas/colombo-2" class="area-card"><i class="fas fa-map-pin"></i> Colombo 2 <span class="time-badge">25 min</span></a>
+        <a href="/areas/colombo-3" class="area-card"><i class="fas fa-map-pin"></i> Colombo 3 <span class="time-badge">25 min</span></a>
+        <a href="/areas/colombo-4" class="area-card"><i class="fas fa-map-pin"></i> Colombo 4 <span class="time-badge">30 min</span></a>
+        <a href="/areas/colombo-5" class="area-card"><i class="fas fa-map-pin"></i> Colombo 5 <span class="time-badge">25 min</span></a>
+        <a href="/areas/colombo-6" class="area-card"><i class="fas fa-map-pin"></i> Colombo 6 <span class="time-badge">30 min</span></a>
+        <a href="/areas/colombo-7" class="area-card"><i class="fas fa-map-pin"></i> Colombo 7 <span class="time-badge">25 min</span></a>
+        <a href="/areas/colombo-8" class="area-card"><i class="fas fa-map-pin"></i> Colombo 8 <span class="time-badge">30 min</span></a>
+        <a href="/areas/colombo-9" class="area-card"><i class="fas fa-map-pin"></i> Colombo 9 <span class="time-badge">30 min</span></a>
+        <a href="/areas/colombo-10" class="area-card"><i class="fas fa-map-pin"></i> Colombo 10 <span class="time-badge">30 min</span></a>
+        <a href="/areas/colombo-11" class="area-card"><i class="fas fa-map-pin"></i> Colombo 11 <span class="time-badge">35 min</span></a>
+        <a href="/areas/colombo-12" class="area-card"><i class="fas fa-map-pin"></i> Colombo 12 <span class="time-badge">35 min</span></a>
+        <a href="/areas/colombo-13" class="area-card"><i class="fas fa-map-pin"></i> Colombo 13 <span class="time-badge">35 min</span></a>
+        <a href="/areas/colombo-14" class="area-card"><i class="fas fa-map-pin"></i> Colombo 14 <span class="time-badge">35 min</span></a>
+        <a href="/areas/colombo-15" class="area-card"><i class="fas fa-map-pin"></i> Colombo 15 <span class="time-badge">35 min</span></a>
+      </div>
+    </div>
+
+    <div class="area-section">
+      <div class="section-title"><i class="fas fa-suburb"></i> Suburbs & Major Towns</div>
+      <div class="area-grid">
+        <a href="/areas/kotte" class="area-card"><i class="fas fa-map-pin"></i> Kotte <span class="time-badge">30 min</span></a>
+        <a href="/areas/dehiwala" class="area-card"><i class="fas fa-map-pin"></i> Dehiwala <span class="time-badge">35 min</span></a>
+        <a href="/areas/mount-lavinia" class="area-card"><i class="fas fa-map-pin"></i> Mount Lavinia <span class="time-badge">40 min</span></a>
+        <a href="/areas/nugegoda" class="area-card"><i class="fas fa-map-pin"></i> Nugegoda <span class="time-badge">30 min</span></a>
+        <a href="/areas/maharagama" class="area-card"><i class="fas fa-map-pin"></i> Maharagama <span class="time-badge">35 min</span></a>
+        <a href="/areas/piliyandala" class="area-card"><i class="fas fa-map-pin"></i> Piliyandala <span class="time-badge">40 min</span></a>
+        <a href="/areas/battaramulla" class="area-card"><i class="fas fa-map-pin"></i> Battaramulla <span class="time-badge">30 min</span></a>
+        <a href="/areas/rajagiriya" class="area-card"><i class="fas fa-map-pin"></i> Rajagiriya <span class="time-badge">30 min</span></a>
+        <a href="/areas/moratuwa" class="area-card"><i class="fas fa-map-pin"></i> Moratuwa <span class="time-badge">45 min</span></a>
+        <a href="/areas/kelaniya" class="area-card"><i class="fas fa-map-pin"></i> Kelaniya <span class="time-badge">40 min</span></a>
+        <a href="/areas/negombo" class="area-card"><i class="fas fa-map-pin"></i> Negombo <span class="time-badge">50 min</span></a>
+      </div>
+    </div>
+
+    <!-- MAP placeholder (interactive if possible) -->
+    <div class="map-container">
+      <i class="fas fa-map-marked-alt"></i> <span>Google Map – SIX7 Plumbing covers all of Colombo & Western Province</span>
+    </div>
+
+    <!-- CROSS-LINK PILLS to other key pages -->
+    <div class="cross-links">
+      <h3><i class="fas fa-compass"></i> Explore our services in your area</h3>
+      <div class="link-pills">
+        <a href="/" class="pill"><i class="fas fa-home"></i> Home</a>
+        <a href="/services" class="pill"><i class="fas fa-tools"></i> All Services</a>
+        <a href="/pricing" class="pill"><i class="fas fa-coins"></i> Pricing</a>
+        <a href="/commercial-plumbing" class="pill"><i class="fas fa-building"></i> Commercial</a>
+        <a href="/emergency-plumbing-colombo" class="pill"><i class="fas fa-exclamation-triangle"></i> Emergency</a>
+        <a href="/faq" class="pill"><i class="fas fa-question-circle"></i> FAQ</a>
+        <a href="/contact" class="pill"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+
+    <!-- MINI FAQ about areas -->
+    <div class="area-faq">
+      <h2 style="font-size: 2rem; margin-bottom: 30px;"><i class="fas fa-question-circle" style="color:var(--accent);"></i> Quick area questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-q"><i class="fas fa-clock"></i> How fast can you reach Kotte?</div>
+          <div class="faq-a">Usually 30 minutes. 24/7 emergency. <a href="/areas/kotte">→ Kotte page</a></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><i class="fas fa-clock"></i> What about Dehiwala?</div>
+          <div class="faq-a">35 min guarantee. Night teams available. <a href="/areas/dehiwala">→ Dehiwala</a></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><i class="fas fa-building"></i> Do you serve Negombo for commercial?</div>
+          <div class="faq-a">Yes, hotels and businesses in Negombo. <a href="/commercial-plumbing">→ Commercial</a></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><i class="fas fa-tools"></i> Maharagama plumber near me?</div>
+          <div class="faq-a">We're local. Call now for quick service. <a href="/areas/maharagama">→ Maharagama</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HELP BOX -->
+    <div class="help-box">
+      <h2><i class="fas fa-phone-alt"></i> Don't see your area? Call us 24/7</h2>
+      <p>We cover the entire Western Province. If you're in Colombo, we're already nearby.</p>
+      <a href="tel:+94758244216" class="btn-primary"><i class="fas fa-phone-alt"></i> +94 75 824 4216</a>
+      <a href="https://wa.me/94758244216" style="background: var(--success); color: white; padding: 16px 40px; border-radius: 60px; font-weight: 700; text-decoration: none; display: inline-block; margin-left: 15px;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-links" style="margin-bottom:25px;">
+        <a href="/">Home</a> · <a href="/services">Services</a> · <a href="/areas">Areas</a> · <a href="/commercial-plumbing">Commercial</a> · <a href="/pricing">Pricing</a> · <a href="/faq">FAQ</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a>
+      </div>
+      <p><i class="fas fa-phone-alt"></i> +94 75 824 4216 · 24h · <i class="fab fa-whatsapp"></i> WhatsApp same</p>
+      <p style="margin-top:20px;">© 2026 SIX7 Plumbing – a division of SIX7. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE BUTTONS (call & WhatsApp) -->
+  <div class="sticky-mobile">
+    <a href="tel:+94758244216" class="sticky-call-btn"><i class="fas fa-phone-alt"></i> Emergency Call</a>
+    <a href="https://wa.me/94758244216" class="sticky-wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </div>
+
+  <!-- LocalBusiness Schema (includes all areas) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "SIX7 Plumbing",
+    "telephone": "+94758244216",
+    "email": "plumbing@six7.lk",
+    "url": "https://plumbing.six7.lk",
+    "priceRange": "₨",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Colombo",
+      "addressRegion": "Western Province",
+      "addressCountry": "LK"
+    },
+    "areaServed": [
+      "Colombo 1", "Colombo 2", "Colombo 3", "Colombo 4", "Colombo 5", "Colombo 6", "Colombo 7", "Colombo 8", "Colombo 9", "Colombo 10", "Colombo 11", "Colombo 12", "Colombo 13", "Colombo 14", "Colombo 15",
+      "Kotte", "Dehiwala", "Mount Lavinia", "Nugegoda", "Maharagama", "Piliyandala", "Battaramulla", "Rajagiriya", "Moratuwa", "Kelaniya", "Negombo"
+    ],
+    "openingHours": "Mo-Su 00:00-23:59"
+  }
+  </script>
+  <!-- FAQ schema for area questions -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How fast can you reach Kotte?","acceptedAnswer":{"@type":"Answer","text":"30 minutes guarantee. 24/7 emergency."}},
+      {"@type":"Question","name":"Do you serve Negombo for commercial plumbing?","acceptedAnswer":{"@type":"Answer","text":"Yes, hotels and businesses in Negombo."}},
+      {"@type":"Question","name":"Is there a plumber near me in Maharagama?","acceptedAnswer":{"@type":"Answer","text":"Yes, we cover Maharagama with 35min arrival."}}
+    ]
+  }
+  </script>
+</body>
+</html>
