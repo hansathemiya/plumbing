@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <!-- DEV NOTES:
+    - Full Services page for SIX7 Plumbing
+    - Content exactly as per plain-text specification
+    - All H3 services with descriptions, starting prices, CTAs
+    - Service area list, 3-step process, FAQ, cross-links
+    - Schema: FAQPage + Service + BreadcrumbList
+    - Sticky mobile call & WhatsApp buttons (brand colors: #0b3b4f, #ff8a4c, #b13e3e, #25D366)
+    - Internal links to /pricing, /areas, /emergency-plumbing-colombo, etc.
+    - Phone: +94 75 824 4216, WhatsApp: wa.me/94758244216
+  -->
+  <title>Plumbing Services in Colombo | Emergency, Repair & Installation | SIX7 Plumbing</title>
+  <meta name="description" content="Professional plumbing services in Colombo & Western Province. 24/7 emergency repairs, leak detection, bathroom installations & commercial plumbing. Direct pricing. Call +94 75 824 4216.">
+  <meta name="keywords" content="plumbing services colombo, plumber colombo, emergency plumber colombo, leak repair colombo, bathroom plumbing sri lanka, cheap plumber colombo, commercial plumbing colombo, drain cleaning colombo">
+  <meta name="author" content="SIX7 Plumbing">
+  <link rel="canonical" href="https://plumbing.six7.lk/services">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Plumbing Services in Colombo | SIX7 Plumbing">
+  <meta property="og:description" content="24/7 emergency plumbing, leak repairs, bathroom renovations & commercial services. Direct pricing, 60-min arrival.">
+  <meta property="og:image" content="https://plumbing.six7.lk/assets/six7-og.jpg">
+  <meta property="og:url" content="https://plumbing.six7.lk/services">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #0b3b4f;
+      --primary-dark: #072a38;
+      --accent: #ff8a4c;
+      --accent-hover: #ff9f5c;
+      --success: #25D366;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-primary: #13294b;
+      --text-muted: #5e717f;
+      --border: #e2ecf5;
+      --emergency: #b13e3e;
+    }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* emergency ribbon */
+    .emergency-ribbon {
+      background: var(--emergency);
+      color: white;
+      padding: 12px 0;
+      font-weight: 600;
+    }
+    .emergency-ribbon .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .emergency-ribbon a {
+      background: #1f2f3f;
+      color: white;
+      padding: 8px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+    .emergency-ribbon a:hover { background: #14212b; }
+    /* header */
+    header {
+      background: var(--card-bg);
+      box-shadow: 0 6px 18px rgba(0,35,50,0.05);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(150deg, var(--primary), #226277);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .logo span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      -webkit-text-fill-color: var(--text-muted);
+      margin-left: 4px;
+    }
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+    }
+    .btn-sm {
+      padding: 10px 22px;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    .btn-wa { background: var(--success); color: white; }
+    .btn-wa:hover { background: #20b85a; }
+    .btn-call { background: var(--primary); color: white; }
+    .btn-call:hover { background: var(--primary-dark); }
+
+    /* page header */
+    .page-header {
+      padding: 40px 0 20px;
+    }
+    .page-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .page-header p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 900px;
+    }
+    .breadcrumb {
+      margin-bottom: 20px;
+      color: var(--text-muted);
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* service cards / blocks */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .service-card {
+      background: white;
+      border-radius: 48px;
+      padding: 32px;
+      border: 1px solid var(--border);
+      transition: 0.2s;
+    }
+    .service-card:hover {
+      box-shadow: 0 20px 30px rgba(11,59,79,0.08);
+    }
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+    .service-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    .service-desc {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    .service-desc li {
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .service-desc i {
+      color: var(--accent);
+      width: 20px;
+    }
+    .service-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .price-tag {
+      background: #eef4fa;
+      padding: 8px 18px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .cta-link {
+      background: var(--primary);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .cta-link:hover {
+      background: var(--primary-dark);
+    }
+
+    /* areas list */
+    .areas-list {
+      background: white;
+      border-radius: 60px;
+      padding: 40px;
+      margin: 40px 0;
+      border: 1px solid var(--border);
+    }
+    .area-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .area-tag {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      padding: 8px 22px;
+      border-radius: 60px;
+      font-size: 1rem;
+    }
+
+    /* steps */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .step {
+      background: white;
+      border-radius: 40px;
+      padding: 30px;
+      text-align: center;
+    }
+    .step-num {
+      background: var(--accent);
+      color: var(--primary);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.8rem;
+      margin: 0 auto 20px;
+    }
+
+    /* faq */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 30px;
+      padding: 25px;
+    }
+    .faq-q {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    /* cta banner */
+    .cta-banner {
+      background: var(--primary);
+      color: white;
+      border-radius: 60px;
+      padding: 50px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    .cta-banner .btn-primary {
+      background: var(--accent);
+      color: var(--text-primary);
+      padding: 16px 40px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-decoration: none;
+      display: inline-block;
+      margin: 20px 10px;
+    }
+
+    /* footer */
+    footer {
+      background: #10242f;
+      color: #bcd3e3;
+      padding: 50px 0 30px;
+      margin-top: 60px;
+    }
+    .footer-links a {
+      color: #ffd58c;
+      text-decoration: none;
+      margin: 0 14px;
+    }
+
+    /* sticky mobile */
+    .sticky-mobile {
+      display: none;
+    }
+    @media (max-width: 800px) {
+      .service-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .page-header h1 { font-size: 2.2rem; }
+      .nav-actions .btn-sm span { display: none; }
+      .sticky-mobile {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background: white;
+        border-top: 2px solid var(--border);
+      }
+      .sticky-mobile a {
+        flex: 1;
+        text-align: center;
+        padding: 16px 0;
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+      .sticky-call-btn { background: var(--emergency); color: white; }
+      .sticky-wa-btn { background: var(--success); color: white; }
+      body { padding-bottom: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- EMERGENCY RIBBON -->
+  <div class="emergency-ribbon">
+    <div class="container">
+      <span><i class="fas fa-exclamation-triangle"></i> 24/7 EMERGENCY · We answer at 1AM</span>
+      <a href="tel:+94758244216"><i class="fas fa-phone-alt"></i> +94 75 824 4216</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <a href="/" style="text-decoration: none;"><div class="logo">SIX7<span>Plumbing</span></div></a>
+      <div class="nav-actions">
+        <a href="https://wa.me/94758244216" class="btn-sm btn-wa"><i class="fab fa-whatsapp"></i><span> WhatsApp</span></a>
+        <a href="tel:+94758244216" class="btn-sm btn-call"><i class="fas fa-phone"></i><span> Call</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB & PAGE HEADER -->
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.8rem; margin:0 8px;"></i> Services
+    </div>
+    <div class="page-header">
+      <h1><i class="fas fa-tools" style="color: var(--accent);"></i> Professional Plumbing Services in Colombo — Fast, Affordable & Reliable</h1>
+      <p>SIX7 Plumbing delivers expert plumbing services across Colombo and the Western Province. Whether you need emergency leak repair at 2AM, a budget bathroom renovation, or commercial plumbing for your office, our direct-work model means fair prices with no middlemen fees. We serve homeowners, small businesses, and industrial clients with the same commitment to speed, quality, and transparency. All jobs come with a written quote before work begins, and we offer both economy and premium parts options to fit your budget. 24/7 availability. 60-minute arrival guarantee in central Colombo. Call <strong>+94 75 824 4216</strong> or WhatsApp for a free estimate.</p>
+    </div>
+  </div>
+
+  <!-- MAIN SERVICES GRID (8 cards as per spec) -->
+  <div class="container">
+    <div class="service-grid">
+      <!-- Emergency Plumbing -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        <div class="service-title">🚨 Emergency Plumbing Services (24/7)</div>
+        <ul class="service-desc">
+          <li><i class="fas fa-check"></i> Burst pipe repair & flood control</li>
+          <li><i class="fas fa-check"></i> Midnight leak response (no extra charge)</li>
+          <li><i class="fas fa-check"></i> Sewage backup emergency cleanup</li>
+          <li><i class="fas fa-check"></i> No-water-supply troubleshooting</li>
+          <li><i class="fas fa-check"></i> Gas leak detection & safety shutdown</li>
+          <li><i class="fas fa-check"></i> Priority dispatch for Colombo 1-10 suburbs</li>
+        </ul>
+        <div class="service-footer">
+          <span class="price-tag"><i class="fas fa-clock"></i> 24/7</span>
+          <a href="tel:+94758244216" class="cta-link"><i class="fas fa-phone-alt"></i> Call now</a>
+        </div>
+      </div>
+      <!-- Leak Detection -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-tint"></i></div>
+        <div class="service-title">💧 Leak Detection & Repair</div>
+        <ul class="service-desc">
+          <li><i class="fas fa-check"></i> Hidden leak detection (acoustic & thermal)</li>
+          <li><i class="fas fa-check"></i> Exposed pipe repair & replacement</li>
+          <li><i class="fas fa-check"></i> Wall/floor leak tracing without damage</li>
+          <li><i class="fas fa-check"></i> Pressure testing & system diagnostics</li>
+          <li><i class="fas fa-check"></i> Preventive leak inspection for older homes</li>
+        </ul>
+        <div class="service-footer">
+          <span class="price-tag">From LKR 2,500</span>
+          <a href="https://wa.me/94758244216" class="cta-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+      <!-- Drain & Toilet -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-poop"></i></div>
+        <div class="service-title">🚽 Drain & Toilet Services</div>
+        <ul class="service-desc">
+          <li><i class="fas fa-check"></i> Unclog blocked drains, sinks & floor traps</li>
+          <li><i class="fas fa-check"></i> Toilet repair: running, leaking, not flushing</li>
+          <li><i class="fas fa-check"></i> Sewer line cleaning & rodding</li>
+          <li><i class="fas fa-check"></i> High-pressure jetting for stubborn blockages</li>
+          <li><i class="fas fa-check"></i> Preventive drain maintenance for businesses</li>
+        </ul>
+        <div class="service-footer">
+          <span class="price-tag">45 min response</span>
+          <a href="tel:+94758244216" class="cta-link"><i class="fas fa-phone-alt"></i> Call</a>
+        </div>
+      </div>
+      <!-- Tap & Fixture -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-shower"></i></div>
+        <div class="service-title">🚿 Tap, Faucet & Fixture Installation</div>
+        <ul class="service-desc">
+          <li><i class="fas fa-check"></i> New tap & mixer installation (kitchen/bath)</li>
+          <li><i class="fas fa-check"></i> Faucet repair: dripping, leaking, low pressure</li>
+          <li><i class="fas fa-check"></i> Shower head & hand shower upgrades</li>
+          <li><i class="fas fa-check"></i> Sink installation & replacement</li>
+          <li><i class="fas fa-check"></i> Customer-supplied fixture installation (labor-only)</li>
+        </ul>
+        <div class="service-footer">
+          <span class="price-tag">Labor from LKR 1,000</span>
+          <a href="https://wa.me/94758244216" class="cta-link"><i class="fab fa-whatsapp"></i> Quote</a>
+        </div>
+      </div>
+      <!-- Bathroom Renovations -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-bath"></i></div>
+        <div class="service-title">🛁 Bathroom & Kitchen Renovations</div>
+        <ul class="service-desc">
+          <li><i class="fas fa-check"></i> Full bathroom re-plumbing (budget to premium)</li>
+          <li><i class="fas fa-check"></i> Kitchen sink & plumbing upgrades</li>
+          <li><i class="fas fa-check"></i> Water heater (geyser) installation & repair</li>
+          <li><i class="fas fa-check"></i> Tile-safe pipe routing for renovations</li>
+          <li><i class="fas fa-check"></i> Old fixture removal & eco-friendly disposal</li>
+        </ul>
+        <div class="service-footer">
+          <span class="price-tag">From LKR 45,000</span>
+          <a href="/areas" class="cta-link"><i class="fas fa-map-pin"></i> Free site visit</a>
+        </div>
+      </div>
+      <!-- Water Tank & Pump -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-water"></i></div>
+        <div class="service-title">🏗️ Water Tank, Pump & Supply Systems</div>
+        <ul class="service-desc">
+          <li><i class="fas fa-check"></i> Water pump repair & replacement (all brands)</li>
+          <li><i class="fas fa-check"></i> Overhead & underground tank installation</li>
+          <li><i class="fas fa-check"></i> Pump pressure optimization & noise reduction</li>
+          <li><i class="fas fa-check"></i> Tank cleaning & sediment removal</li>
+          <li><i class="fas fa-check"></i> Rainwater harvesting plumbing integration</li>
+        </ul>
+        <div class="service-footer">
+          <span class="price-tag">Repairs from LKR 3,500</span>
+          <a href="tel:+94758244216" class="cta-link"><i class="fas fa-phone-alt"></i> Call</a>
+        </div>
+      </div>
+      <!-- Commercial Plumbing -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-building"></i></div>
+        <div class="service-title">🏢 Commercial & Industrial Plumbing</div>
+        <ul class="service-desc">
+          <li><i class="fas fa-check"></i> Office building plumbing maintenance contracts</li>
+          <li><i class="fas fa-check"></i> Restaurant & hotel kitchen plumbing systems</li>
+          <li><i class="fas fa-check"></i> Factory pipe welding & industrial supply lines</li>
+          <li><i class="fas fa-check"></i> Fire sprinkler system support & inspections</li>
+          <li><i class="fas fa-check"></i> After-hours work to minimize disruption</li>
+        </ul>
+        <div class="service-footer">
+          <span class="price-tag">Bulk pricing</span>
+          <a href="/commercial-plumbing" class="cta-link"><i class="fas fa-arrow-right"></i> Enquire</a>
+        </div>
+      </div>
+      <!-- Preventive Maintenance -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
+        <div class="service-title">🔧 Preventive Maintenance & Inspections</div>
+        <ul class="service-desc">
+          <li><i class="fas fa-check"></i> Annual plumbing health check for homes & businesses</li>
+          <li><i class="fas fa-check"></i> Pipe corrosion assessment for older properties</li>
+          <li><i class="fas fa-check"></i> Water pressure testing & optimization</li>
+          <li><i class="fas fa-check"></i> Seasonal monsoon-prep inspections</li>
+          <li><i class="fas fa-check"></i> Maintenance contracts with priority response</li>
+        </ul>
+        <div class="service-footer">
+          <span class="price-tag">LKR 1,500 (waived)</span>
+          <a href="/contact" class="cta-link"><i class="fas fa-calendar"></i> Book now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY CHOOSE US -->
+  <div class="container">
+    <div style="background: white; border-radius: 60px; padding: 40px; margin: 40px 0;">
+      <h2 style="font-size: 2rem; margin-bottom: 30px;"><i class="fas fa-star" style="color: var(--accent);"></i> Why Choose SIX7 Plumbing for Your Colombo Plumbing Needs?</h2>
+      <div style="display: grid; grid-template-columns: repeat(2,1fr); gap: 25px;">
+        <div><i class="fas fa-check-circle" style="color: var(--accent);"></i> <strong>Direct Work Model</strong> — No agency fees, no middlemen. You pay for the job, not the platform.</div>
+        <div><i class="fas fa-check-circle" style="color: var(--accent);"></i> <strong>Transparent Pricing</strong> — Written quote before any work starts. No hidden charges.</div>
+        <div><i class="fas fa-check-circle" style="color: var(--accent);"></i> <strong>Budget-Friendly Options</strong> — Choose economy (local) or premium (imported) parts to match your budget.</div>
+        <div><i class="fas fa-check-circle" style="color: var(--accent);"></i> <strong>24/7 Emergency Response</strong> — Real humans answer +94 75 824 4216 at 1AM, weekends, holidays.</div>
+        <div><i class="fas fa-check-circle" style="color: var(--accent);"></i> <strong>60-Minute Arrival Guarantee</strong> — For Colombo 1-10. Outer suburbs: 90 minutes max.</div>
+        <div><i class="fas fa-check-circle" style="color: var(--accent);"></i> <strong>Workmanship Warranty</strong> — 90-day guarantee on all repairs. Free call-back if issue persists.</div>
+        <div><i class="fas fa-check-circle" style="color: var(--accent);"></i> <strong>Local Expertise</strong> — We know Colombo's older plumbing systems, water pressure challenges, and monsoon issues.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE AREAS -->
+  <div class="container">
+    <div class="areas-list">
+      <h2 style="font-size: 2rem;"><i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> Service Areas — Plumbers Near You in Colombo</h2>
+      <p>We cover the entire Western Province with fast arrival times:</p>
+      <div class="area-tags">
+        <span class="area-tag">Colombo 1-15</span><span class="area-tag">Kotte</span><span class="area-tag">Sri Jayawardenepura</span><span class="area-tag">Battaramulla</span><span class="area-tag">Rajagiriya</span><span class="area-tag">Dehiwala</span><span class="area-tag">Mount Lavinia</span><span class="area-tag">Wellawatte</span><span class="area-tag">Bambalapitiya</span><span class="area-tag">Nugegoda</span><span class="area-tag">Maharagama</span><span class="area-tag">Piliyandala</span><span class="area-tag">Kottawa</span><span class="area-tag">Moratuwa</span><span class="area-tag">Boralesgamuwa</span><span class="area-tag">Thalawathugoda</span><span class="area-tag">Malabe</span><span class="area-tag">Kelaniya</span><span class="area-tag">Ragama</span><span class="area-tag">Negombo</span>
+      </div>
+      <p>Searching for "plumber near me"? We're likely 15-30 minutes away. <a href="/areas" style="color: var(--primary); font-weight: 600;">→ All areas</a></p>
+    </div>
+  </div>
+
+  <!-- 3 STEPS -->
+  <div class="container">
+    <h2 style="font-size: 2rem; margin: 40px 0 20px;">How Our Plumbing Service Works (3 Simple Steps)</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>Contact Us</h3><p>Call +94 75 824 4216, WhatsApp, or fill our quick form. Tell us your issue and suburb.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Get a Clear Quote</h3><p>We assess (often via photos) and provide a written, fixed-price quote. No surprises.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>We Fix It</h3><p>A verified SIX7 plumber arrives on time, completes the job cleanly, and guarantees the work.</p></div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="container">
+    <h2 style="font-size: 2rem; margin: 40px 0 20px;">Frequently Asked Questions — Plumbing Services Colombo</h2>
+    <div class="faq-grid">
+      <div class="faq-item"><div class="faq-q">How much does a plumber cost in Colombo?</div><div class="faq-a">Service call from LKR 1,500 (waived if you proceed). Most repairs range LKR 2,500–15,000. Written quote before starting.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you charge extra for nights, weekends, or emergencies?</div><div class="faq-a">No extra charge for emergency timing. Same fair pricing, 24/7.</div></div>
+      <div class="faq-item"><div class="faq-q">Can I use my own parts to save money?</div><div class="faq-a">Yes. Labor-only installation available. Warranty covers workmanship only when using our parts.</div></div>
+      <div class="faq-item"><div class="faq-q">Are your plumbers licensed and insured?</div><div class="faq-a">Yes. All SIX7 plumbers are vetted, experienced, and covered under public liability insurance.</div></div>
+      <div class="faq-item"><div class="faq-q">What if I'm not happy with the work?</div><div class="faq-a">90-day workmanship warranty. If same issue recurs, we return free. Satisfaction guaranteed.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you do small jobs or only big projects?</div><div class="faq-a">We welcome all job sizes — from a dripping tap to a full hotel plumbing system.</div></div>
+      <div class="faq-item"><div class="faq-q">Can you give me a quote over WhatsApp?</div><div class="faq-a">Yes. Send photos/videos via WhatsApp +94 75 824 4216 for estimated range. Final quote on-site.</div></div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA BANNER -->
+  <div class="container">
+    <div class="cta-banner">
+      <h2 style="font-size: 2.5rem;">Ready to Fix Your Plumbing Issue?</h2>
+      <p style="margin:20px 0;">📞 Call Now: <strong>+94 75 824 4216</strong> (24/7 Emergency Line)<br>💬 WhatsApp: <strong>+94 75 824 4216</strong> (Send photos for instant estimate)<br>📧 Email: plumbing@six7.lk (Non-urgent enquiries)</p>
+      <div>
+        <a href="tel:+94758244216" class="btn-primary"><i class="fas fa-phone-alt"></i> Call Emergency</a>
+        <a href="https://wa.me/94758244216" style="background: var(--success); color: white; padding: 16px 40px; border-radius: 60px; font-weight: 700; text-decoration: none; display: inline-block; margin: 10px;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+      <p style="margin-top:20px;">✅ Free written quotes · ✅ No call-out fee with repair · ✅ 90-day workmanship warranty · ✅ Economy or premium parts — you choose</p>
+    </div>
+  </div>
+
+  <!-- RELATED LINKS -->
+  <div class="container" style="text-align: center; margin-bottom: 40px;">
+    <p style="font-size:1.2rem;">Explore more: <a href="/services/emergency-plumbing-colombo" style="color:var(--primary);">Emergency</a> · <a href="/services/leak-repair-colombo">Leak Repair</a> · <a href="/services/bathroom-renovation-colombo">Renovations</a> · <a href="/commercial-plumbing-colombo">Commercial</a> · <a href="/pricing">Pricing</a> · <a href="/areas">Areas</a></p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-links" style="margin-bottom:25px;">
+        <a href="/">Home</a> · <a href="/services">Services</a> · <a href="/areas">Areas</a> · <a href="/commercial-plumbing">Commercial</a> · <a href="/pricing">Pricing</a> · <a href="/faq">FAQ</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a>
+      </div>
+      <p><i class="fas fa-phone-alt"></i> +94 75 824 4216 · 24h · <i class="fab fa-whatsapp"></i> WhatsApp same</p>
+      <p style="margin-top:20px;">© 2026 SIX7 Plumbing – a division of SIX7. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE BUTTONS -->
+  <div class="sticky-mobile">
+    <a href="tel:+94758244216" class="sticky-call-btn"><i class="fas fa-phone-alt"></i> Emergency Call</a>
+    <a href="https://wa.me/94758244216" class="sticky-wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </div>
+
+  <!-- SCHEMA: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://plumbing.six7.lk/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://plumbing.six7.lk/services"
+    }]
+  }
+  </script>
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How much does a plumber cost in Colombo?","acceptedAnswer":{"@type":"Answer","text":"Service call from LKR 1,500 (waived if you proceed). Most repairs range LKR 2,500–15,000. Written quote before starting."}},
+      {"@type":"Question","name":"Do you charge extra for nights, weekends, or emergencies?","acceptedAnswer":{"@type":"Answer","text":"No extra charge for emergency timing. Same fair pricing, 24/7."}},
+      {"@type":"Question","name":"Can I use my own parts to save money?","acceptedAnswer":{"@type":"Answer","text":"Yes. Labor-only installation available. Warranty covers workmanship only when using our parts."}},
+      {"@type":"Question","name":"Are your plumbers licensed and insured?","acceptedAnswer":{"@type":"Answer","text":"Yes. All SIX7 plumbers are vetted, experienced, and covered under public liability insurance."}},
+      {"@type":"Question","name":"What if I'm not happy with the work?","acceptedAnswer":{"@type":"Answer","text":"90-day workmanship warranty. If same issue recurs, we return free. Satisfaction guaranteed."}},
+      {"@type":"Question","name":"Do you do small jobs or only big projects?","acceptedAnswer":{"@type":"Answer","text":"We welcome all job sizes — from a dripping tap to a full hotel plumbing system."}}
+    ]
+  }
+  </script>
+  <!-- Service schema (example for first service) – can be expanded -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Emergency Plumbing Services 24/7",
+    "provider": {"@type": "Plumber", "name": "SIX7 Plumbing"},
+    "areaServed": ["Colombo","Western Province"],
+    "description": "24/7 emergency plumbing including burst pipes, floods, sewage backup. 60-min arrival.",
+    "offers": {"@type": "Offer", "price": "1500", "priceCurrency": "LKR"}
+  }
+  </script>
+</body>
+</html>
