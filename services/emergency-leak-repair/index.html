@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <!-- DEV NOTES:
+    - Full Emergency Leak Repair service page for SIX7 Plumbing
+    - Content exactly as per plain-text spec
+    - Includes: What We Fix, Emergency Steps, Pricing, Areas, FAQ, Trust badges, CTAs
+    - All phone numbers are clickable tel: links
+    - WhatsApp deep links with pre-filled message suggestion
+    - Schema: Service, FAQPage, BreadcrumbList
+    - Sticky mobile call & WhatsApp buttons (brand colors)
+    - Internal links to /pricing, /areas, related services
+  -->
+  <title>Emergency Leak Repair Colombo | 24/7 Burst Pipe Fix | SIX7 Plumbing</title>
+  <meta name="description" content="24/7 emergency leak repair in Colombo. Burst pipes, hidden leaks, flooding — we arrive in 60 mins. Direct pricing, no middlemen. Call +94 75 824 4216 now.">
+  <meta name="keywords" content="emergency leak repair colombo, burst pipe repair colombo, hidden leak detection sri lanka, water leak plumber colombo, 24/7 plumbing emergency colombo, affordable leak fix colombo, six7 plumbing leak repair">
+  <meta name="author" content="SIX7 Plumbing">
+  <link rel="canonical" href="https://plumbing.six7.lk/services/emergency-leak-repair">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Emergency Leak Repair Colombo | 24/7 Burst Pipe Fix | SIX7 Plumbing">
+  <meta property="og:description" content="24/7 emergency leak repair. Burst pipes, hidden leaks — we arrive in 60 mins. Call +94 75 824 4216 now.">
+  <meta property="og:image" content="https://plumbing.six7.lk/assets/six7-og.jpg">
+  <meta property="og:url" content="https://plumbing.six7.lk/services/emergency-leak-repair">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #0b3b4f;
+      --primary-dark: #072a38;
+      --accent: #ff8a4c;
+      --accent-hover: #ff9f5c;
+      --success: #25D366;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-primary: #13294b;
+      --text-muted: #5e717f;
+      --border: #e2ecf5;
+      --emergency: #b13e3e;
+    }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* emergency ribbon */
+    .emergency-ribbon {
+      background: var(--emergency);
+      color: white;
+      padding: 12px 0;
+      font-weight: 600;
+    }
+    .emergency-ribbon .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .emergency-ribbon a {
+      background: #1f2f3f;
+      color: white;
+      padding: 8px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+    .emergency-ribbon a:hover { background: #14212b; }
+    /* header */
+    header {
+      background: var(--card-bg);
+      box-shadow: 0 6px 18px rgba(0,35,50,0.05);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(150deg, var(--primary), #226277);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .logo span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      -webkit-text-fill-color: var(--text-muted);
+      margin-left: 4px;
+    }
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+    }
+    .btn-sm {
+      padding: 10px 22px;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    .btn-wa { background: var(--success); color: white; }
+    .btn-wa:hover { background: #20b85a; }
+    .btn-call { background: var(--primary); color: white; }
+    .btn-call:hover { background: var(--primary-dark); }
+
+    /* breadcrumb & page header */
+    .breadcrumb {
+      margin: 20px 0 10px;
+      color: var(--text-muted);
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .page-header {
+      padding: 20px 0 30px;
+    }
+    .page-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .page-header p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 900px;
+    }
+
+    /* service cards */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .service-card {
+      background: white;
+      border-radius: 48px;
+      padding: 32px;
+      border: 1px solid var(--border);
+    }
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+    .service-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    .service-desc {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    .service-desc li {
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .service-desc i {
+      color: var(--accent);
+      width: 20px;
+    }
+    .service-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .price-tag {
+      background: #eef4fa;
+      padding: 8px 18px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* emergency steps section */
+    .steps-section {
+      background: white;
+      border-radius: 60px;
+      padding: 40px;
+      margin: 40px 0;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 30px;
+      margin: 30px 0;
+    }
+    .step-item {
+      background: var(--bg-light);
+      border-radius: 40px;
+      padding: 25px;
+    }
+    .step-number {
+      background: var(--accent);
+      color: var(--primary);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+    .dos-donts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    /* pricing table */
+    .pricing-card {
+      background: white;
+      border-radius: 60px;
+      padding: 40px;
+      margin: 40px 0;
+    }
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .price-match {
+      background: #e2f0fa;
+      padding: 20px;
+      border-radius: 60px;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    /* area list */
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .area-item {
+      background: var(--bg-light);
+      padding: 8px 12px;
+      border-radius: 40px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    /* faq */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 30px;
+      padding: 25px;
+    }
+    .faq-q {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    /* trust badges */
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    .badge {
+      background: #e2f0f9;
+      padding: 10px 20px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* footer */
+    footer {
+      background: #10242f;
+      color: #bcd3e3;
+      padding: 50px 0 30px;
+      margin-top: 60px;
+    }
+    .footer-links a {
+      color: #ffd58c;
+      text-decoration: none;
+      margin: 0 14px;
+    }
+
+    /* sticky mobile */
+    .sticky-mobile {
+      display: none;
+    }
+    @media (max-width: 700px) {
+      .service-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .dos-donts { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .area-grid { grid-template-columns: repeat(2,1fr); }
+      .page-header h1 { font-size: 2.2rem; }
+      .nav-actions .btn-sm span { display: none; }
+      .sticky-mobile {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background: white;
+        border-top: 2px solid var(--border);
+      }
+      .sticky-mobile a {
+        flex: 1;
+        text-align: center;
+        padding: 16px 0;
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+      .sticky-call-btn { background: var(--emergency); color: white; }
+      .sticky-wa-btn { background: var(--success); color: white; }
+      body { padding-bottom: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- EMERGENCY RIBBON -->
+  <div class="emergency-ribbon">
+    <div class="container">
+      <span><i class="fas fa-exclamation-triangle"></i> 24/7 EMERGENCY · We answer at 1AM</span>
+      <a href="tel:+94758244216"><i class="fas fa-phone-alt"></i> +94 75 824 4216</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <a href="/" style="text-decoration: none;"><div class="logo">SIX7<span>Plumbing</span></div></a>
+      <div class="nav-actions">
+        <a href="https://wa.me/94758244216" class="btn-sm btn-wa"><i class="fab fa-whatsapp"></i><span> WhatsApp</span></a>
+        <a href="tel:+94758244216" class="btn-sm btn-call"><i class="fas fa-phone"></i><span> Call</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.8rem; margin:0 8px;"></i>
+      <a href="/services">Services</a> <i class="fas fa-chevron-right" style="font-size:0.8rem; margin:0 8px;"></i>
+      Emergency Leak Repair
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="container">
+    <div class="page-header">
+      <h1><i class="fas fa-tint" style="color: var(--accent);"></i> Emergency Leak Repair in Colombo — 24/7 Burst Pipe & Hidden Leak Fix</h1>
+      <p>Water leaking? Don't wait — every minute counts. SIX7 Plumbing provides 24/7 emergency leak repair across Colombo and the Western Province. Whether it's a burst pipe flooding your bathroom, a hidden leak behind your wall, or a dripping fixture wasting water, our direct-work team arrives fast to stop the damage. We serve Colombo 1-15, Kotte, Dehiwala, Nugegoda, Maharagama, and all suburbs. No call-out fee if you proceed with repair. Written quote before work starts. Call <a href="tel:+94758244216" style="color:var(--primary); font-weight:600;">+94 75 824 4216</a> now — we answer at 1AM, weekends, and public holidays.</p>
+    </div>
+  </div>
+
+  <!-- WHAT WE FIX (5 cards) -->
+  <div class="container">
+    <h2 style="font-size:2.2rem; margin-bottom:30px;">🚨 What We Fix — Emergency Leak Services</h2>
+    <div class="service-grid">
+      <!-- Burst Pipe -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-burst"></i></div>
+        <div class="service-title">Burst Pipe Repair</div>
+        <ul class="service-desc">
+          <li><i class="fas fa-check"></i> Immediate shut-off & containment</li>
+          <li><i class="fas fa-check"></i> Pipe section replacement or temporary patch</li>
+          <li><i class="fas fa-check"></i> Pressure testing to prevent re-burst</li>
+          <li><i class="fas fa-check"></i> Cleanup assistance for water damage</li>
+        </ul>
+        <div class="service-footer">
+          <span class="price-tag">From LKR 3,500 + parts</span>
+          <span style="color:var(--text-muted);">90 min fix</span>
+        </div>
+      </div>
+      <!-- Hidden Leak Detection -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+        <div class="service-title">Hidden Leak Detection</div>
+        <ul class="service-desc">
+          <li><i class="fas fa-check"></i> Acoustic listening devices</li>
+          <li><i class="fas fa-check"></i> Thermal imaging (if available)</li>
+          <li><i class="fas fa-check"></i> Pressure testing to isolate leak</li>
+          <li><i class="fas fa-check"></i> Minimal-invasive access</li>
+        </ul>
+        <div class="service-footer">
+          <span class="price-tag">LKR 2,500 (waived with repair)</span>
+        </div>
+      </div>
+      <!-- Slab & Underground -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+        <div class="service-title">Slab & Underground Leak Repair</div>
+        <ul class="service-desc">
+          <li><i class="fas fa-check"></i> Detection under concrete</li>
+          <li><i class="fas fa-check"></i> Targeted excavation only where needed</li>
+          <li><i class="fas fa-check"></i> Pipe rerouting or sleeve repair</li>
+          <li><i class="fas fa-check"></i> Post-repair pressure certification</li>
+        </ul>
+        <div class="service-footer">
+          <span class="price-tag">Quoted on-site</span>
+        </div>
+      </div>
+      <!-- Fixture & Connection -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-shower"></i></div>
+        <div class="service-title">Fixture & Connection Leaks</div>
+        <ul class="service-desc">
+          <li><i class="fas fa-check"></i> Tap, toilet, sink, shower leaks</li>
+          <li><i class="fas fa-check"></i> Valve replacement & washer upgrades</li>
+          <li><i class="fas fa-check"></i> Flexible hose inspections</li>
+          <li><i class="fas fa-check"></i> Prevention tips</li>
+        </ul>
+        <div class="service-footer">
+          <span class="price-tag">Labor from LKR 1,500</span>
+        </div>
+      </div>
+      <!-- Water Tank & Pump -->
+      <div class="service-card" style="grid-column:span 2;">
+        <div class="service-icon"><i class="fas fa-water"></i></div>
+        <div class="service-title">Water Tank & Pump Leaks</div>
+        <ul class="service-desc">
+          <li><i class="fas fa-check"></i> Tank seam & valve leak repairs</li>
+          <li><i class="fas fa-check"></i> Pump seal & connection fixes</li>
+          <li><i class="fas fa-check"></i> Overflow prevention adjustments</li>
+          <li><i class="fas fa-check"></i> Same-day service for most tank emergencies</li>
+        </ul>
+        <div class="service-footer">
+          <span class="price-tag">Same-day service</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT TO DO RIGHT NOW (Emergency Steps) -->
+  <div class="container">
+    <div class="steps-section">
+      <h2 style="font-size:2.2rem;"><i class="fas fa-clock"></i> ⚡ What to Do RIGHT NOW (While Waiting for Us)</h2>
+      <p style="margin:20px 0;">If you have a major leak or flood:</p>
+      <div class="steps-grid">
+        <div class="step-item"><span class="step-number">1</span><h3>SHUT OFF THE WATER</h3><p>Locate your main water valve (near meter or street entry). Turn clockwise until fully closed. Call us if you can't find it — we'll guide you.</p></div>
+        <div class="step-item"><span class="step-number">2</span><h3>TURN OFF ELECTRICITY</h3><p>If water is near outlets or appliances, switch off main breaker. Don't touch panels with wet hands.</p></div>
+        <div class="step-item"><span class="step-number">3</span><h3>CONTAIN THE WATER</h3><p>Use buckets, towels, or mops. Move furniture away. Place container under active drips.</p></div>
+        <div class="step-item"><span class="step-number">4</span><h3>CALL SIX7 IMMEDIATELY</h3><p><a href="tel:+94758244216" style="color:var(--primary);">+94 75 824 4216</a> or <a href="https://wa.me/94758244216" style="color:var(--primary);">WhatsApp with photos</a>. Tell us location, leak type, and if water is still flowing.</p></div>
+      </div>
+      <div class="dos-donts">
+        <div style="background:#ffeeee; border-radius:40px; padding:25px;">
+          <h3 style="color:var(--emergency);"><i class="fas fa-times-circle"></i> DON'T</h3>
+          <ul style="list-style:none;">
+            <li><i class="fas fa-times" style="color:var(--emergency);"></i> Ignore a small drip</li>
+            <li><i class="fas fa-times" style="color:var(--emergency);"></i> Use chemical drain cleaners on a leaking pipe</li>
+            <li><i class="fas fa-times" style="color:var(--emergency);"></i> Attempt complex repairs without proper tools</li>
+          </ul>
+        </div>
+        <div style="background:#e1f7e1; border-radius:40px; padding:25px;">
+          <h3 style="color:green;"><i class="fas fa-check-circle"></i> DO</h3>
+          <ul style="list-style:none;">
+            <li><i class="fas fa-check" style="color:green;"></i> Take photos/videos for insurance claims</li>
+            <li><i class="fas fa-check" style="color:green;"></i> Keep area clear for technician access</li>
+            <li><i class="fas fa-check" style="color:green;"></i> Ask about our 90-day leak repair warranty</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRANSPARENT PRICING -->
+  <div class="container">
+    <div class="pricing-card">
+      <h2 style="font-size:2.2rem;">💰 Transparent Emergency Pricing</h2>
+      <p style="margin-bottom:30px;">We believe in fair, upfront pricing — even for emergencies.</p>
+      <div class="price-row"><span>Service Call</span> <span><strong>LKR 1,500</strong> (WAIVED with repair)</span></div>
+      <div class="price-row"><span>Leak Diagnosis</span> <span><strong>LKR 2,500</strong> (WAIVED with repair)</span></div>
+      <div class="price-row"><span>Simple Leak Repair</span> <span><strong>From LKR 2,500</strong> + parts</span></div>
+      <div class="price-row"><span>Burst Pipe Repair</span> <span><strong>From LKR 4,500</strong> + parts</span></div>
+      <div class="price-row"><span>Hidden Leak Detection</span> <span><strong>From LKR 5,000</strong> (includes report)</span></div>
+      
+      <p style="margin:30px 0 20px;"><strong>What Affects Price:</strong> ✓ Time of day: No extra charge for nights/weekends · ✓ Parts: Choose economy (local) or premium (imported) · ✓ Accessibility · ✓ Complexity</p>
+      
+      <div class="price-match">
+        <i class="fas fa-badge-check"></i> <strong>Price Match Promise:</strong> Found a lower written quote for the same scope? We'll match it.
+      </div>
+      <p>Need an exact price? <a href="https://wa.me/94758244216" style="color:var(--primary); font-weight:600;">WhatsApp photos to +94 75 824 4216</a> for instant estimate.</p>
+    </div>
+  </div>
+
+  <!-- SERVICE AREAS -->
+  <div class="container">
+    <h2 style="font-size:2rem;">📍 We Cover All Colombo & Western Province</h2>
+    <p style="margin:20px 0;">Our emergency leak teams are stationed for fast arrival:</p>
+    <div style="background:white; border-radius:60px; padding:40px;">
+      <h3>Colombo Core (15-30 min):</h3>
+      <div class="area-grid">
+        <span class="area-item">Colombo 1-15</span>
+      </div>
+      <h3>Greater Colombo (30-45 min):</h3>
+      <div class="area-grid">
+        <span class="area-item">Kotte</span><span class="area-item">Sri Jayawardenepura</span><span class="area-item">Battaramulla</span><span class="area-item">Rajagiriya</span><span class="area-item">Nawala</span><span class="area-item">Nugegoda</span><span class="area-item">Maharagama</span><span class="area-item">Piliyandala</span><span class="area-item">Kottawa</span><span class="area-item">Malabe</span><span class="area-item">Thalawathugoda</span><span class="area-item">Boralesgamuwa</span>
+      </div>
+      <h3>Southern Corridor (45-60 min):</h3>
+      <div class="area-grid">
+        <span class="area-item">Dehiwala</span><span class="area-item">Mount Lavinia</span><span class="area-item">Wellawatte</span><span class="area-item">Bambalapitiya</span><span class="area-item">Moratuwa</span><span class="area-item">Panadura</span>
+      </div>
+      <h3>Northern/Eastern (60-90 min):</h3>
+      <div class="area-grid">
+        <span class="area-item">Kelaniya</span><span class="area-item">Ragama</span><span class="area-item">Negombo</span><span class="area-item">Homagama</span><span class="area-item">Angoda</span>
+      </div>
+      <p style="margin-top:30px;">Searching for "emergency plumber near me"? We're likely within 10km. <a href="tel:+94758244216" style="color:var(--primary);">Call to confirm →</a></p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="container">
+    <h2 style="font-size:2rem;">❓ Emergency Leak Repair FAQs</h2>
+    <div class="faq-grid">
+      <div class="faq-item"><div class="faq-q">How fast can you arrive for a leak emergency?</div><p>60 minutes for Colombo 1-10. 90 minutes max for outer suburbs. We dispatch nearest technician.</p></div>
+      <div class="faq-item"><div class="faq-q">Do you charge extra for nights or weekends?</div><p>No. Same emergency rates 24/7. Plumbing disasters don't wait for business hours.</p></div>
+      <div class="faq-item"><div class="faq-q">Can you fix a leak without breaking walls?</div><p>Often yes. Acoustic detectors and thermal imaging pinpoint leaks with minimal intrusion. We always get approval first.</p></div>
+      <div class="faq-item"><div class="faq-q">What if the leak is under my concrete slab?</div><p>We specialize in slab leak detection and repair. Written quote before any work begins.</p></div>
+      <div class="faq-item"><div class="faq-q">Do you offer a warranty on leak repairs?</div><p>Yes — 90-day workmanship warranty. Free call-back if same leak recurs.</p></div>
+      <div class="faq-item"><div class="faq-q">Can I get a quote over WhatsApp?</div><p>For standard leaks, yes — send photos/videos and we'll provide a price range. For complex/hidden leaks, on-site estimate.</p></div>
+    </div>
+  </div>
+
+  <!-- TRUST BADGES + WHY CHOOSE -->
+  <div class="container">
+    <div class="badges">
+      <span class="badge"><i class="fas fa-hand-holding-usd"></i> Direct Work — No agency fees</span>
+      <span class="badge"><i class="fas fa-clock"></i> 60-min arrival guarantee</span>
+      <span class="badge"><i class="fas fa-file-invoice"></i> Written quote first</span>
+      <span class="badge"><i class="fas fa-shield-alt"></i> 90-day warranty</span>
+      <span class="badge"><i class="fas fa-sliders-h"></i> Economy or premium parts</span>
+    </div>
+    <div style="background:white; border-radius:60px; padding:40px; margin:40px 0;">
+      <h2 style="font-size:2rem;">🔧 Why Colombo Trusts SIX7 for Leak Emergencies</h2>
+      <ul style="columns:2; list-style:none;">
+        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> Direct Work Model — No agency fees</li>
+        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> 24/7 Human Answer — Real people at 1AM</li>
+        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> 60-Min Arrival Guarantee</li>
+        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> Written Quote First — No surprises</li>
+        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> Economy or Premium Parts — You choose</li>
+        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> 90-Day Warranty — Free call-back</li>
+        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> Local Expertise — Colombo pipe systems</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="container">
+    <div style="background: var(--accent); border-radius: 60px; padding: 50px; text-align: center; margin: 40px 0;">
+      <h2 style="font-size: 2.5rem;">📞 Ready to Stop the Leak?</h2>
+      <p style="font-size:1.3rem; margin:20px 0;">Don't let a small drip become a costly disaster. SIX7 Plumbing is ready to help — right now.</p>
+      <p style="font-size:2rem; font-weight:800;">
+        <a href="tel:+94758244216" style="color: var(--text-primary); text-decoration: none;">
+          🚨 +94 75 824 4216
+        </a>
+      </p>
+      <p>⚡ Average Response: 60 minutes in Colombo · 💬 <a href="https://wa.me/94758244216" style="color:var(--text-primary);">Send Photos on WhatsApp</a></p>
+      <div style="margin-top:30px;">
+        <span class="badge">✅ No call-out fee with repair</span>
+        <span class="badge">✅ Written quote before work</span>
+        <span class="badge">✅ 90-day warranty</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED LINKS -->
+  <div class="container" style="text-align: center; margin-bottom: 40px;">
+    <p style="font-size:1.2rem;">Related services: <a href="/services/drain-unclogging" style="color:var(--primary);">Drain Unclogging</a> · <a href="/services/bathroom-renovation">Bathroom Renovation</a> · <a href="/services/water-pump-repair">Water Pump Repair</a> · <a href="/pricing">Pricing</a> · <a href="/areas">Areas</a></p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-links" style="margin-bottom:25px;">
+        <a href="/">Home</a> · <a href="/services">Services</a> · <a href="/areas">Areas</a> · <a href="/commercial-plumbing">Commercial</a> · <a href="/pricing">Pricing</a> · <a href="/faq">FAQ</a> · <a href="/contact">Contact</a>
+      </div>
+      <p><i class="fas fa-phone-alt"></i> <a href="tel:+94758244216" style="color:#ffd58c;">+94 75 824 4216</a> · 24h · <i class="fab fa-whatsapp"></i> <a href="https://wa.me/94758244216" style="color:#ffd58c;">WhatsApp same</a></p>
+      <p style="margin-top:20px;">© 2026 SIX7 Plumbing – a division of SIX7. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE BUTTONS -->
+  <div class="sticky-mobile">
+    <a href="tel:+94758244216" class="sticky-call-btn"><i class="fas fa-phone-alt"></i> Emergency Call</a>
+    <a href="https://wa.me/94758244216" class="sticky-wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </div>
+
+  <!-- SCHEMA: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://plumbing.six7.lk/"},
+      {"@type":"ListItem","position":2,"name":"Services","item":"https://plumbing.six7.lk/services"},
+      {"@type":"ListItem","position":3,"name":"Emergency Leak Repair","item":"https://plumbing.six7.lk/services/emergency-leak-repair"}
+    ]
+  }
+  </script>
+  <!-- Service Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Emergency Leak Repair",
+    "serviceType": "Plumbing",
+    "provider": {"@type": "Plumber", "name": "SIX7 Plumbing"},
+    "areaServed": ["Colombo","Kotte","Dehiwala","Nugegoda","Maharagama","Mount Lavinia"],
+    "offers": {
+      "@type": "Offer",
+      "price": "2500",
+      "priceCurrency": "LKR",
+      "priceRange": "₨2500-₨15000"
+    },
+    "description": "24/7 emergency leak repair in Colombo. Burst pipes, hidden leaks, flooding — we arrive in 60 mins."
+  }
+  </script>
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How fast can you arrive for a leak emergency?","acceptedAnswer":{"@type":"Answer","text":"60 minutes for Colombo 1-10. 90 minutes max for outer suburbs."}},
+      {"@type":"Question","name":"Do you charge extra for nights or weekends?","acceptedAnswer":{"@type":"Answer","text":"No. Same emergency rates 24/7."}},
+      {"@type":"Question","name":"Can you fix a leak without breaking walls?","acceptedAnswer":{"@type":"Answer","text":"Often yes. Acoustic detectors and thermal imaging pinpoint leaks with minimal intrusion."}},
+      {"@type":"Question","name":"Do you offer a warranty on leak repairs?","acceptedAnswer":{"@type":"Answer","text":"Yes — 90-day workmanship warranty."}}
+    ]
+  }
+  </script>
+</body>
+</html>
