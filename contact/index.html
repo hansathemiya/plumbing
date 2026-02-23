@@ -1,606 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <!-- DEV NOTES:
-    - Full Contact page for SIX7 Plumbing
-    - All phone numbers are clickable tel: links
-    - Emergency banner phone is a large tappable button
-    - Form now shows error message (not wired to backend) + inline validation demo
-    - Content exactly as per spec
-    - Schema: ContactPage, LocalBusiness with contactPoint, FAQPage
-    - Sticky mobile call & WhatsApp buttons
-  -->
-  <title>Contact Plumber in Colombo | 24/7 Emergency Hotline | SIX7 Plumbing</title>
-  <meta name="description" content="Contact SIX7 Plumbing for fast, affordable service in Colombo. 24/7 emergency hotline +94 75 824 4216. Free quotes, direct pricing, no middlemen. WhatsApp or Call now.">
-  <meta name="keywords" content="contact plumber colombo, plumber phone number colombo, emergency plumbing contact, plumbing quote sri lanka, affordable plumber colombo, six7 plumbing contact, plumbing services western province">
-  <meta name="author" content="SIX7 Plumbing">
-  <link rel="canonical" href="https://plumbing.six7.lk/contact">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIX7 Plumbing | Contact Us | 24/7 Emergency Plumber Colombo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="SIX7 Plumbing | Contact Us | 24/7 Emergency Plumber Colombo"/>
+<meta property="og:description" content="Reach SIX7 Plumbing anytime for emergency plumbing services in Colombo. Fast response, reliable solutions, and professional service for homes and businesses."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://six7.lk/plumbing/contact"/>
+<meta property="og:image" content="https://six7.lk/assets/plumbing-contact-preview.jpg"/>
+<meta property="og:site_name" content="SIX7 Plumbing"/>
+<meta property="og:locale" content="en_LK"/>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Contact Plumber in Colombo | SIX7 Plumbing">
-  <meta property="og:description" content="24/7 emergency hotline +94 75 824 4216. Free quotes, direct pricing. WhatsApp or Call now.">
-  <meta property="og:image" content="https://plumbing.six7.lk/assets/six7-og.jpg">
-  <meta property="og:url" content="https://plumbing.six7.lk/contact">
-  <meta property="og:type" content="website">
+  <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff8b4d",
+                        "six7-navy": "#0b3b4f",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23160f",
+                        "emergency": "#b13e3e",
+                        "whatsapp": "#25D366",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass { backdrop-filter: blur(12px); background-color: rgba(248, 246, 245, 0.8); }
+        .dark .glass { background-color: rgba(35, 22, 15, 0.8); }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            z-index: 9999;
+            transition: 0.3s ease-in-out;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+            padding: 80px 24px 24px;
+        }
+        .mobile-menu.active {
+            right: 0;
+        }
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9998;
+            display: none;
+        }
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+        .dark .mobile-menu {
+            background: #1a1a1a;
+        }
+        
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9997;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .float-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: 0.2s;
+            color: white;
+        }
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+        .float-btn.call {
+            background: #b13e3e;
+        }
+        .float-btn.wa {
+            background: #25D366;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+        
+        /* Form error message */
+        .form-error-message {
+            background: #fee2e2;
+            border: 1px solid #ef4444;
+            color: #b91c1c;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --primary: #0b3b4f;
-      --primary-dark: #072a38;
-      --accent: #ff8a4c;
-      --accent-hover: #ff9f5c;
-      --success: #25D366;
-      --bg-light: #f8fafc;
-      --card-bg: #ffffff;
-      --text-primary: #13294b;
-      --text-muted: #5e717f;
-      --border: #e2ecf5;
-      --emergency: #b13e3e;
-    }
-    body {
-      font-family: "Inter", system-ui, sans-serif;
-      background: var(--bg-light);
-      color: var(--text-primary);
-      line-height: 1.5;
-    }
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    /* emergency ribbon */
-    .emergency-ribbon {
-      background: var(--emergency);
-      color: white;
-      padding: 12px 0;
-      font-weight: 600;
-    }
-    .emergency-ribbon .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .emergency-ribbon a {
-      background: #1f2f3f;
-      color: white;
-      padding: 8px 28px;
-      border-radius: 60px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 700;
-      transition: 0.2s;
-    }
-    .emergency-ribbon a:hover { background: #14212b; }
-    /* header */
-    header {
-      background: var(--card-bg);
-      box-shadow: 0 6px 18px rgba(0,35,50,0.05);
-      padding: 12px 0;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-    header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-size: 2.2rem;
-      font-weight: 800;
-      background: linear-gradient(150deg, var(--primary), #226277);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .logo span {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      -webkit-text-fill-color: var(--text-muted);
-      margin-left: 4px;
-    }
-    .nav-actions {
-      display: flex;
-      gap: 12px;
-    }
-    .btn-sm {
-      padding: 10px 22px;
-      border-radius: 60px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: 0.2s;
-      font-size: 0.95rem;
-      white-space: nowrap;
-    }
-    .btn-wa { background: var(--success); color: white; }
-    .btn-wa:hover { background: #20b85a; }
-    .btn-call { background: var(--primary); color: white; }
-    .btn-call:hover { background: var(--primary-dark); }
-
-    /* page header */
-    .page-header {
-      padding: 40px 0 20px;
-    }
-    .page-header h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-    .page-header p {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      max-width: 900px;
-    }
-    .breadcrumb {
-      margin-bottom: 20px;
-      color: var(--text-muted);
-    }
-    .breadcrumb a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    /* emergency banner */
-    .emergency-banner {
-      background: var(--emergency);
-      color: white;
-      border-radius: 60px;
-      padding: 40px;
-      margin: 30px 0;
-      text-align: center;
-    }
-    .emergency-banner h2 { font-size: 2.2rem; }
-    .phone-large {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin: 20px 0;
-      background: rgba(255,255,255,0.15);
-      display: inline-block;
-      padding: 15px 40px;
-      border-radius: 60px;
-      text-decoration: none;
-      color: white;
-      transition: 0.2s;
-    }
-    .phone-large:hover {
-      background: rgba(255,255,255,0.3);
-      transform: scale(1.02);
-    }
-    .phone-large span {
-      font-size: 1rem;
-      display: block;
-      opacity: 0.9;
-    }
-
-    /* contact grid */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 30px;
-      margin: 40px 0;
-    }
-    .contact-card {
-      background: white;
-      border-radius: 40px;
-      padding: 30px;
-      border: 1px solid var(--border);
-    }
-    .contact-card h3 {
-      font-size: 1.8rem;
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-    .contact-detail {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 15px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .contact-detail i {
-      font-size: 2rem;
-      color: var(--accent);
-      width: 40px;
-    }
-    .contact-detail a {
-      color: inherit;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .contact-detail a:hover {
-      color: var(--primary);
-      text-decoration: underline;
-    }
-
-    /* form */
-    .form-card {
-      background: white;
-      border-radius: 60px;
-      padding: 40px;
-      margin: 40px 0;
-    }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 16px 22px;
-      border-radius: 60px;
-      border: 1.5px solid var(--border);
-      background: #fafdff;
-      font-size: 1rem;
-    }
-    textarea { border-radius: 30px; }
-    .btn-block {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 18px;
-      border-radius: 60px;
-      font-weight: 700;
-      font-size: 1.2rem;
-      cursor: pointer;
-      width: 100%;
-    }
-    .btn-block:hover { background: var(--primary-dark); }
-    .form-error {
-      background: #ffeeee;
-      color: #b13e3e;
-      border: 2px solid #b13e3e;
-      border-radius: 60px;
-      padding: 15px;
-      margin-top: 20px;
-      text-align: center;
-      font-weight: 600;
-      display: none;
-    }
-    .form-error.show { display: block; }
-
-    /* map placeholder */
-    .map-placeholder {
-      background: #cde1f0;
-      border-radius: 60px;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-weight: 600;
-      font-size: 1.2rem;
-      border: 2px dashed var(--primary);
-      margin: 40px 0;
-    }
-
-    /* area list */
-    .area-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 10px;
-      margin: 20px 0;
-    }
-    .area-item {
-      background: var(--bg-light);
-      padding: 8px 12px;
-      border-radius: 40px;
-      text-align: center;
-      border: 1px solid var(--border);
-    }
-
-    /* footer */
-    footer {
-      background: #10242f;
-      color: #bcd3e3;
-      padding: 50px 0 30px;
-      margin-top: 60px;
-    }
-    .footer-links a {
-      color: #ffd58c;
-      text-decoration: none;
-      margin: 0 14px;
-    }
-    footer a {
-      color: #ffd58c;
-    }
-
-    /* sticky mobile */
-    .sticky-mobile {
-      display: none;
-    }
-    @media (max-width: 700px) {
-      .contact-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .area-grid { grid-template-columns: repeat(2,1fr); }
-      .page-header h1 { font-size: 2.2rem; }
-      .nav-actions .btn-sm span { display: none; }
-      .sticky-mobile {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 9999;
-        background: white;
-        border-top: 2px solid var(--border);
-      }
-      .sticky-mobile a {
-        flex: 1;
-        text-align: center;
-        padding: 16px 0;
-        font-weight: 700;
-        font-size: 1.1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        text-decoration: none;
-      }
-      .sticky-call-btn { background: var(--emergency); color: white; }
-      .sticky-wa-btn { background: var(--success); color: white; }
-      body { padding-bottom: 80px; }
-    }
-  </style>
-</head>
-<body>
-  <!-- EMERGENCY RIBBON -->
-  <div class="emergency-ribbon">
-    <div class="container">
-      <span><i class="fas fa-exclamation-triangle"></i> 24/7 EMERGENCY · We answer at 1AM</span>
-      <a href="tel:+94758244216"><i class="fas fa-phone-alt"></i> +94 75 824 4216</a>
-    </div>
-  </div>
-
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <a href="/" style="text-decoration: none;"><div class="logo">SIX7<span>Plumbing</span></div></a>
-      <div class="nav-actions">
-        <a href="https://wa.me/94758244216" class="btn-sm btn-wa"><i class="fab fa-whatsapp"></i><span> WhatsApp</span></a>
-        <a href="tel:+94758244216" class="btn-sm btn-call"><i class="fas fa-phone"></i><span> Call</span></a>
-      </div>
-    </div>
-  </header>
-
-  <!-- BREADCRUMB & PAGE HEADER -->
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.8rem; margin:0 8px;"></i> Contact
-    </div>
-    <div class="page-header">
-      <h1><i class="fas fa-phone-alt" style="color: var(--accent);"></i> Contact SIX7 Plumbing — Fast Response & Free Quotes</h1>
-      <p>Need a plumber in Colombo fast? SIX7 Plumbing is just one call away. Whether you have a burst pipe at 2AM, a blocked drain, or need a quote for a bathroom renovation, our team is ready to help. We operate on a direct-work model, meaning you speak directly to our team—not a call center—ensuring fair pricing and quick decisions. We serve all Colombo suburbs including Kotte, Dehiwala, Nugegoda, and Maharagama. Contact us today for a transparent quote with no hidden fees. Emergency lines are open 24/7.</p>
-    </div>
-  </div>
-
-  <!-- EMERGENCY BANNER (with clickable phone button) -->
-  <div class="container">
-    <div class="emergency-banner">
-      <h2><i class="fas fa-exclamation-triangle"></i> PLUMBING EMERGENCY? DON'T WAIT.</h2>
-      <a href="tel:+94758244216" class="phone-large">
-        <i class="fas fa-phone-alt"></i> +94 75 824 4216
-        <span>Tap to call — 24/7</span>
-      </a>
-      <p>⚡ Average Response Time: 60 Minutes (Colombo 1-10)</p>
-    </div>
-  </div>
-
-  <!-- CONTACT GRID (all numbers clickable) -->
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3><i class="fas fa-clock"></i> Emergency Priority</h3>
-        <div class="contact-detail">
-          <i class="fas fa-phone"></i> 
-          <a href="tel:+94758244216"><strong>+94 75 824 4216</strong></a>
-        </div>
-        <div class="contact-detail">
-          <i class="fab fa-whatsapp"></i> 
-          <a href="https://wa.me/94758244216"><strong>+94 75 824 4216</strong></a>
-        </div>
-        <div class="contact-detail">
-          <i class="fas fa-envelope"></i> 
-          <a href="mailto:plumbing@six7.lk"><strong>plumbing@six7.lk</strong></a> (Response within 2h)
-        </div>
-        <div class="contact-detail"><i class="fas fa-calendar-alt"></i> Hours: <strong>24/7</strong> (Including Public Holidays)</div>
-        <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> Service Area: <strong>Colombo & Western Province</strong></div>
-      </div>
-      <div class="contact-card">
-        <h3><i class="fas fa-check-circle"></i> Why Call Us Direct?</h3>
-        <div class="contact-detail"><i class="fas fa-check"></i> ✓ No Call Centers — Speak to a plumbing expert.</div>
-        <div class="contact-detail"><i class="fas fa-check"></i> ✓ Instant Quotes — Often given over WhatsApp via photos.</div>
-        <div class="contact-detail"><i class="fas fa-check"></i> ✓ Fair Pricing — Direct work means no agency markups.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- QUOTE FORM (with error message) -->
-  <div class="container">
-    <div class="form-card">
-      <h2 style="font-size: 2.2rem; margin-bottom: 30px;"><i class="fas fa-file-signature"></i> Request a Free Quote</h2>
-      <p style="margin-bottom: 20px;">Prefer to message? Fill out the form below. We reply within 15 minutes during business hours. For emergencies, please call instead.</p>
-      <form id="quoteForm">
-        <div class="form-row">
-          <input type="text" id="name" placeholder="Name (Required)" required>
-          <input type="tel" id="phone" placeholder="Phone Number (WhatsApp preferred)" required>
-        </div>
-        <div class="form-row">
-          <select id="suburb" required>
-            <option value="">Suburb/Location</option>
-            <option>Colombo 1</option><option>Colombo 2</option><option>Colombo 3</option><option>Colombo 4</option><option>Colombo 5</option><option>Colombo 6</option><option>Colombo 7</option><option>Colombo 8</option><option>Colombo 9</option><option>Colombo 10</option><option>Kotte</option><option>Dehiwala</option><option>Nugegoda</option><option>Maharagama</option><option>Battaramulla</option><option>Rajagiriya</option><option>Moratuwa</option><option>Mount Lavinia</option><option>Other</option>
-          </select>
-          <select id="service" required>
-            <option value="">Service Type</option>
-            <option>Emergency Leak</option><option>Drain Unclog</option><option>Installation</option><option>Renovation</option><option>Commercial</option>
-          </select>
-        </div>
-        <div style="margin-bottom:20px;">
-          <input type="file" id="photo" accept="image/*" style="padding:10px; border-radius:60px; background:white;"> <small>(Optional - helps us give accurate price)</small>
-        </div>
-        <textarea id="message" rows="3" placeholder="Message: Describe your issue (required)" required></textarea>
-        <button type="submit" class="btn-block"><i class="fas fa-paper-plane"></i> Get My Free Quote</button>
-        <div id="formError" class="form-error">
-          <i class="fas fa-exclamation-circle"></i> This is a demo — form not connected to a backend yet. Please call <a href="tel:+94758244216" style="color:#b13e3e; text-decoration:underline;">+94 75 824 4216</a> for immediate help.
-        </div>
-      </form>
-      <p style="margin-top:15px; font-size:0.9rem;">Your information is secure. We never share your details with third parties.</p>
-    </div>
-  </div>
-
-  <!-- MAP & COVERAGE -->
-  <div class="container">
-    <h2 style="font-size: 2rem; margin-bottom: 20px;"><i class="fas fa-map-marked-alt" style="color: var(--accent);"></i> Our Service Coverage</h2>
-    <div class="map-placeholder">
-      <i class="fas fa-map-marked-alt fa-3x" style="margin-right:15px;"></i> Google Map – SIX7 Plumbing serves all Colombo & Western Province
-    </div>
-    <p style="margin:20px 0;">While SIX7 Plumbing operates as a mobile service-area business (meaning we come to you), our operations cover the entire Western Province. We do not have a public walk-in storefront, but our teams are stationed strategically across Colombo to ensure fast arrival times.</p>
-    <div style="background:white; border-radius:40px; padding:30px; margin:30px 0;">
-      <h3>Primary Hubs:</h3>
-      <ul style="columns:2; list-style:none;">
-        <li><i class="fas fa-circle" style="color:var(--accent); font-size:0.8rem;"></i> Colombo Central (Colombo 1-10)</li>
-        <li><i class="fas fa-circle" style="color:var(--accent);"></i> Greater Colombo (Kotte, Battaramulla, Rajagiriya)</li>
-        <li><i class="fas fa-circle" style="color:var(--accent);"></i> Southern Suburbs (Dehiwala, Mount Lavinia, Moratuwa)</li>
-        <li><i class="fas fa-circle" style="color:var(--accent);"></i> Eastern Suburbs (Nugegoda, Maharagama, Piliyandala)</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- FAQ (Contact & Booking) -->
-  <div class="container">
-    <h2 style="font-size: 2rem; margin: 40px 0 20px;">❓ Frequently Asked Questions — Contact & Booking</h2>
-    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:30px;">
-      <div style="background:white; border-radius:30px; padding:25px;"><div class="faq-q" style="font-weight:700;">What is the best way to contact SIX7 Plumbing?</div><p>For emergencies, call <a href="tel:+94758244216" style="color:var(--primary);">+94 75 824 4216</a> immediately. For non-urgent quotes, WhatsApp or email works best. Sending photos via WhatsApp helps us give you an instant price estimate.</p></div>
-      <div style="background:white; border-radius:30px; padding:25px;"><div class="faq-q" style="font-weight:700;">Do you charge for coming to give a quote?</div><p>No. Our site visits and quotes are free. If you proceed with the repair, the visit fee is waived. If you choose not to proceed, a small diagnostic fee may apply for complex inspections.</p></div>
-      <div style="background:white; border-radius:30px; padding:25px;"><div class="faq-q" style="font-weight:700;">How quickly will you reply to my message?</div><p>We aim to reply within 15 minutes during business hours (8 AM - 8 PM). After hours, our emergency team monitors messages for urgent cases only.</p></div>
-      <div style="background:white; border-radius:30px; padding:25px;"><div class="faq-q" style="font-weight:700;">Can I get a quote over the phone?</div><p>Yes, for standard jobs (tap installation, leak repair). For complex renovations, we may need to see photos or visit the site to ensure accuracy.</p></div>
-      <div style="background:white; border-radius:30px; padding:25px;"><div class="faq-q" style="font-weight:700;">Do you cover my suburb?</div><p>We cover all of Colombo and most Western Province suburbs. Check our Service Areas list below. If you're unsure, call us to confirm.</p></div>
-      <div style="background:white; border-radius:30px; padding:25px;"><div class="faq-q" style="font-weight:700;">Is there a minimum charge for small jobs?</div><p>Yes, there is a minimum service call fee to cover travel and diagnostics. However, this is waived if you proceed with the repair work.</p></div>
-    </div>
-  </div>
-
-  <!-- SERVICES KEYWORDS (SEO) -->
-  <div class="container">
-    <div style="background:white; border-radius:60px; padding:40px; margin:40px 0;">
-      <h2 style="font-size:2rem;">🔍 Plumbing Services Available in Colombo</h2>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:20px;">
-        <div>
-          <h3>Residential Plumbing Contact:</h3>
-          <ul>
-            <li>Emergency leak repair Colombo</li><li>Bathroom renovation quotes</li><li>Toilet repair and installation</li><li>Kitchen sink plumbing</li><li>Water pump repair Western Province</li><li>Water tank cleaning Colombo</li><li>Gas line plumbing checks</li><li>Drain unclogging services</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Commercial Plumbing Contact:</h3>
-          <ul>
-            <li>Office plumbing maintenance Colombo</li><li>Restaurant kitchen plumbing</li><li>Hotel bathroom repairs</li><li>Industrial pipe welding</li><li>Fire sprinkler system checks</li><li>Property management plumbing contracts</li>
-          </ul>
-        </div>
-      </div>
-      <p>If you are searching for "industrial plumber Colombo" or "home plumber near me", our contact team can route you to the right specialist immediately.</p>
-    </div>
-  </div>
-
-  <!-- COMPLETE AREA LIST -->
-  <div class="container">
-    <h2 style="font-size:2rem;">📍 Complete Service Area List</h2>
-    <p>We proudly serve homeowners and businesses in the following locations. If your suburb is listed, we can likely arrive within 60-90 minutes.</p>
-    <div style="background:white; border-radius:60px; padding:40px; margin:30px 0;">
-      <h3>Colombo District:</h3>
-      <div class="area-grid">
-        <span class="area-item">Colombo 1</span><span class="area-item">Colombo 2</span><span class="area-item">Colombo 3</span><span class="area-item">Colombo 4</span><span class="area-item">Colombo 5</span><span class="area-item">Colombo 6</span><span class="area-item">Colombo 7</span><span class="area-item">Colombo 8</span><span class="area-item">Colombo 9</span><span class="area-item">Colombo 10</span><span class="area-item">Colombo 11</span><span class="area-item">Colombo 12</span><span class="area-item">Colombo 13</span><span class="area-item">Colombo 14</span><span class="area-item">Colombo 15</span>
-      </div>
-      <h3>Greater Colombo & Suburbs:</h3>
-      <div class="area-grid">
-        <span class="area-item">Kotte</span><span class="area-item">Sri Jayawardenepura</span><span class="area-item">Battaramulla</span><span class="area-item">Rajagiriya</span><span class="area-item">Nawala</span><span class="area-item">Nugegoda</span><span class="area-item">Maharagama</span><span class="area-item">Piliyandala</span><span class="area-item">Kottawa</span><span class="area-item">Gangodawila</span><span class="area-item">Malabe</span><span class="area-item">Thalawathugoda</span><span class="area-item">Boralesgamuwa</span><span class="area-item">Moratuwa</span><span class="area-item">Dehiwala</span><span class="area-item">Mount Lavinia</span><span class="area-item">Wellawatte</span><span class="area-item">Bambalapitiya</span><span class="area-item">Kirulapone</span><span class="area-item">Narahenpita</span><span class="area-item">Havelock Town</span><span class="area-item">Borella</span><span class="area-item">Dematagoda</span><span class="area-item">Mattakkuliya</span><span class="area-item">Modara</span><span class="area-item">Kelaniya</span><span class="area-item">Ragama</span><span class="area-item">Negombo</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- SOCIAL & PARTNER -->
-  <div class="container">
-    <div style="background:white; border-radius:60px; padding:40px; margin:40px 0;">
-      <h2><i class="fas fa-share-alt"></i> Connect With Us on Social Media</h2>
-      <p>Stay updated with plumbing tips, seasonal offers, and maintenance checklists.</p>
-      <p style="font-size:1.5rem;">
-        <a href="https://wa.me/94758244216" style="color:var(--success);"><i class="fab fa-whatsapp"></i> WhatsApp</a> · 
-        <a href="#" style="color:#4267B2;"><i class="fab fa-facebook"></i> Facebook</a> · 
-        <a href="#" style="color:#C13584;"><i class="fab fa-instagram"></i> Instagram</a>
-      </p>
-    </div>
-    <div style="background:var(--primary); color:white; border-radius:60px; padding:40px; margin:40px 0;">
-      <h2>🤝 Partner With SIX7 Plumbing</h2>
-      <p>Are you a qualified plumber looking for more work? We subcontract excess jobs to verified partners.</p>
-      <ul style="margin:20px 0;">
-        <li><i class="fas fa-check-circle"></i> Requirements: 3+ years experience, own tools, ID verified.</li>
-        <li><i class="fas fa-check-circle"></i> Benefits: Steady job flow, guaranteed payment, no marketing costs.</li>
-      </ul>
-      <p>Contact: Send your CV and certification to <strong><a href="mailto:plumbing@six7.lk" style="color:white; text-decoration:underline;">plumbing@six7.lk</a></strong> with subject "Partner Application".</p>
-    </div>
-  </div>
-
-  <!-- FINAL CTA (with clickable phone) -->
-  <div class="container">
-    <div style="background: var(--accent); color: var(--text-primary); border-radius: 60px; padding: 50px; text-align: center; margin: 40px 0;">
-      <h2 style="font-size: 2.5rem;">📞 Ready to Fix Your Plumbing Issue?</h2>
-      <p style="font-size:1.3rem;">Don't let a small leak become a big problem. Contact SIX7 Plumbing today for honest, affordable, and professional service.</p>
-      <p style="font-size:2rem; font-weight:800;">
-        <a href="tel:+94758244216" style="color: var(--text-primary); text-decoration: none;">
-          ✅ 24/7 Emergency Line: +94 75 824 4216
-        </a>
-      </p>
-      <p>✅ WhatsApp Quick Quote: <a href="https://wa.me/94758244216" style="color: var(--text-primary);">+94 75 824 4216</a> ✅ Email Support: <a href="mailto:plumbing@six7.lk" style="color: var(--text-primary);">plumbing@six7.lk</a></p>
-      <p style="margin-top:20px;">SIX7 Plumbing — Direct Work. Fair Prices. Colombo's Trusted Choice.</p>
-    </div>
-  </div>
-
-  <!-- FOOTER (with clickable phone) -->
-  <footer>
-    <div class="container">
-      <div class="footer-links" style="margin-bottom:25px;">
-        <a href="/">Home</a> · <a href="/services">Services</a> · <a href="/areas">Areas</a> · <a href="/commercial-plumbing">Commercial</a> · <a href="/pricing">Pricing</a> · <a href="/faq">FAQ</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a>
-      </div>
-      <p><i class="fas fa-phone-alt"></i> <a href="tel:+94758244216" style="color:#ffd58c;">+94 75 824 4216</a> · 24h · <i class="fab fa-whatsapp"></i> <a href="https://wa.me/94758244216" style="color:#ffd58c;">WhatsApp same</a></p>
-      <p style="margin-top:20px;">© 2026 SIX7 Plumbing – a division of SIX7. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- STICKY MOBILE BUTTONS -->
-  <div class="sticky-mobile">
-    <a href="tel:+94758244216" class="sticky-call-btn"><i class="fas fa-phone-alt"></i> Emergency Call</a>
-    <a href="https://wa.me/94758244216" class="sticky-wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-  </div>
-
-  <!-- SCHEMA -->
-  <script type="application/ld+json">
-  {
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "url": "https://plumbing.six7.lk/contact",
     "name": "Contact SIX7 Plumbing",
     "description": "24/7 emergency plumbing contact in Colombo. Free quotes, direct pricing."
-  }
-  </script>
-  <script type="application/ld+json">
-  {
+}
+</script>
+<script type="application/ld+json">
+{
     "@context": "https://schema.org",
     "@type": "Plumber",
     "name": "SIX7 Plumbing",
@@ -609,33 +152,492 @@
     "url": "https://plumbing.six7.lk",
     "areaServed": ["Colombo","Kotte","Dehiwala","Nugegoda","Maharagama","Battaramulla","Rajagiriya","Moratuwa","Mount Lavinia","Kelaniya","Negombo"],
     "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+94758244216",
-      "contactType": "customer service",
-      "availableLanguage": "English, Sinhala"
+        "@type": "ContactPoint",
+        "telephone": "+94758244216",
+        "contactType": "customer service",
+        "availableLanguage": "English, Sinhala"
     }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
+}
+</script>
+<script type="application/ld+json">
+{
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"What is the best way to contact SIX7 Plumbing?","acceptedAnswer":{"@type":"Answer","text":"For emergencies, call +94 75 824 4216 immediately. For non-urgent quotes, WhatsApp or email works best."}},
-      {"@type":"Question","name":"Do you charge for coming to give a quote?","acceptedAnswer":{"@type":"Answer","text":"No. Our site visits and quotes are free. If you proceed with the repair, the visit fee is waived."}}
+        {"@type":"Question","name":"What is the best way to contact SIX7 Plumbing?","acceptedAnswer":{"@type":"Answer","text":"For emergencies, call +94 75 824 4216 immediately. For non-urgent quotes, WhatsApp or email works best."}},
+        {"@type":"Question","name":"Do you charge for coming to give a quote?","acceptedAnswer":{"@type":"Answer","text":"No. Our site visits and quotes are free. If you proceed with the repair, the visit fee is waived."}}
     ]
-  }
-  </script>
+}
+</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<!-- Emergency Bar -->
+<div class="w-full bg-emergency py-2 px-4 text-center sticky top-0 z-50">
+<p class="text-white text-sm font-bold tracking-wide flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">emergency_home</span>
+        24/7 EMERGENCY SERVICE: <a class="underline hover:no-underline" href="tel:+94758244216">+94 75 824 4216</a>
+</p>
+</div>
 
-  <!-- FORM ERROR MESSAGE SCRIPT -->
-  <script>
-    document.getElementById('quoteForm')?.addEventListener('submit', function(e){
-      e.preventDefault(); // prevent actual submission
-      // Show the error message
-      document.getElementById('formError').classList.add('show');
-      // Optionally scroll to error
-      document.getElementById('formError').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
-  </script>
+<!-- Sticky Header -->
+<header class="sticky top-[36px] z-40 glass border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-10 bg-six7-navy rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">plumbing</span>
+</div>
+<a href="/" class="text-2xl font-black text-six7-navy dark:text-slate-100 tracking-tight">SIX7<span class="text-primary">.</span>PLUMBING</a>
+</div>
+
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/">Home</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/services">Services</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/commercial-plumbing">Commercial</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/areas">Areas</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/pricing">Pricing</a>
+<a class="text-sm font-semibold text-primary" href="/contact">Contact</a>
+</nav>
+
+<!-- Desktop Actions -->
+<div class="hidden md:flex items-center gap-3">
+<a class="flex items-center gap-2 bg-whatsapp text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm hover:opacity-90 transition-all" href="https://wa.me/94758244216">
+<span class="material-symbols-outlined text-lg">chat</span>
+            WhatsApp
+        </a>
+<a class="flex items-center gap-2 bg-six7-navy text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm hover:bg-slate-800 transition-all" href="tel:+94758244216">
+<span class="material-symbols-outlined text-lg">call</span>
+            Call Now
+        </a>
+</div>
+
+<!-- Mobile Menu Button -->
+<button class="md:hidden p-2" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu-overlay" id="menuOverlay" onclick="toggleMobileMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+<div class="flex justify-end mb-8">
+<button onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-6">
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/" onclick="toggleMobileMenu()">Home</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/services" onclick="toggleMobileMenu()">Services</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/commercial-plumbing" onclick="toggleMobileMenu()">Commercial</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/areas" onclick="toggleMobileMenu()">Areas</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/pricing" onclick="toggleMobileMenu()">Pricing</a>
+<a class="text-lg font-semibold text-primary" href="/contact" onclick="toggleMobileMenu()">Contact</a>
+<hr class="my-2 border-slate-200 dark:border-slate-700"/>
+<a class="flex items-center gap-2 bg-whatsapp text-white px-5 py-3 rounded-xl font-bold text-sm" href="https://wa.me/94758244216" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">chat</span> WhatsApp
+        </a>
+<a class="flex items-center gap-2 bg-six7-navy text-white px-5 py-3 rounded-xl font-bold text-sm" href="tel:+94758244216" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">call</span> Call Now
+        </a>
+</nav>
+</div>
+
+<!-- Floating Buttons -->
+<div class="floating-buttons md:hidden">
+<a href="tel:+94758244216" class="float-btn call">
+<span class="material-symbols-outlined">call</span>
+</a>
+<a href="https://wa.me/94758244216" class="float-btn wa">
+<span class="material-symbols-outlined">chat</span>
+</a>
+</div>
+
+<main>
+<!-- Breadcrumb -->
+<div class="max-w-7xl mx-auto px-6 pt-8">
+<div class="flex items-center gap-2 text-sm text-slate-500">
+<a href="/" class="hover:text-primary">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-slate-700 dark:text-slate-300">Contact</span>
+</div>
+</div>
+
+<!-- Page Header -->
+<section class="pt-8 pb-12">
+<div class="max-w-7xl mx-auto px-6">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-six7-navy dark:text-slate-100 leading-tight tracking-tight mb-6">
+            Contact SIX7 Plumbing — Fast Response & Free Quotes
+        </h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 max-w-4xl leading-relaxed">
+            Need a plumber in Colombo fast? SIX7 Plumbing is just one call away. Whether you have a burst pipe at 2AM, a blocked drain, or need a quote for a bathroom renovation, our team is ready to help. We operate on a direct-work model, meaning you speak directly to our team—not a call center—ensuring fair pricing and quick decisions. We serve all Colombo suburbs including Kotte, Dehiwala, Nugegoda, and Maharagama. Contact us today for a transparent quote with no hidden fees. Emergency lines are open 24/7.
+        </p>
+</div>
+</section>
+
+<!-- Emergency Banner -->
+<section class="max-w-7xl mx-auto px-6">
+<div class="bg-emergency text-white rounded-3xl p-8 md:p-12 text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-black mb-4">PLUMBING EMERGENCY? DON'T WAIT.</h2>
+<a href="tel:+94758244216" class="inline-block bg-white/20 hover:bg-white/30 transition-colors px-8 py-4 rounded-2xl text-3xl md:text-4xl font-black mb-4">
++94 75 824 4216
+<span class="block text-sm font-normal mt-1">Tap to call — 24/7</span>
+</a>
+<p class="text-lg">⚡ Average Response Time: 60 Minutes (Colombo 1-10)</p>
+</div>
+</section>
+
+<!-- Contact Grid -->
+<section class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-2 gap-8 mb-16">
+<!-- Emergency Priority Card -->
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+<h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">schedule</span>
+            Emergency Priority
+        </h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4 py-3 border-b border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary text-2xl">call</span>
+<a href="tel:+94758244216" class="font-bold text-lg hover:text-primary">+94 75 824 4216</a>
+</div>
+<div class="flex items-center gap-4 py-3 border-b border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary text-2xl">chat</span>
+<a href="https://wa.me/94758244216" class="font-bold text-lg hover:text-primary">+94 75 824 4216</a>
+</div>
+<div class="flex items-center gap-4 py-3 border-b border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary text-2xl">mail</span>
+<a href="mailto:plumbing@six7.lk" class="font-bold text-lg hover:text-primary">plumbing@six7.lk</a>
+<span class="text-sm text-slate-500">(Response within 2h)</span>
+</div>
+<div class="flex items-center gap-4 py-3 border-b border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary text-2xl">calendar_month</span>
+<span><span class="font-bold">Hours:</span> 24/7 (Including Public Holidays)</span>
+</div>
+<div class="flex items-center gap-4 py-3">
+<span class="material-symbols-outlined text-primary text-2xl">location_on</span>
+<span><span class="font-bold">Service Area:</span> Colombo & Western Province</span>
+</div>
+</div>
+</div>
+
+<!-- Why Call Direct Card -->
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+<h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified</span>
+            Why Call Us Direct?
+        </h3>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>No Call Centers — Speak to a plumbing expert.</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Instant Quotes — Often given over WhatsApp via photos.</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Fair Pricing — Direct work means no agency markups.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Quote Form -->
+<section class="max-w-7xl mx-auto px-6 mb-16">
+<div class="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-3xl shadow-sm">
+<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-4">Request a Free Quote</h2>
+<p class="text-slate-600 dark:text-slate-400 mb-6">Prefer to message? Fill out the form below. We reply within 15 minutes during business hours. For emergencies, please call instead.</p>
+
+<!-- Form with Error Message -->
+<form id="quoteForm">
+<div class="form-error-message" id="formError" style="display: none;">
+<span class="material-symbols-outlined text-sm">error</span>
+<span>Need immediate assistance? Call or text <a href="tel:+94758244216" class="font-bold underline">+94 75 824 4216</a> for instant response</span>
+</div>
+
+<div class="grid md:grid-cols-2 gap-4 mb-4">
+<input type="text" placeholder="Name (Required)" required class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+<input type="tel" placeholder="Phone Number (WhatsApp preferred)" required class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+</div>
+
+<div class="grid md:grid-cols-2 gap-4 mb-4">
+<select required class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+<option value="">Suburb/Location</option>
+<option>Colombo 1</option><option>Colombo 2</option><option>Colombo 3</option><option>Colombo 4</option><option>Colombo 5</option><option>Colombo 6</option><option>Colombo 7</option><option>Colombo 8</option><option>Colombo 9</option><option>Colombo 10</option><option>Kotte</option><option>Dehiwala</option><option>Nugegoda</option><option>Maharagama</option><option>Battaramulla</option><option>Rajagiriya</option><option>Moratuwa</option><option>Mount Lavinia</option><option>Other</option>
+</select>
+<select required class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+<option value="">Service Type</option>
+<option>Emergency Leak</option><option>Drain Unclog</option><option>Installation</option><option>Renovation</option><option>Commercial</option>
+</select>
+</div>
+
+<div class="mb-4">
+<input type="file" id="photo" accept="image/*" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+<p class="text-xs text-slate-500 mt-1">Optional - helps us give accurate price</p>
+</div>
+
+<textarea rows="3" placeholder="Message: Describe your issue (required)" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 mb-4"></textarea>
+
+<button type="submit" class="w-full bg-six7-navy text-white py-3 rounded-xl font-bold text-lg hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">send</span>
+            Get My Free Quote
+        </button>
+</form>
+
+<p class="text-sm text-slate-500 mt-4">Your information is secure. We never share your details with third parties.</p>
+</div>
+</section>
+
+<!-- Service Coverage -->
+<section class="max-w-7xl mx-auto px-6 mb-16">
+<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-6">Our Service Coverage</h2>
+
+<div class="bg-slate-200 dark:bg-slate-800 rounded-3xl h-64 flex items-center justify-center mb-6 border-2 border-dashed border-six7-navy/30">
+<div class="text-center">
+<span class="material-symbols-outlined text-5xl text-six7-navy/50 mb-2">map</span>
+<p class="text-six7-navy/70 font-semibold">Google Map – SIX7 Plumbing serves all Colombo & Western Province</p>
+</div>
+</div>
+
+<p class="text-slate-600 dark:text-slate-400 mb-6">While SIX7 Plumbing operates as a mobile service-area business (meaning we come to you), our operations cover the entire Western Province. We do not have a public walk-in storefront, but our teams are stationed strategically across Colombo to ensure fast arrival times.</p>
+
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl">
+<h3 class="text-xl font-bold mb-4">Primary Hubs:</h3>
+<ul class="grid md:grid-cols-2 gap-3">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">circle</span>
+            Colombo Central (Colombo 1-10)
+        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">circle</span>
+            Greater Colombo (Kotte, Battaramulla, Rajagiriya)
+        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">circle</span>
+            Southern Suburbs (Dehiwala, Mount Lavinia, Moratuwa)
+        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">circle</span>
+            Eastern Suburbs (Nugegoda, Maharagama, Piliyandala)
+        </li>
+</ul>
+</div>
+</section>
+
+<!-- FAQ Section -->
+<section class="max-w-7xl mx-auto px-6 mb-16">
+<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-8">Frequently Asked Questions — Contact & Booking</h2>
+
+<div class="grid md:grid-cols-2 gap-6">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+<h3 class="font-bold text-lg mb-2">What is the best way to contact SIX7 Plumbing?</h3>
+<p class="text-slate-600 dark:text-slate-400">For emergencies, call <a href="tel:+94758244216" class="text-primary font-semibold">+94 75 824 4216</a> immediately. For non-urgent quotes, WhatsApp or email works best. Sending photos via WhatsApp helps us give you an instant price estimate.</p>
+</div>
+
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+<h3 class="font-bold text-lg mb-2">Do you charge for coming to give a quote?</h3>
+<p class="text-slate-600 dark:text-slate-400">No. Our site visits and quotes are free. If you proceed with the repair, the visit fee is waived. If you choose not to proceed, a small diagnostic fee may apply for complex inspections.</p>
+</div>
+
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+<h3 class="font-bold text-lg mb-2">How quickly will you reply to my message?</h3>
+<p class="text-slate-600 dark:text-slate-400">We aim to reply within 15 minutes during business hours (8 AM - 8 PM). After hours, our emergency team monitors messages for urgent cases only.</p>
+</div>
+
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+<h3 class="font-bold text-lg mb-2">Can I get a quote over the phone?</h3>
+<p class="text-slate-600 dark:text-slate-400">Yes, for standard jobs (tap installation, leak repair). For complex renovations, we may need to see photos or visit the site to ensure accuracy.</p>
+</div>
+
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+<h3 class="font-bold text-lg mb-2">Do you cover my suburb?</h3>
+<p class="text-slate-600 dark:text-slate-400">We cover all of Colombo and most Western Province suburbs. Check our Service Areas list below. If you're unsure, call us to confirm.</p>
+</div>
+
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+<h3 class="font-bold text-lg mb-2">Is there a minimum charge for small jobs?</h3>
+<p class="text-slate-600 dark:text-slate-400">Yes, there is a minimum service call fee to cover travel and diagnostics. However, this is waived if you proceed with the repair work.</p>
+</div>
+</div>
+</section>
+
+<!-- Complete Area List -->
+<section class="max-w-7xl mx-auto px-6 mb-16">
+<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-4">Complete Service Area List</h2>
+<p class="text-slate-600 dark:text-slate-400 mb-6">We proudly serve homeowners and businesses in the following locations. If your suburb is listed, we can likely arrive within 60-90 minutes.</p>
+
+<div class="bg-white dark:bg-slate-800 p-8 rounded-3xl">
+<h3 class="font-bold text-xl mb-4">Colombo District:</h3>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 1</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 2</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 3</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 4</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 5</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 6</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 7</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 8</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 9</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 10</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 11</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 12</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 13</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 14</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Colombo 15</span>
+</div>
+
+<h3 class="font-bold text-xl mb-4">Greater Colombo & Suburbs:</h3>
+<div class="flex flex-wrap gap-2">
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Kotte</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Sri Jayawardenepura</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Battaramulla</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Rajagiriya</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Nawala</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Nugegoda</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Maharagama</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Piliyandala</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Kottawa</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Gangodawila</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Malabe</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Thalawathugoda</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Boralesgamuwa</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Moratuwa</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Dehiwala</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Mount Lavinia</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Wellawatte</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Bambalapitiya</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Kirulapone</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Narahenpita</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Havelock Town</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Borella</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Dematagoda</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Mattakkuliya</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Modara</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Kelaniya</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Ragama</span>
+<span class="bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full text-sm">Negombo</span>
+</div>
+</div>
+</section>
+
+<!-- Social & Partner -->
+<section class="max-w-7xl mx-auto px-6 mb-16">
+<div class="bg-white dark:bg-slate-800 p-8 rounded-3xl mb-8">
+<h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">share</span>
+        Connect With Us on Social Media
+    </h2>
+<p class="mb-4">Stay updated with plumbing tips, seasonal offers, and maintenance checklists.</p>
+<div class="flex gap-6 text-2xl">
+<a href="https://wa.me/94758244216" class="text-whatsapp hover:scale-110 transition-transform">WhatsApp</a>
+<a href="#" class="text-blue-600 hover:scale-110 transition-transform">Facebook</a>
+<a href="#" class="text-pink-600 hover:scale-110 transition-transform">Instagram</a>
+</div>
+</div>
+
+<div class="bg-six7-navy text-white p-8 rounded-3xl">
+<h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">handshake</span>
+        Partner With SIX7 Plumbing
+    </h2>
+<p class="mb-4">Are you a qualified plumber looking for more work? We subcontract excess jobs to verified partners.</p>
+<ul class="space-y-2 mb-4">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span>Requirements: 3+ years experience, own tools, ID verified.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span>Benefits: Steady job flow, guaranteed payment, no marketing costs.</span>
+</li>
+</ul>
+<p>Contact: Send your CV and certification to <strong><a href="mailto:plumbing@six7.lk" class="text-primary underline">plumbing@six7.lk</a></strong> with subject "Partner Application".</p>
+</div>
+</section>
+
+<!-- Final CTA -->
+<section class="max-w-7xl mx-auto px-6 mb-16">
+<div class="bg-primary rounded-3xl p-8 md:p-12 text-center">
+<h2 class="text-3xl md:text-4xl font-black text-six7-navy mb-4">Ready to Fix Your Plumbing Issue?</h2>
+<p class="text-xl text-six7-navy/80 mb-6">Don't let a small leak become a big problem. Contact SIX7 Plumbing today for honest, affordable, and professional service.</p>
+<p class="text-3xl md:text-4xl font-black mb-4">
+<a href="tel:+94758244216" class="text-six7-navy hover:underline">
+            Emergency Line: +94 75 824 4216
+        </a>
+</p>
+<p class="text-lg">
+        WhatsApp Quick Quote: <a href="https://wa.me/94758244216" class="text-six7-navy font-semibold underline">+94 75 824 4216</a> · 
+        Email: <a href="mailto:plumbing@six7.lk" class="text-six7-navy font-semibold underline">plumbing@six7.lk</a>
+</p>
+<p class="mt-6 text-six7-navy font-bold">SIX7 Plumbing — Direct Work. Fair Prices. Colombo's Trusted Choice.</p>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-six7-navy text-white pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-six7-navy">
+<span class="material-symbols-outlined text-xl">plumbing</span>
+</div>
+<h4 class="text-xl font-black">SIX7 PLUMBING</h4>
+</div>
+<p class="text-slate-400 text-sm">Colombo's most trusted emergency plumbing service.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a href="/" class="hover:text-primary">Home</a></li>
+<li><a href="/services" class="hover:text-primary">Services</a></li>
+<li><a href="/commercial-plumbing" class="hover:text-primary">Commercial</a></li>
+<li><a href="/areas" class="hover:text-primary">Areas</a></li>
+<li><a href="/pricing" class="hover:text-primary">Pricing</a></li>
+<li><a href="/contact" class="hover:text-primary">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Contact</h4>
+<div class="space-y-2 text-sm text-slate-400">
+<a href="tel:+94758244216" class="flex items-center gap-2 hover:text-primary">
+<span class="material-symbols-outlined text-primary">call</span> +94 75 824 4216
+        </a>
+<a href="mailto:plumbing@six7.lk" class="flex items-center gap-2 hover:text-primary">
+<span class="material-symbols-outlined text-primary">mail</span> plumbing@six7.lk
+        </a>
+<a href="https://wa.me/94758244216" class="flex items-center gap-2 hover:text-primary">
+<span class="material-symbols-outlined text-primary">chat</span> WhatsApp
+        </a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-4">Service Areas</h4>
+<p class="text-sm text-slate-400">Colombo 01-15, Dehiwala, Mount Lavinia, Kotte, Nugegoda, Battaramulla, Rajagiriya, Kaduwela, Malabe, Moratuwa</p>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 text-center text-sm text-slate-500">
+<p>© 2026 SIX7 Plumbing. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+    document.getElementById('mobileMenu').classList.toggle('active');
+    document.getElementById('menuOverlay').classList.toggle('active');
+}
+
+// Form error message
+document.getElementById('quoteForm')?.addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formError').style.display = 'flex';
+    document.getElementById('formError').scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+</script>
 </body>
 </html>
