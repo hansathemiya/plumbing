@@ -1,1 +1,477 @@
-404 error
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <!-- DEV NOTES:
+    - 404 Error page for SIX7 Plumbing
+    - Fun, friendly tone with "down the drain" theme
+    - BIG emergency CTA with clickable phone number
+    - Secondary CTAs: WhatsApp, Homepage, Services
+    - Quick help links to key service pages
+    - Reassurance badges (60-min, direct pricing, warranty)
+    - Sticky mobile call & WhatsApp buttons (same as main site)
+    - All phone numbers clickable tel: links
+    - No index meta to prevent search indexing
+  -->
+  <title>404 - Page Not Found | SIX7 Plumbing</title>
+  <meta name="description" content="Oops! This page went down the drain. But your plumbing emergency doesn't have to wait. Call our 24/7 emergency line now.">
+  <meta name="robots" content="noindex, follow"> <!-- don't index 404 page -->
+  <meta name="author" content="SIX7 Plumbing">
+  <link rel="canonical" href="https://plumbing.six7.lk/404">
+
+  <!-- Open Graph (optional) -->
+  <meta property="og:title" content="404 - Page Not Found | SIX7 Plumbing">
+  <meta property="og:description" content="Oops! This page went down the drain. Call our 24/7 emergency line.">
+  <meta property="og:image" content="https://plumbing.six7.lk/assets/six7-og.jpg">
+  <meta property="og:url" content="https://plumbing.six7.lk/404">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #0b3b4f;
+      --primary-dark: #072a38;
+      --accent: #ff8a4c;
+      --accent-hover: #ff9f5c;
+      --success: #25D366;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-primary: #13294b;
+      --text-muted: #5e717f;
+      --border: #e2ecf5;
+      --emergency: #b13e3e;
+    }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-primary);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+    /* emergency ribbon */
+    .emergency-ribbon {
+      background: var(--emergency);
+      color: white;
+      padding: 12px 0;
+      font-weight: 600;
+    }
+    .emergency-ribbon .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .emergency-ribbon a {
+      background: #1f2f3f;
+      color: white;
+      padding: 8px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+    .emergency-ribbon a:hover { background: #14212b; }
+    /* header */
+    header {
+      background: var(--card-bg);
+      box-shadow: 0 6px 18px rgba(0,35,50,0.05);
+      padding: 12px 0;
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(150deg, var(--primary), #226277);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .logo span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      -webkit-text-fill-color: var(--text-muted);
+      margin-left: 4px;
+    }
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+    }
+    .btn-sm {
+      padding: 10px 22px;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    .btn-wa { background: var(--success); color: white; }
+    .btn-wa:hover { background: #20b85a; }
+    .btn-call { background: var(--primary); color: white; }
+    .btn-call:hover { background: var(--primary-dark); }
+
+    /* main 404 content */
+    .error-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .error-card {
+      background: white;
+      border-radius: 60px;
+      padding: 50px 40px;
+      box-shadow: 0 25px 45px -20px rgba(11,59,79,0.2);
+      border: 1px solid var(--border);
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .error-icon {
+      font-size: 5rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .error-card h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .error-sub {
+      font-size: 1.5rem;
+      color: var(--emergency);
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+    .error-message {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* BIG emergency CTA */
+    .emergency-cta {
+      background: var(--emergency);
+      color: white;
+      border-radius: 60px;
+      padding: 30px;
+      margin: 30px 0;
+    }
+    .emergency-cta h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .phone-big {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: rgba(255,255,255,0.2);
+      display: inline-block;
+      padding: 15px 40px;
+      border-radius: 60px;
+      text-decoration: none;
+      color: white;
+      transition: 0.2s;
+      margin: 15px 0;
+    }
+    .phone-big:hover {
+      background: rgba(255,255,255,0.3);
+      transform: scale(1.02);
+    }
+    .phone-big span {
+      font-size: 1rem;
+      display: block;
+    }
+
+    /* secondary CTAs */
+    .secondary-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin: 30px 0;
+    }
+    .btn-secondary {
+      background: var(--primary);
+      color: white;
+      padding: 16px 30px;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-secondary:hover {
+      background: var(--primary-dark);
+    }
+    .btn-outline {
+      background: white;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 14px 30px;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-outline:hover {
+      background: #f0f7fc;
+    }
+
+    /* quick links grid */
+    .quick-links {
+      background: var(--bg-light);
+      border-radius: 50px;
+      padding: 30px;
+      margin: 30px 0;
+      border: 1px solid var(--border);
+    }
+    .quick-links h3 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 15px;
+    }
+    .links-grid a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 10px;
+      background: white;
+      border-radius: 60px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.2s;
+    }
+    .links-grid a:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .links-grid a i {
+      color: var(--accent);
+      width: 24px;
+    }
+    .links-grid a:hover i {
+      color: white;
+    }
+
+    /* reassurance badges */
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px 0 20px;
+    }
+    .badge {
+      background: #e2f0f9;
+      padding: 10px 20px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .badge i {
+      color: var(--accent);
+      margin-right: 8px;
+    }
+
+    /* footer note */
+    .footer-note {
+      background: var(--primary);
+      color: white;
+      border-radius: 60px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    .footer-note a {
+      color: white;
+      font-weight: 700;
+    }
+
+    /* footer */
+    footer {
+      background: #10242f;
+      color: #bcd3e3;
+      padding: 40px 0 20px;
+      margin-top: 40px;
+    }
+    .footer-links a {
+      color: #ffd58c;
+      text-decoration: none;
+      margin: 0 14px;
+    }
+
+    /* sticky mobile */
+    .sticky-mobile {
+      display: none;
+    }
+    @media (max-width: 700px) {
+      .error-card h1 { font-size: 2.4rem; }
+      .error-sub { font-size: 1.3rem; }
+      .phone-big { font-size: 1.8rem; padding: 12px 20px; }
+      .links-grid { grid-template-columns: 1fr; }
+      .nav-actions .btn-sm span { display: none; }
+      .sticky-mobile {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background: white;
+        border-top: 2px solid var(--border);
+      }
+      .sticky-mobile a {
+        flex: 1;
+        text-align: center;
+        padding: 16px 0;
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+      .sticky-call-btn { background: var(--emergency); color: white; }
+      .sticky-wa-btn { background: var(--success); color: white; }
+      body { padding-bottom: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- EMERGENCY RIBBON (same as main site) -->
+  <div class="emergency-ribbon">
+    <div class="container">
+      <span><i class="fas fa-exclamation-triangle"></i> 24/7 EMERGENCY · We answer at 1AM</span>
+      <a href="tel:+94758244216"><i class="fas fa-phone-alt"></i> +94 75 824 4216</a>
+    </div>
+  </div>
+
+  <!-- HEADER (same as main site) -->
+  <header>
+    <div class="container">
+      <a href="/" style="text-decoration: none;"><div class="logo">SIX7<span>Plumbing</span></div></a>
+      <div class="nav-actions">
+        <a href="https://wa.me/94758244216" class="btn-sm btn-wa"><i class="fab fa-whatsapp"></i><span> WhatsApp</span></a>
+        <a href="tel:+94758244216" class="btn-sm btn-call"><i class="fas fa-phone"></i><span> Call</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN 404 CONTENT -->
+  <div class="error-main">
+    <div class="container">
+      <div class="error-card">
+        <div class="error-icon">
+          <i class="fas fa-toilet"></i> <i class="fas fa-water"></i>
+        </div>
+        <h1>Oops! This page went down the drain. 🚽</h1>
+        <div class="error-sub">
+          Don't worry — your plumbing emergency doesn't have to wait. We're still here to help.
+        </div>
+        <div class="error-message">
+          The page you're looking for might have been moved, deleted, or never existed. But SIX7 Plumbing is real, and we're ready to fix your issue right now.
+        </div>
+
+        <!-- BIG EMERGENCY CTA -->
+        <div class="emergency-cta">
+          <h2><i class="fas fa-exclamation-triangle"></i> Need a plumber NOW?</h2>
+          <a href="tel:+94758244216" class="phone-big">
+            <i class="fas fa-phone-alt"></i> +94 75 824 4216
+            <span>24/7 Emergency Line</span>
+          </a>
+        </div>
+
+        <!-- SECONDARY CTAS -->
+        <div class="secondary-ctas">
+          <a href="https://wa.me/94758244216" class="btn-secondary"><i class="fab fa-whatsapp"></i> WhatsApp Us for Instant Quote</a>
+          <a href="/" class="btn-outline"><i class="fas fa-home"></i> Go Back to Homepage</a>
+          <a href="/services" class="btn-outline"><i class="fas fa-tools"></i> Browse Our Services</a>
+        </div>
+
+        <!-- QUICK HELP LINKS -->
+        <div class="quick-links">
+          <h3><i class="fas fa-bolt"></i> Quick Help Links</h3>
+          <div class="links-grid">
+            <a href="/services/emergency-leak-repair"><i class="fas fa-tint"></i> Emergency leak repair</a>
+            <a href="/services/drain-unclogging"><i class="fas fa-poop"></i> Blocked drain unclogging</a>
+            <a href="/services/tap-installation"><i class="fas fa-shower"></i> Tap/toilet installation</a>
+            <a href="/services/bathroom-renovation"><i class="fas fa-bath"></i> Bathroom renovation quote</a>
+            <a href="/commercial-plumbing"><i class="fas fa-building"></i> Commercial plumbing enquiry</a>
+          </div>
+        </div>
+
+        <!-- REASSURANCE BADGES -->
+        <div class="badges">
+          <span class="badge"><i class="fas fa-clock"></i> 60-min arrival guarantee in Colombo</span>
+          <span class="badge"><i class="fas fa-hand-holding-usd"></i> Direct pricing — no middlemen</span>
+          <span class="badge"><i class="fas fa-shield-alt"></i> 90-day workmanship warranty</span>
+        </div>
+
+        <!-- FOOTER NOTE -->
+        <div class="footer-note">
+          <i class="fas fa-phone-alt"></i> Still can't find what you need? Call us directly: <a href="tel:+94758244216">+94 75 824 4216</a> — we answer 24/7.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER (simplified) -->
+  <footer>
+    <div class="container">
+      <div class="footer-links" style="margin-bottom:20px;">
+        <a href="/">Home</a> · <a href="/services">Services</a> · <a href="/areas">Areas</a> · <a href="/commercial-plumbing">Commercial</a> · <a href="/pricing">Pricing</a> · <a href="/faq">FAQ</a> · <a href="/contact">Contact</a>
+      </div>
+      <p>© 2026 SIX7 Plumbing – a division of SIX7. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE BUTTONS -->
+  <div class="sticky-mobile">
+    <a href="tel:+94758244216" class="sticky-call-btn"><i class="fas fa-phone-alt"></i> Emergency Call</a>
+    <a href="https://wa.me/94758244216" class="sticky-wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </div>
+</body>
+</html>
