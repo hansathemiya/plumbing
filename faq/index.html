@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <!-- DEV NOTES:
+    - Full FAQ page with all 27 questions organized by intent
+    - Cross-links to homepage, service pages, area pages, commercial, pricing
+    - FAQPage schema included (first 10 questions, extend as needed)
+    - Sticky mobile call & WhatsApp buttons
+    - FontAwesome for icons, Inter font
+    - Color palette exactly as per brand: #0b3b4f, #ff8a4c, #b13e3e, etc.
+    - To update phone/email: replace +94 75 824 4216 / plumbing@six7.lk globally
+  -->
+  <title>Plumbing FAQ Colombo | 24/7 Emergency & Pricing Answers | SIX7 Plumbing</title>
+  <meta name="description" content="Find answers to all your plumbing questions: emergency, pricing, areas, services, commercial. 24/7 plumber in Colombo. Call +94 75 824 4216.">
+  <meta name="keywords" content="plumbing FAQ colombo, plumber questions, emergency plumber, plumbing cost sri lanka, leak repair, drain unclog">
+  <meta name="author" content="SIX7 Plumbing">
+  <link rel="canonical" href="https://plumbing.six7.lk/faq">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Plumbing FAQ Colombo – SIX7 Plumbing">
+  <meta property="og:description" content="Emergency? Pricing? Areas? We answer all your plumbing questions. 24/7 service.">
+  <meta property="og:image" content="https://plumbing.six7.lk/assets/six7-og.jpg">
+  <meta property="og:url" content="https://plumbing.six7.lk/faq">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #0b3b4f;
+      --primary-dark: #072a38;
+      --accent: #ff8a4c;
+      --accent-hover: #ff9f5c;
+      --success: #25D366;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-primary: #13294b;
+      --text-muted: #5e717f;
+      --border: #e2ecf5;
+      --emergency: #b13e3e;
+    }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* emergency ribbon */
+    .emergency-ribbon {
+      background: var(--emergency);
+      color: white;
+      padding: 12px 0;
+      font-weight: 600;
+    }
+    .emergency-ribbon .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .emergency-ribbon a {
+      background: #1f2f3f;
+      color: white;
+      padding: 8px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+    .emergency-ribbon a:hover { background: #14212b; }
+    /* header */
+    header {
+      background: var(--card-bg);
+      box-shadow: 0 6px 18px rgba(0,35,50,0.05);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(150deg, var(--primary), #226277);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .logo span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      -webkit-text-fill-color: var(--text-muted);
+      margin-left: 4px;
+    }
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+    }
+    .btn-sm {
+      padding: 10px 22px;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    .btn-wa { background: var(--success); color: white; }
+    .btn-wa:hover { background: #20b85a; }
+    .btn-call { background: var(--primary); color: white; }
+    .btn-call:hover { background: var(--primary-dark); }
+
+    /* page header */
+    .page-header {
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+    .page-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    .page-header p {
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .breadcrumb {
+      margin-bottom: 20px;
+      color: var(--text-muted);
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* faq sections */
+    .faq-category {
+      margin: 50px 0 30px;
+    }
+    .category-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      border-left: 8px solid var(--accent);
+      padding-left: 20px;
+      margin-bottom: 30px;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 40px;
+      padding: 28px;
+      box-shadow: 0 6px 18px rgba(0,35,45,0.03);
+      border: 1px solid var(--border);
+      transition: 0.2s;
+    }
+    .faq-item:hover {
+      box-shadow: 0 15px 30px rgba(11,59,79,0.08);
+    }
+    .faq-q {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary);
+    }
+    .faq-q i {
+      color: var(--accent);
+      font-size: 1.6rem;
+    }
+    .faq-a {
+      color: #315a6b;
+      font-size: 1.05rem;
+      padding-left: 40px;
+    }
+    .faq-a a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent);
+    }
+    .faq-a a:hover {
+      color: var(--accent);
+    }
+
+    /* cross-link banner */
+    .cross-links {
+      background: white;
+      border-radius: 60px;
+      padding: 40px;
+      margin: 40px 0;
+      border: 2px solid var(--border);
+    }
+    .cross-links h3 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+    .link-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .pill {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      padding: 12px 30px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .pill:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .pill i { margin-right: 8px; }
+
+    /* need more help */
+    .help-box {
+      background: var(--primary);
+      color: white;
+      border-radius: 60px;
+      padding: 40px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    .help-box h2 { font-size: 2.2rem; margin-bottom: 20px; }
+    .help-box .btn-primary {
+      background: var(--accent);
+      color: var(--text-primary);
+      padding: 16px 40px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-decoration: none;
+      display: inline-block;
+      margin: 20px 0 10px;
+    }
+
+    /* footer */
+    footer {
+      background: #10242f;
+      color: #bcd3e3;
+      padding: 50px 0 30px;
+      margin-top: 60px;
+    }
+    .footer-links a {
+      color: #ffd58c;
+      text-decoration: none;
+      margin: 0 14px;
+    }
+
+    /* sticky mobile buttons (two: call & whatsapp) */
+    .sticky-mobile {
+      display: none;
+    }
+    @media (max-width: 700px) {
+      .faq-grid { grid-template-columns: 1fr; }
+      .page-header h1 { font-size: 2.2rem; }
+      .category-title { font-size: 1.8rem; }
+      .nav-actions .btn-sm span { display: none; }
+      .nav-actions .btn-sm i { margin: 0; }
+      
+      .sticky-mobile {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background: white;
+        border-top: 2px solid var(--border);
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+      }
+      .sticky-mobile a {
+        flex: 1;
+        text-align: center;
+        padding: 16px 0;
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+      .sticky-call-btn {
+        background: var(--emergency);
+        color: white;
+      }
+      .sticky-wa-btn {
+        background: var(--success);
+        color: white;
+      }
+      body { padding-bottom: 80px; } /* avoid overlap */
+    }
+  </style>
+</head>
+<body>
+  <!-- EMERGENCY RIBBON -->
+  <div class="emergency-ribbon">
+    <div class="container">
+      <span><i class="fas fa-exclamation-triangle"></i> 24/7 EMERGENCY · We answer at 1AM</span>
+      <a href="tel:+94758244216"><i class="fas fa-phone-alt"></i> +94 75 824 4216</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <a href="/" style="text-decoration: none;"><div class="logo">SIX7<span>Plumbing</span></div></a>
+      <div class="nav-actions">
+        <a href="https://wa.me/94758244216" class="btn-sm btn-wa"><i class="fab fa-whatsapp"></i><span> WhatsApp</span></a>
+        <a href="tel:+94758244216" class="btn-sm btn-call"><i class="fas fa-phone"></i><span> Call</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER & BREADCRUMB -->
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.8rem; margin:0 8px;"></i> FAQ
+    </div>
+    <div class="page-header">
+      <h1><i class="fas fa-question-circle" style="color: var(--accent);"></i> Plumbing FAQ – Colombo</h1>
+      <p>Quick answers for emergencies, pricing, services & more. 24/7 support.</p>
+    </div>
+  </div>
+
+  <!-- MAIN FAQ CONTENT - all 27 questions organized by intent -->
+  <div class="container">
+
+    <!-- Emergency & Availability -->
+    <div class="faq-category">
+      <div class="category-title"><i class="fas fa-clock"></i> Emergency & Availability</div>
+      <div class="faq-grid">
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-map-marker-alt"></i> What areas do you cover in Colombo?</div><div class="faq-a">We cover Colombo 1-15, Kotte, Dehiwala, Mount Lavinia, Nugegoda, Maharagama, Piliyandala, Battaramulla, Rajagiriya, Moratuwa, Kelaniya, Negombo. <strong>Entire Western Province with 60-min arrival guarantee.</strong> <a href="/areas">→ All areas</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-moon"></i> Do you really answer calls at 1AM or midnight?</div><div class="faq-a">Yes — our 24/7 hotline <strong>+94 75 824 4216</strong> is always staffed. Night teams ready for bursts/floods. No extra charge for night calls. <a href="/emergency-plumbing-colombo">→ Emergency guide</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-tachometer-alt"></i> How quickly can you arrive for an emergency?</div><div class="faq-a">60-min guarantee for Colombo 1-10, 90-min for outer suburbs. Emergencies: burst pipes, flooding, sewage backup, no water, gas leaks. <a href="/emergency-plumbing-colombo">→ See what's emergency</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-exclamation-triangle"></i> What counts as a plumbing emergency?</div><div class="faq-a">Burst pipes, flooding, sewage backup, no water supply, gas leaks. Renovations/installations are not emergencies but we schedule them fast.</div></div>
+      </div>
+    </div>
+
+    <!-- Pricing & Cost -->
+    <div class="faq-category">
+      <div class="category-title"><i class="fas fa-coins"></i> Pricing & Cost</div>
+      <div class="faq-grid">
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-tag"></i> How much does a plumber cost in Colombo?</div><div class="faq-a">Service call LKR 1,500 (waived if work done). Leak repair from LKR 2,500, tap install from LKR 1,000. Direct work = cheaper than agencies. <a href="/pricing">→ Full price list</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-calendar-alt"></i> Do you charge extra for weekends or holidays?</div><div class="faq-a">No peak pricing — same transparent rates 24/7/365. Emergency surcharge: none. <a href="/pricing">→ See policy</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-hand-holding-usd"></i> What is the cheapest plumber in Colombo?</div><div class="faq-a">We offer best VALUE, not just cheapest. Price match guarantee. Economy parts option available. <a href="/pricing">→ Compare</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-stethoscope"></i> Do I need to pay for diagnosis/inspection?</div><div class="faq-a">Free quotes for all jobs. If on-site inspection is complex, we tell you upfront — but always no-obligation.</div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-credit-card"></i> Can I pay after the job is done?</div><div class="faq-a">Yes — cash, card, bank transfer. For large projects (> LKR 50,000) we may ask 30% deposit. <a href="/pricing">→ Payment terms</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-file-invoice"></i> Are your prices fixed or can they change?</div><div class="faq-a">Written quote guarantee — price won't change unless hidden damage found (we'll call first). <a href="/guarantee">→ Warranty page</a></div></div>
+      </div>
+    </div>
+
+    <!-- Service-Specific -->
+    <div class="faq-category">
+      <div class="category-title"><i class="fas fa-tools"></i> Service-Specific</div>
+      <div class="faq-grid">
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-water"></i> How do you detect hidden water leaks?</div><div class="faq-a">Acoustic detection & thermal imaging. Success rate >95%. Cost from LKR 3,500. <a href="/services/leak-detection-repair">→ Leak service</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-poop"></i> Can you unclog a severely blocked drain?</div><div class="faq-a">Yes — rodding, high-pressure jetting, chemical treatment. 98% success. <a href="/services/drain-unclogging">→ Drain unclog</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-water-pump"></i> Do you repair or replace water pumps?</div><div class="faq-a">We repair all major brands (Grundfos, Pedrollo, etc.) or advise replacement. Warranty on repairs. <a href="/services/water-pump-repair">→ Pump repair</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-shower"></i> Can you install bathroom fixtures I bought online?</div><div class="faq-a">Yes — installation-only pricing. Warranty covers workmanship, not parts. <a href="/services/tap-faucet-installation">→ Install service</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-wrench"></i> Do you do small jobs or only big projects?</div><div class="faq-a">No job too small: tap washers, toilet leaks, etc. Same day service for small fixes. <a href="/services">→ All services</a></div></div>
+      </div>
+    </div>
+
+    <!-- Trust & Quality -->
+    <div class="faq-category">
+      <div class="category-title"><i class="fas fa-shield-alt"></i> Trust & Quality</div>
+      <div class="faq-grid">
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-id-card"></i> Are your plumbers licensed and insured?</div><div class="faq-a">All plumbers certified, background-checked, fully insured. You're covered. <a href="/about">→ About us</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-medal"></i> Do you guarantee your work?</div><div class="faq-a">90-day workmanship warranty, parts warranty varies. Free call-back if issue persists. <a href="/guarantee">→ Guarantee</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-smile"></i> What if I'm not satisfied with the work?</div><div class="faq-a">We'll re-do or refund. 100% satisfaction guaranteed. <a href="/guarantee">→ See policy</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-broom"></i> Do you clean up after the job?</div><div class="faq-a">Yes — we leave your space spotless. Old parts disposed responsibly.</div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-star"></i> Can I see reviews from customers in my area?</div><div class="faq-a"><a href="https://maps.google.com" target="_blank">Google Reviews</a> and suburb-specific testimonials on each area page. <a href="/areas">→ Find your area</a></div></div>
+      </div>
+    </div>
+
+    <!-- Commercial & Industrial -->
+    <div class="faq-category">
+      <div class="category-title"><i class="fas fa-building"></i> Commercial & Industrial</div>
+      <div class="faq-grid">
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-office"></i> Do you handle office building plumbing?</div><div class="faq-a">Yes — offices, hotels, hospitals, schools. After-hours work to avoid disruption. Bulk pricing. <a href="/commercial-plumbing">→ Commercial</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-hard-hat"></i> Can you manage plumbing for construction projects?</div><div class="faq-a">New construction, retrofits, project management. We coordinate with contractors. <a href="/commercial-plumbing">→ Learn more</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-file-signature"></i> Do you offer maintenance contracts for businesses?</div><div class="faq-a">Monthly/quarterly plans, priority response, cost savings. <a href="/commercial-plumbing">→ Contact commercial team</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-utensils"></i> What industries do you specialize in?</div><div class="faq-a">Hotels, hospitals, factories, restaurants, schools. Case studies available. <a href="/commercial-plumbing">→ Industries</a></div></div>
+      </div>
+    </div>
+
+    <!-- DIY vs Professional -->
+    <div class="faq-category">
+      <div class="category-title"><i class="fas fa-user-cog"></i> DIY vs Professional</div>
+      <div class="faq-grid">
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-tint"></i> Can I fix a leaking tap myself?</div><div class="faq-a">Minor washer changes are DIY-friendly, but mistakes can cause bigger leaks. Cost of error high. <a href="/blog/diy-mistakes">→ DIY risks</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-shield-alt"></i> What should I do while waiting for the plumber?</div><div class="faq-a">Shut off main water valve, turn off electricity near water, contain water with towels. <a href="/emergency-plumbing-colombo">→ Emergency steps</a></div></div>
+        <div class="faq-item"><div class="faq-q"><i class="fas fa-calendar-check"></i> How often should I service my plumbing?</div><div class="faq-a">Annual check recommended. Warning signs: low pressure, noises, slow drains. <a href="/blog/maintenance">→ Maintenance tips</a></div></div>
+      </div>
+    </div>
+
+    <!-- CROSS-LINK BANNER (connects to all main sections) -->
+    <div class="cross-links">
+      <h3><i class="fas fa-link"></i> Explore more from SIX7</h3>
+      <div class="link-pills">
+        <a href="/" class="pill"><i class="fas fa-home"></i> Home</a>
+        <a href="/services" class="pill"><i class="fas fa-tools"></i> Services</a>
+        <a href="/areas" class="pill"><i class="fas fa-map-marker-alt"></i> Areas</a>
+        <a href="/pricing" class="pill"><i class="fas fa-coins"></i> Pricing</a>
+        <a href="/commercial-plumbing" class="pill"><i class="fas fa-building"></i> Commercial</a>
+        <a href="/emergency-plumbing-colombo" class="pill"><i class="fas fa-exclamation-triangle"></i> Emergency</a>
+        <a href="/guarantee" class="pill"><i class="fas fa-shield-alt"></i> Warranty</a>
+        <a href="/about" class="pill"><i class="fas fa-users"></i> About</a>
+        <a href="/blog" class="pill"><i class="fas fa-blog"></i> Blog</a>
+        <a href="/contact" class="pill"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+
+    <!-- HELP BOX -->
+    <div class="help-box">
+      <h2><i class="fas fa-question-circle"></i> Still have questions?</h2>
+      <p>We're here 24/7. Call or WhatsApp for immediate answers.</p>
+      <a href="tel:+94758244216" class="btn-primary"><i class="fas fa-phone-alt"></i> +94 75 824 4216</a>
+      <a href="https://wa.me/94758244216" style="background: var(--success); color: white; padding: 16px 40px; border-radius: 60px; font-weight: 700; text-decoration: none; display: inline-block; margin-left: 15px;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-links" style="margin-bottom:25px;">
+        <a href="/">Home</a> · <a href="/services">Services</a> · <a href="/areas">Areas</a> · <a href="/commercial-plumbing">Commercial</a> · <a href="/pricing">Pricing</a> · <a href="/faq">FAQ</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a>
+      </div>
+      <p><i class="fas fa-phone-alt"></i> +94 75 824 4216 · 24h · <i class="fab fa-whatsapp"></i> WhatsApp same</p>
+      <p style="margin-top:20px;">© 2026 SIX7 Plumbing – a division of SIX7. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE BUTTONS (call & WhatsApp) -->
+  <div class="sticky-mobile">
+    <a href="tel:+94758244216" class="sticky-call-btn"><i class="fas fa-phone-alt"></i> Emergency Call</a>
+    <a href="https://wa.me/94758244216" class="sticky-wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </div>
+
+  <!-- FAQPage Schema (first 10 questions, extend as needed) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What areas do you cover in Colombo?","acceptedAnswer":{"@type":"Answer","text":"Colombo 1-15, Kotte, Dehiwala, Mount Lavinia, Nugegoda, Maharagama, Piliyandala, Battaramulla, Rajagiriya, Moratuwa, Kelaniya, Negombo. Entire Western Province."}},
+      {"@type":"Question","name":"Do you really answer calls at 1AM?","acceptedAnswer":{"@type":"Answer","text":"Yes — 24/7 hotline +94 75 824 4216. Night teams ready."}},
+      {"@type":"Question","name":"How quickly can you arrive for an emergency?","acceptedAnswer":{"@type":"Answer","text":"60-min guarantee Colombo 1-10, 90-min outer suburbs."}},
+      {"@type":"Question","name":"How much does a plumber cost in Colombo?","acceptedAnswer":{"@type":"Answer","text":"Service call LKR 1,500 (waived with job). Leak repair from LKR 2,500."}},
+      {"@type":"Question","name":"Do you charge extra for weekends or holidays?","acceptedAnswer":{"@type":"Answer","text":"No — same transparent rates 24/7."}},
+      {"@type":"Question","name":"Do I need to pay for diagnosis?","acceptedAnswer":{"@type":"Answer","text":"Free quotes for all jobs. No-obligation inspection."}},
+      {"@type":"Question","name":"Are your plumbers licensed and insured?","acceptedAnswer":{"@type":"Answer","text":"Yes, fully licensed, background-checked, insured."}},
+      {"@type":"Question","name":"Do you guarantee your work?","acceptedAnswer":{"@type":"Answer","text":"90-day workmanship warranty. Free call-back."}},
+      {"@type":"Question","name":"Do you handle commercial plumbing?","acceptedAnswer":{"@type":"Answer","text":"Yes — offices, hotels, hospitals, factories. After-hours available."}},
+      {"@type":"Question","name":"What should I do while waiting for the plumber?","acceptedAnswer":{"@type":"Answer","text":"Shut off main water valve, contain water, call us immediately."}}
+    ]
+  }
+  </script>
+
+  <!-- Placeholder for form/backend (FAQ page no form, but keep consistency) -->
+  <script>
+    // any future interactive elements
+  </script>
+</body>
+</html>
