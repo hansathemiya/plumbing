@@ -1,0 +1,38 @@
+# robots.txt for SIX7 Plumbing
+# Domain: https://plumbing.six7.lk
+# Generated: 2026
+
+# Allow all crawlers access by default
+User-agent: *
+Allow: /
+
+# Disallow private or admin directories (if added later)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /backup/
+
+# Allow assets for proper rendering (CSS/JS/Images)
+# Google needs these to verify mobile-friendliness
+Allow: /assets/
+Allow: /images/
+Allow: /logo.png
+Allow: /favicon.ico
+
+# Prevent crawling of specific file types that don't need indexing
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.xls$
+
+# Prevent crawling of URL parameters (avoid duplicate content)
+# Example: prevents indexing of ?sort=price or ?session=123
+Disallow: /*?*
+
+# Sitemap location (Crucial for SEO)
+# Ensure you generate and upload sitemap.xml to the root directory
+Sitemap: https://plumbing.six7.lk/sitemap.xml
+
+# Crawl-delay (Optional: Bing uses this, Google ignores it)
+# Keep it low or omit for faster indexing
+Crawl-delay: 1
