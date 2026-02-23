@@ -1,664 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <!-- DEV NOTES:
-    - Full Drain Unclogging service page for SIX7 Plumbing
-    - Content exactly as per plain-text spec
-    - Includes: What We Unclog, Emergency Steps, Pricing, Areas, FAQ, Trust badges, CTAs
-    - All phone numbers are clickable tel: links
-    - WhatsApp deep links with pre-filled message suggestion
-    - Schema: Service, FAQPage, BreadcrumbList
-    - Sticky mobile call & WhatsApp buttons (brand colors)
-    - Internal links to /pricing, /areas, related services
-  -->
-  <title>Drain Unclogging Colombo | Blocked Drain & Sewer Repair | SIX7 Plumbing</title>
-  <meta name="description" content="Blocked drain in Colombo? SIX7 unclogs toilets, sinks, floor traps & sewers fast. 24/7 emergency service. From LKR 3,000. Call +94 75 824 4216 now.">
-  <meta name="keywords" content="drain unclogging colombo, blocked drain repair colombo, toilet unclog sri lanka, sewer cleaning colombo, emergency drain plumber colombo, floor trap unclog colombo, affordable drain service western province">
-  <meta name="author" content="SIX7 Plumbing">
-  <link rel="canonical" href="https://plumbing.six7.lk/services/drain-unclogging">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIX7 Plumbing | Drain Unclogging Colombo | Blocked Drain & Sewer Repair</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff8b4d",
+                        "six7-navy": "#0b3b4f",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23160f",
+                        "emergency": "#b13e3e",
+                        "whatsapp": "#25D366",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass { backdrop-filter: blur(12px); background-color: rgba(248, 246, 245, 0.8); }
+        .dark .glass { background-color: rgba(35, 22, 15, 0.8); }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            z-index: 9999;
+            transition: 0.3s ease-in-out;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+            padding: 80px 24px 24px;
+        }
+        .mobile-menu.active {
+            right: 0;
+        }
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9998;
+            display: none;
+        }
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+        .dark .mobile-menu {
+            background: #1a1a1a;
+        }
+        
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9997;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .float-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: 0.2s;
+            color: white;
+        }
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+        .float-btn.call {
+            background: #b13e3e;
+        }
+        .float-btn.wa {
+            background: #25D366;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+        
+        /* Form error message */
+        .form-error-message {
+            background: #fee2e2;
+            border: 1px solid #ef4444;
+            color: #b91c1c;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Service card styling */
+        .service-card {
+            transition: all 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px rgba(11,59,79,0.1);
+        }
+        
+        /* Step styling */
+        .step-item {
+            transition: all 0.2s;
+        }
+        .step-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Badge styling */
+        .badge {
+            transition: all 0.2s;
+        }
+        .badge:hover {
+            background: #0b3b4f;
+            color: white;
+        }
+    </style>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Drain Unclogging Colombo | Blocked Drain & Sewer Repair | SIX7 Plumbing">
-  <meta property="og:description" content="Blocked drain? SIX7 unclogs toilets, sinks & sewers fast. 24/7 emergency. From LKR 3,000. Call +94 75 824 4216.">
-  <meta property="og:image" content="https://plumbing.six7.lk/assets/six7-og.jpg">
-  <meta property="og:url" content="https://plumbing.six7.lk/services/drain-unclogging">
-  <meta property="og:type" content="website">
-
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --primary: #0b3b4f;
-      --primary-dark: #072a38;
-      --accent: #ff8a4c;
-      --accent-hover: #ff9f5c;
-      --success: #25D366;
-      --bg-light: #f8fafc;
-      --card-bg: #ffffff;
-      --text-primary: #13294b;
-      --text-muted: #5e717f;
-      --border: #e2ecf5;
-      --emergency: #b13e3e;
-    }
-    body {
-      font-family: "Inter", system-ui, sans-serif;
-      background: var(--bg-light);
-      color: var(--text-primary);
-      line-height: 1.5;
-    }
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    /* emergency ribbon */
-    .emergency-ribbon {
-      background: var(--emergency);
-      color: white;
-      padding: 12px 0;
-      font-weight: 600;
-    }
-    .emergency-ribbon .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .emergency-ribbon a {
-      background: #1f2f3f;
-      color: white;
-      padding: 8px 28px;
-      border-radius: 60px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 700;
-      transition: 0.2s;
-    }
-    .emergency-ribbon a:hover { background: #14212b; }
-    /* header */
-    header {
-      background: var(--card-bg);
-      box-shadow: 0 6px 18px rgba(0,35,50,0.05);
-      padding: 12px 0;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-    header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-size: 2.2rem;
-      font-weight: 800;
-      background: linear-gradient(150deg, var(--primary), #226277);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .logo span {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      -webkit-text-fill-color: var(--text-muted);
-      margin-left: 4px;
-    }
-    .nav-actions {
-      display: flex;
-      gap: 12px;
-    }
-    .btn-sm {
-      padding: 10px 22px;
-      border-radius: 60px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: 0.2s;
-      font-size: 0.95rem;
-      white-space: nowrap;
-    }
-    .btn-wa { background: var(--success); color: white; }
-    .btn-wa:hover { background: #20b85a; }
-    .btn-call { background: var(--primary); color: white; }
-    .btn-call:hover { background: var(--primary-dark); }
-
-    /* breadcrumb & page header */
-    .breadcrumb {
-      margin: 20px 0 10px;
-      color: var(--text-muted);
-    }
-    .breadcrumb a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-    .page-header {
-      padding: 20px 0 30px;
-    }
-    .page-header h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-    .page-header p {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      max-width: 900px;
-    }
-
-    /* service cards */
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 30px;
-      margin: 40px 0;
-    }
-    .service-card {
-      background: white;
-      border-radius: 48px;
-      padding: 32px;
-      border: 1px solid var(--border);
-    }
-    .service-icon {
-      font-size: 2.5rem;
-      color: var(--accent);
-      margin-bottom: 15px;
-    }
-    .service-title {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
-    .service-desc {
-      list-style: none;
-      margin-bottom: 20px;
-    }
-    .service-desc li {
-      padding: 6px 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .service-desc i {
-      color: var(--accent);
-      width: 20px;
-    }
-    .service-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-    .price-tag {
-      background: #eef4fa;
-      padding: 8px 18px;
-      border-radius: 60px;
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    /* emergency steps section */
-    .steps-section {
-      background: white;
-      border-radius: 60px;
-      padding: 40px;
-      margin: 40px 0;
-    }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 30px;
-      margin: 30px 0;
-    }
-    .step-item {
-      background: var(--bg-light);
-      border-radius: 40px;
-      padding: 25px;
-    }
-    .step-number {
-      background: var(--accent);
-      color: var(--primary);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
-    .dos-donts {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin: 30px 0;
-    }
-
-    /* pricing table */
-    .pricing-card {
-      background: white;
-      border-radius: 60px;
-      padding: 40px;
-      margin: 40px 0;
-    }
-    .price-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 15px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .price-match {
-      background: #e2f0fa;
-      padding: 20px;
-      border-radius: 60px;
-      text-align: center;
-      margin: 30px 0;
-    }
-
-    /* area list */
-    .area-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 10px;
-      margin: 20px 0;
-    }
-    .area-item {
-      background: var(--bg-light);
-      padding: 8px 12px;
-      border-radius: 40px;
-      text-align: center;
-      border: 1px solid var(--border);
-    }
-
-    /* faq */
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 30px;
-      margin: 40px 0;
-    }
-    .faq-item {
-      background: white;
-      border-radius: 30px;
-      padding: 25px;
-    }
-    .faq-q {
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    /* trust badges */
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin: 40px 0;
-    }
-    .badge {
-      background: #e2f0f9;
-      padding: 10px 20px;
-      border-radius: 60px;
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    /* footer */
-    footer {
-      background: #10242f;
-      color: #bcd3e3;
-      padding: 50px 0 30px;
-      margin-top: 60px;
-    }
-    .footer-links a {
-      color: #ffd58c;
-      text-decoration: none;
-      margin: 0 14px;
-    }
-
-    /* sticky mobile */
-    .sticky-mobile {
-      display: none;
-    }
-    @media (max-width: 700px) {
-      .service-grid { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr; }
-      .dos-donts { grid-template-columns: 1fr; }
-      .faq-grid { grid-template-columns: 1fr; }
-      .area-grid { grid-template-columns: repeat(2,1fr); }
-      .page-header h1 { font-size: 2.2rem; }
-      .nav-actions .btn-sm span { display: none; }
-      .sticky-mobile {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 9999;
-        background: white;
-        border-top: 2px solid var(--border);
-      }
-      .sticky-mobile a {
-        flex: 1;
-        text-align: center;
-        padding: 16px 0;
-        font-weight: 700;
-        font-size: 1.1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        text-decoration: none;
-      }
-      .sticky-call-btn { background: var(--emergency); color: white; }
-      .sticky-wa-btn { background: var(--success); color: white; }
-      body { padding-bottom: 80px; }
-    }
-  </style>
-</head>
-<body>
-  <!-- EMERGENCY RIBBON -->
-  <div class="emergency-ribbon">
-    <div class="container">
-      <span><i class="fas fa-exclamation-triangle"></i> 24/7 EMERGENCY · We answer at 1AM</span>
-      <a href="tel:+94758244216"><i class="fas fa-phone-alt"></i> +94 75 824 4216</a>
-    </div>
-  </div>
-
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <a href="/" style="text-decoration: none;"><div class="logo">SIX7<span>Plumbing</span></div></a>
-      <div class="nav-actions">
-        <a href="https://wa.me/94758244216" class="btn-sm btn-wa"><i class="fab fa-whatsapp"></i><span> WhatsApp</span></a>
-        <a href="tel:+94758244216" class="btn-sm btn-call"><i class="fas fa-phone"></i><span> Call</span></a>
-      </div>
-    </div>
-  </header>
-
-  <!-- BREADCRUMB -->
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="/">Home</a> <i class="fas fa-chevron-right" style="font-size:0.8rem; margin:0 8px;"></i>
-      <a href="/services">Services</a> <i class="fas fa-chevron-right" style="font-size:0.8rem; margin:0 8px;"></i>
-      Drain Unclogging
-    </div>
-  </div>
-
-  <!-- PAGE HEADER -->
-  <div class="container">
-    <div class="page-header">
-      <h1><i class="fas fa-poop" style="color: var(--accent);"></i> Drain Unclogging in Colombo — Fast, Affordable & 24/7 Blocked Drain Repair</h1>
-      <p>Blocked drain? Don't let it flood your home. SIX7 Plumbing provides fast, affordable drain unclogging services across Colombo and the Western Province. Whether it's a clogged toilet, slow-draining sink, smelly floor trap, or backed-up sewer line, our direct-work team arrives quickly to restore flow — without damaging your pipes. We serve Colombo 1-15, Kotte, Dehiwala, Nugegoda, Maharagama, and all suburbs. Most unclogs completed within 45 minutes. No call-out fee if you proceed. Written quote before work starts. Call <a href="tel:+94758244216" style="color:var(--primary); font-weight:600;">+94 75 824 4216</a> now — we answer 24/7.</p>
-    </div>
-  </div>
-
-  <!-- WHAT WE UNCLOG (5 cards) -->
-  <div class="container">
-    <h2 style="font-size:2.2rem; margin-bottom:30px;">🚽 What We Unclog — Drain Services in Colombo</h2>
-    <div class="service-grid">
-      <!-- Toilet Unclogging -->
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-toilet"></i></div>
-        <div class="service-title">Toilet Unclogging & Repair</div>
-        <ul class="service-desc">
-          <li><i class="fas fa-check"></i> Clear blocked toilets (paper, wipes, objects)</li>
-          <li><i class="fas fa-check"></i> Fix running or weak-flush toilets</li>
-          <li><i class="fas fa-check"></i> Replace faulty flush valves or seals</li>
-          <li><i class="fas fa-check"></i> Preventive tips to avoid repeat clogs</li>
-        </ul>
-        <div class="service-footer">
-          <span class="price-tag">From LKR 2,500</span>
-          <span style="color:var(--text-muted);">30 min fix</span>
-        </div>
-      </div>
-      <!-- Sink & Kitchen Drain -->
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-sink"></i></div>
-        <div class="service-title">Sink, Basin & Kitchen Drain</div>
-        <ul class="service-desc">
-          <li><i class="fas fa-check"></i> Clear grease, food, soap & hair blockages</li>
-          <li><i class="fas fa-check"></i> Remove P-trap debris without damage</li>
-          <li><i class="fas fa-check"></i> Install drain strainers to prevent future clogs</li>
-          <li><i class="fas fa-check"></i> Eco-friendly cleaning options</li>
-        </ul>
-        <div class="service-footer">
-          <span class="price-tag">From LKR 2,000</span>
-          <span>Same-day</span>
-        </div>
-      </div>
-      <!-- Floor Trap & Bathroom -->
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-shower"></i></div>
-        <div class="service-title">Floor Trap & Bathroom Drain</div>
-        <ul class="service-desc">
-          <li><i class="fas fa-check"></i> Unclog smelly, slow-draining floor traps</li>
-          <li><i class="fas fa-check"></i> Remove hair, soap scum & debris</li>
-          <li><i class="fas fa-check"></i> Jet flush for deep cleaning (add-on)</li>
-          <li><i class="fas fa-check"></i> Deodorize after service for fresh results</li>
-        </ul>
-        <div class="service-footer">
-          <span class="price-tag">From LKR 1,800</span>
-        </div>
-      </div>
-      <!-- Sewer Line & Main Drain -->
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-draw-polygon"></i></div>
-        <div class="service-title">Sewer Line & Main Drain</div>
-        <ul class="service-desc">
-          <li><i class="fas fa-check"></i> Clear blockages in main sewer lines</li>
-          <li><i class="fas fa-check"></i> Rodding & high-pressure jetting</li>
-          <li><i class="fas fa-check"></i> Camera inspection to locate blockage</li>
-          <li><i class="fas fa-check"></i> Preventive maintenance for older properties</li>
-        </ul>
-        <div class="service-footer">
-          <span class="price-tag">From LKR 5,000</span>
-        </div>
-      </div>
-      <!-- Outdoor & Garden Drain -->
-      <div class="service-card" style="grid-column:span 2;">
-        <div class="service-icon"><i class="fas fa-tree"></i></div>
-        <div class="service-title">Outdoor & Garden Drain Unclog</div>
-        <ul class="service-desc">
-          <li><i class="fas fa-check"></i> Clear rainwater drains, yard gullies & downpipes</li>
-          <li><i class="fas fa-check"></i> Remove leaves, soil & debris blockages</li>
-          <li><i class="fas fa-check"></i> Monsoon-prep drain cleaning (seasonal)</li>
-          <li><i class="fas fa-check"></i> Install mesh guards to prevent future clogs</li>
-        </ul>
-        <div class="service-footer">
-          <span class="price-tag">From LKR 2,200</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- WHAT TO DO RIGHT NOW (Emergency Steps) -->
-  <div class="container">
-    <div class="steps-section">
-      <h2 style="font-size:2.2rem;"><i class="fas fa-clock"></i> ⚡ What to Do RIGHT NOW (While Waiting for Us)</h2>
-      <p style="margin:20px 0;">If your drain is completely blocked or overflowing:</p>
-      <div class="steps-grid">
-        <div class="step-item"><span class="step-number">1</span><h3>STOP USING WATER</h3><p>Don't flush toilets, run sinks, or shower. Additional water will worsen the backup.</p></div>
-        <div class="step-item"><span class="step-number">2</span><h3>CONTAIN THE OVERFLOW</h3><p>Place buckets/towels under leaking fixtures. Move rugs, electronics & furniture away.</p></div>
-        <div class="step-item"><span class="step-number">3</span><h3>TRY A PLUNGER (If Safe)</h3><p>Use flange plunger for toilets, cup plunger for sinks. Create tight seal, pump 10-15 times. ❌ Do NOT use chemical drain cleaners.</p></div>
-        <div class="step-item"><span class="step-number">4</span><h3>CALL SIX7 IMMEDIATELY</h3><p><a href="tel:+94758244216" style="color:var(--primary);">+94 75 824 4216</a> or <a href="https://wa.me/94758244216" style="color:var(--primary);">WhatsApp with photos</a>. Tell us which drain and what went down it.</p></div>
-      </div>
-      <div class="dos-donts">
-        <div style="background:#ffeeee; border-radius:40px; padding:25px;">
-          <h3 style="color:var(--emergency);"><i class="fas fa-times-circle"></i> DON'T</h3>
-          <ul style="list-style:none;">
-            <li><i class="fas fa-times" style="color:var(--emergency);"></i> Pour boiling water on PVC pipes (can warp them)</li>
-            <li><i class="fas fa-times" style="color:var(--emergency);"></i> Use chemical drain openers (corrosive, ineffective)</li>
-            <li><i class="fas fa-times" style="color:var(--emergency);"></i> Attempt to disassemble pipes without proper tools</li>
-          </ul>
-        </div>
-        <div style="background:#e1f7e1; border-radius:40px; padding:25px;">
-          <h3 style="color:green;"><i class="fas fa-check-circle"></i> DO</h3>
-          <ul style="list-style:none;">
-            <li><i class="fas fa-check" style="color:green;"></i> Take photos/videos for insurance if damage occurs</li>
-            <li><i class="fas fa-check" style="color:green;"></i> Keep the area clear for our technician's access</li>
-            <li><i class="fas fa-check" style="color:green;"></i> Ask about our preventive maintenance packages</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TRANSPARENT PRICING -->
-  <div class="container">
-    <div class="pricing-card">
-      <h2 style="font-size:2.2rem;">💰 Transparent Drain Unclogging Pricing</h2>
-      <p style="margin-bottom:30px;">We believe in fair, upfront pricing — even for emergencies.</p>
-      <div class="price-row"><span>Service Call</span> <span><strong>LKR 1,500</strong> (WAIVED with unclog)</span></div>
-      <div class="price-row"><span>Simple Unclog (toilet/sink/floor trap)</span> <span><strong>From LKR 2,000</strong></span></div>
-      <div class="price-row"><span>Kitchen Drain (grease/food)</span> <span><strong>From LKR 2,500</strong></span></div>
-      <div class="price-row"><span>Sewer/Main Line Unclog</span> <span><strong>From LKR 5,000</strong></span></div>
-      <div class="price-row"><span>High-Pressure Jetting (add-on)</span> <span><strong>+LKR 2,000</strong></span></div>
-      <div class="price-row"><span>Camera Inspection (if needed)</span> <span><strong>+LKR 3,000</strong></span></div>
-      
-      <p style="margin:30px 0 20px;"><strong>What Affects Price:</strong> ✓ Severity · ✓ Location · ✓ Method (plunger/rod vs. jetting/camera) · ✓ Parts if needed</p>
-      
-      <div class="price-match">
-        <i class="fas fa-badge-check"></i> <strong>Price Match Promise:</strong> Found a lower written quote for the same scope? We'll match it.
-      </div>
-      <p>Need an exact price? <a href="https://wa.me/94758244216" style="color:var(--primary); font-weight:600;">WhatsApp photos to +94 75 824 4216</a> for instant estimate.</p>
-    </div>
-  </div>
-
-  <!-- SERVICE AREAS -->
-  <div class="container">
-    <h2 style="font-size:2rem;">📍 We Cover All Colombo & Western Province</h2>
-    <p style="margin:20px 0;">Our drain unclogging teams are stationed for fast arrival:</p>
-    <div style="background:white; border-radius:60px; padding:40px;">
-      <h3>Colombo Core (15-30 min):</h3>
-      <div class="area-grid">
-        <span class="area-item">Colombo 1-15</span>
-      </div>
-      <h3>Greater Colombo (30-45 min):</h3>
-      <div class="area-grid">
-        <span class="area-item">Kotte</span><span class="area-item">Sri Jayawardenepura</span><span class="area-item">Battaramulla</span><span class="area-item">Rajagiriya</span><span class="area-item">Nawala</span><span class="area-item">Nugegoda</span><span class="area-item">Maharagama</span><span class="area-item">Piliyandala</span><span class="area-item">Kottawa</span><span class="area-item">Malabe</span><span class="area-item">Thalawathugoda</span><span class="area-item">Boralesgamuwa</span>
-      </div>
-      <h3>Southern Corridor (45-60 min):</h3>
-      <div class="area-grid">
-        <span class="area-item">Dehiwala</span><span class="area-item">Mount Lavinia</span><span class="area-item">Wellawatte</span><span class="area-item">Bambalapitiya</span><span class="area-item">Moratuwa</span><span class="area-item">Panadura</span>
-      </div>
-      <h3>Northern/Eastern (60-90 min):</h3>
-      <div class="area-grid">
-        <span class="area-item">Kelaniya</span><span class="area-item">Ragama</span><span class="area-item">Negombo</span><span class="area-item">Homagama</span><span class="area-item">Angoda</span>
-      </div>
-      <p style="margin-top:30px;">Searching for "drain unclogging near me"? We're likely within 10km. <a href="tel:+94758244216" style="color:var(--primary);">Call to confirm →</a></p>
-    </div>
-  </div>
-
-  <!-- FAQ -->
-  <div class="container">
-    <h2 style="font-size:2rem;">❓ Drain Unclogging FAQs</h2>
-    <div class="faq-grid">
-      <div class="faq-item"><div class="faq-q">How fast can you unclog my drain?</div><p>Most simple unclogs completed within 30-45 minutes of arrival. Complex sewer jobs may take longer.</p></div>
-      <div class="faq-item"><div class="faq-q">Do you charge extra for nights or weekends?</div><p>No. Same unclogging rates 24/7. Plumbing emergencies don't wait for business hours.</p></div>
-      <div class="faq-item"><div class="faq-q">Will unclogging damage my pipes?</div><p>No. We use professional tools (rods, jetters) designed to clear blockages without harming pipes.</p></div>
-      <div class="faq-item"><div class="faq-q">What if the clog keeps coming back?</div><p>Recurring clogs often signal deeper issues. We'll diagnose root cause and recommend permanent solution.</p></div>
-      <div class="faq-item"><div class="faq-q">Do you offer preventive drain maintenance?</div><p>Yes — quarterly drain cleaning packages for homes and businesses. Reduces emergency calls.</p></div>
-      <div class="faq-item"><div class="faq-q">Can I get a quote over WhatsApp?</div><p>For standard unclogs, yes — send photos/videos and we'll provide price range. Complex jobs need on-site.</p></div>
-    </div>
-  </div>
-
-  <!-- TRUST BADGES + WHY CHOOSE -->
-  <div class="container">
-    <div class="badges">
-      <span class="badge"><i class="fas fa-hand-holding-usd"></i> Direct Work — No agency fees</span>
-      <span class="badge"><i class="fas fa-clock"></i> 45-min unclog guarantee</span>
-      <span class="badge"><i class="fas fa-file-invoice"></i> Written quote first</span>
-      <span class="badge"><i class="fas fa-shield-alt"></i> 90-day warranty</span>
-      <span class="badge"><i class="fas fa-leaf"></i> Eco-friendly methods</span>
-    </div>
-    <div style="background:white; border-radius:60px; padding:40px; margin:40px 0;">
-      <h2 style="font-size:2rem;">🔧 Why Colombo Trusts SIX7 for Drain Unclogging</h2>
-      <ul style="columns:2; list-style:none;">
-        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> Direct Work Model — No agency fees</li>
-        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> 24/7 Human Answer — Real people at 1AM</li>
-        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> 45-Min Unclog Guarantee</li>
-        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> Written Quote First — No surprises</li>
-        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> Eco-Friendly, Pipe-Safe Methods</li>
-        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> 90-Day Unclog Warranty — Free call-back</li>
-        <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> Local Expertise — Colombo drain systems</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- FINAL CTA -->
-  <div class="container">
-    <div style="background: var(--accent); border-radius: 60px; padding: 50px; text-align: center; margin: 40px 0;">
-      <h2 style="font-size: 2.5rem;">📞 Ready to Unclog Your Drain?</h2>
-      <p style="font-size:1.3rem; margin:20px 0;">Don't let a blocked drain disrupt your day. SIX7 Plumbing is ready to help — right now.</p>
-      <p style="font-size:2rem; font-weight:800;">
-        <a href="tel:+94758244216" style="color: var(--text-primary); text-decoration: none;">
-          🚨 +94 75 824 4216
-        </a>
-      </p>
-      <p>⚡ Average Response: 45 minutes in Colombo · 💬 <a href="https://wa.me/94758244216" style="color:var(--text-primary);">Send Photos on WhatsApp</a></p>
-      <div style="margin-top:30px;">
-        <span class="badge">✅ No call-out fee with unclog</span>
-        <span class="badge">✅ Written quote before work</span>
-        <span class="badge">✅ 90-day warranty</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- RELATED LINKS -->
-  <div class="container" style="text-align: center; margin-bottom: 40px;">
-    <p style="font-size:1.2rem;">Related services: <a href="/services/emergency-leak-repair" style="color:var(--primary);">Leak Repair</a> · <a href="/services/bathroom-renovation">Bathroom Renovation</a> · <a href="/services/water-tank-cleaning">Water Tank Cleaning</a> · <a href="/pricing">Pricing</a> · <a href="/areas">Areas</a></p>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-links" style="margin-bottom:25px;">
-        <a href="/">Home</a> · <a href="/services">Services</a> · <a href="/areas">Areas</a> · <a href="/commercial-plumbing">Commercial</a> · <a href="/pricing">Pricing</a> · <a href="/faq">FAQ</a> · <a href="/contact">Contact</a>
-      </div>
-      <p><i class="fas fa-phone-alt"></i> <a href="tel:+94758244216" style="color:#ffd58c;">+94 75 824 4216</a> · 24h · <i class="fab fa-whatsapp"></i> <a href="https://wa.me/94758244216" style="color:#ffd58c;">WhatsApp same</a></p>
-      <p style="margin-top:20px;">© 2026 SIX7 Plumbing – a division of SIX7. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- STICKY MOBILE BUTTONS -->
-  <div class="sticky-mobile">
-    <a href="tel:+94758244216" class="sticky-call-btn"><i class="fas fa-phone-alt"></i> Emergency Call</a>
-    <a href="https://wa.me/94758244216" class="sticky-wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-  </div>
-
-  <!-- SCHEMA: BreadcrumbList -->
-  <script type="application/ld+json">
-  {
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://plumbing.six7.lk/"},
-      {"@type":"ListItem","position":2,"name":"Services","item":"https://plumbing.six7.lk/services"},
-      {"@type":"ListItem","position":3,"name":"Drain Unclogging","item":"https://plumbing.six7.lk/services/drain-unclogging"}
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://plumbing.six7.lk/"},
+        {"@type":"ListItem","position":2,"name":"Services","item":"https://plumbing.six7.lk/services"},
+        {"@type":"ListItem","position":3,"name":"Drain Unclogging","item":"https://plumbing.six7.lk/services/drain-unclogging"}
     ]
-  }
-  </script>
-  <!-- Service Schema -->
-  <script type="application/ld+json">
-  {
+}
+</script>
+<script type="application/ld+json">
+{
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Drain Unclogging",
@@ -666,26 +170,550 @@
     "provider": {"@type": "Plumber", "name": "SIX7 Plumbing"},
     "areaServed": ["Colombo","Kotte","Dehiwala","Nugegoda","Maharagama","Mount Lavinia"],
     "offers": {
-      "@type": "Offer",
-      "price": "2000",
-      "priceCurrency": "LKR",
-      "priceRange": "₨2000-₨10000"
+        "@type": "Offer",
+        "price": "2000",
+        "priceCurrency": "LKR",
+        "priceRange": "₨2000-₨10000"
     },
     "description": "24/7 drain unclogging in Colombo. Toilets, sinks, floor traps & sewers. Fast, affordable, eco-friendly."
-  }
-  </script>
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
-  {
+}
+</script>
+<script type="application/ld+json">
+{
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"How fast can you unclog my drain?","acceptedAnswer":{"@type":"Answer","text":"Most simple unclogs completed within 30-45 minutes of arrival."}},
-      {"@type":"Question","name":"Do you charge extra for nights or weekends?","acceptedAnswer":{"@type":"Answer","text":"No. Same unclogging rates 24/7."}},
-      {"@type":"Question","name":"Will unclogging damage my pipes?","acceptedAnswer":{"@type":"Answer","text":"No. We use professional tools designed to clear blockages without harming pipes."}},
-      {"@type":"Question","name":"Do you offer preventive drain maintenance?","acceptedAnswer":{"@type":"Answer","text":"Yes — quarterly drain cleaning packages for homes and businesses."}}
+        {"@type":"Question","name":"How fast can you unclog my drain?","acceptedAnswer":{"@type":"Answer","text":"Most simple unclogs completed within 30-45 minutes of arrival."}},
+        {"@type":"Question","name":"Do you charge extra for nights or weekends?","acceptedAnswer":{"@type":"Answer","text":"No. Same unclogging rates 24/7."}},
+        {"@type":"Question","name":"Will unclogging damage my pipes?","acceptedAnswer":{"@type":"Answer","text":"No. We use professional tools designed to clear blockages without harming pipes."}},
+        {"@type":"Question","name":"Do you offer preventive drain maintenance?","acceptedAnswer":{"@type":"Answer","text":"Yes — quarterly drain cleaning packages for homes and businesses."}}
     ]
-  }
-  </script>
+}
+</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<!-- Emergency Bar -->
+<div class="w-full bg-emergency py-2 px-4 text-center sticky top-0 z-50">
+<p class="text-white text-sm font-bold tracking-wide flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">emergency_home</span>
+        24/7 EMERGENCY SERVICE: <a class="underline hover:no-underline" href="tel:+94758244216">+94 75 824 4216</a>
+</p>
+</div>
+
+<!-- Sticky Header -->
+<header class="sticky top-[36px] z-40 glass border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-10 bg-six7-navy rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">plumbing</span>
+</div>
+<a href="/" class="text-2xl font-black text-six7-navy dark:text-slate-100 tracking-tight">SIX7<span class="text-primary">.</span>PLUMBING</a>
+</div>
+
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/">Home</a>
+<a class="text-sm font-semibold text-primary" href="/services">Services</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/commercial-plumbing">Commercial</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/areas">Areas</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/pricing">Pricing</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/faq">FAQ</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/contact">Contact</a>
+</nav>
+
+<!-- Desktop Actions -->
+<div class="hidden md:flex items-center gap-3">
+<a class="flex items-center gap-2 bg-whatsapp text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm hover:opacity-90 transition-all" href="https://wa.me/94758244216">
+<span class="material-symbols-outlined text-lg">chat</span>
+            WhatsApp
+        </a>
+<a class="flex items-center gap-2 bg-six7-navy text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm hover:bg-slate-800 transition-all" href="tel:+94758244216">
+<span class="material-symbols-outlined text-lg">call</span>
+            Call Now
+        </a>
+</div>
+
+<!-- Mobile Menu Button -->
+<button class="md:hidden p-2" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu-overlay" id="menuOverlay" onclick="toggleMobileMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+<div class="flex justify-end mb-8">
+<button onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-6">
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/" onclick="toggleMobileMenu()">Home</a>
+<a class="text-lg font-semibold text-primary" href="/services" onclick="toggleMobileMenu()">Services</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/commercial-plumbing" onclick="toggleMobileMenu()">Commercial</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/areas" onclick="toggleMobileMenu()">Areas</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/pricing" onclick="toggleMobileMenu()">Pricing</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/faq" onclick="toggleMobileMenu()">FAQ</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/contact" onclick="toggleMobileMenu()">Contact</a>
+<hr class="my-2 border-slate-200 dark:border-slate-700"/>
+<a class="flex items-center gap-2 bg-whatsapp text-white px-5 py-3 rounded-xl font-bold text-sm" href="https://wa.me/94758244216" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">chat</span> WhatsApp
+        </a>
+<a class="flex items-center gap-2 bg-six7-navy text-white px-5 py-3 rounded-xl font-bold text-sm" href="tel:+94758244216" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">call</span> Call Now
+        </a>
+</nav>
+</div>
+
+<!-- Floating Buttons -->
+<div class="floating-buttons md:hidden">
+<a href="tel:+94758244216" class="float-btn call">
+<span class="material-symbols-outlined">call</span>
+</a>
+<a href="https://wa.me/94758244216" class="float-btn wa">
+<span class="material-symbols-outlined">chat</span>
+</a>
+</div>
+
+<main>
+<!-- Breadcrumb -->
+<div class="max-w-7xl mx-auto px-6 pt-8">
+<div class="flex items-center gap-2 text-sm text-slate-500">
+<a href="/" class="hover:text-primary">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a href="/services" class="hover:text-primary">Services</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-slate-700 dark:text-slate-300">Drain Unclogging</span>
+</div>
+</div>
+
+<!-- Page Header -->
+<section class="pt-8 pb-12">
+<div class="max-w-7xl mx-auto px-6">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-six7-navy dark:text-slate-100 leading-tight tracking-tight mb-6">
+            Drain Unclogging in Colombo — Fast, Affordable & 24/7 Blocked Drain Repair
+        </h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 max-w-4xl leading-relaxed">
+            Blocked drain? Don't let it flood your home. SIX7 Plumbing provides fast, affordable drain unclogging services across Colombo and the Western Province. Whether it's a clogged toilet, slow-draining sink, smelly floor trap, or backed-up sewer line, our direct-work team arrives quickly to restore flow — without damaging your pipes. We serve Colombo 1-15, Kotte, Dehiwala, Nugegoda, Maharagama, and all suburbs. Most unclogs completed within 45 minutes. No call-out fee if you proceed. Written quote before work starts. Call <a href="tel:+94758244216" class="text-primary font-semibold">+94 75 824 4216</a> now — we answer 24/7.
+        </p>
+</div>
+</section>
+
+<div class="max-w-7xl mx-auto px-6">
+    <!-- What We Unclog -->
+    <h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-8 flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary">cleaning_services</span>
+        What We Unclog — Drain Services in Colombo
+    </h2>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-16">
+        <!-- Toilet Unclogging -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">toilet</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Toilet Unclogging & Repair</h3>
+            <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Clear blocked toilets (paper, wipes, objects)</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Fix running or weak-flush toilets</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Replace faulty flush valves or seals</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Preventive tips to avoid repeat clogs</li>
+            </ul>
+            <div class="flex items-center justify-between">
+                <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm font-semibold">From LKR 2,500</span>
+                <span class="text-sm text-slate-500 flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 30 min fix</span>
+            </div>
+        </div>
+
+        <!-- Sink & Kitchen Drain -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">sink</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Sink, Basin & Kitchen Drain</h3>
+            <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Clear grease, food, soap & hair blockages</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Remove P-trap debris without damage</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Install drain strainers to prevent future clogs</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Eco-friendly cleaning options</li>
+            </ul>
+            <div class="flex items-center justify-between">
+                <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm font-semibold">From LKR 2,000</span>
+                <span class="text-sm text-slate-500">Same-day</span>
+            </div>
+        </div>
+
+        <!-- Floor Trap & Bathroom -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">shower</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Floor Trap & Bathroom Drain</h3>
+            <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Unclog smelly, slow-draining floor traps</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Remove hair, soap scum & debris</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Jet flush for deep cleaning (add-on)</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Deodorize after service for fresh results</li>
+            </ul>
+            <div class="flex items-center justify-between">
+                <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm font-semibold">From LKR 1,800</span>
+            </div>
+        </div>
+
+        <!-- Sewer Line & Main Drain -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">plumbing</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Sewer Line & Main Drain</h3>
+            <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Clear blockages in main sewer lines</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Rodding & high-pressure jetting</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Camera inspection to locate blockage</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Preventive maintenance for older properties</li>
+            </ul>
+            <div class="flex items-center justify-between">
+                <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm font-semibold">From LKR 5,000</span>
+            </div>
+        </div>
+
+        <!-- Outdoor & Garden Drain -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 md:col-span-2">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">yard</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Outdoor & Garden Drain Unclog</h3>
+            <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Clear rainwater drains, yard gullies & downpipes</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Remove leaves, soil & debris blockages</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Monsoon-prep drain cleaning (seasonal)</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Install mesh guards to prevent future clogs</li>
+            </ul>
+            <div class="flex items-center justify-between">
+                <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm font-semibold">From LKR 2,200</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Steps -->
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-10 mb-16">
+        <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-8 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">bolt</span>
+            What to Do RIGHT NOW (While Waiting for Us)
+        </h2>
+        <p class="mb-6">If your drain is completely blocked or overflowing:</p>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="step-item bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl">
+                <div class="bg-primary text-six7-navy w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl mb-4">1</div>
+                <h3 class="font-bold text-lg mb-2">STOP USING WATER</h3>
+                <p class="text-slate-600 dark:text-slate-400">Don't flush toilets, run sinks, or shower. Additional water will worsen the backup.</p>
+            </div>
+            <div class="step-item bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl">
+                <div class="bg-primary text-six7-navy w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl mb-4">2</div>
+                <h3 class="font-bold text-lg mb-2">CONTAIN THE OVERFLOW</h3>
+                <p class="text-slate-600 dark:text-slate-400">Place buckets/towels under leaking fixtures. Move rugs, electronics & furniture away.</p>
+            </div>
+            <div class="step-item bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl">
+                <div class="bg-primary text-six7-navy w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl mb-4">3</div>
+                <h3 class="font-bold text-lg mb-2">TRY A PLUNGER (If Safe)</h3>
+                <p class="text-slate-600 dark:text-slate-400">Use flange plunger for toilets, cup plunger for sinks. Create tight seal, pump 10-15 times. ❌ Do NOT use chemical drain cleaners.</p>
+            </div>
+            <div class="step-item bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl">
+                <div class="bg-primary text-six7-navy w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl mb-4">4</div>
+                <h3 class="font-bold text-lg mb-2">CALL SIX7 IMMEDIATELY</h3>
+                <p class="text-slate-600 dark:text-slate-400"><a href="tel:+94758244216" class="text-primary font-semibold">+94 75 824 4216</a> or <a href="https://wa.me/94758244216" class="text-primary font-semibold">WhatsApp with photos</a>. Tell us which drain and what went down it.</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-2xl">
+                <h3 class="text-emergency font-bold text-lg mb-3 flex items-center gap-2">
+                    <span class="material-symbols-outlined">cancel</span> DON'T
+                </h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-emergency text-sm">close</span> Pour boiling water on PVC pipes (can warp them)</li>
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-emergency text-sm">close</span> Use chemical drain openers (corrosive, ineffective)</li>
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-emergency text-sm">close</span> Attempt to disassemble pipes without proper tools</li>
+                </ul>
+            </div>
+            <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-2xl">
+                <h3 class="text-green-600 font-bold text-lg mb-3 flex items-center gap-2">
+                    <span class="material-symbols-outlined">check_circle</span> DO
+                </h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-sm">check</span> Take photos/videos for insurance if damage occurs</li>
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-sm">check</span> Keep the area clear for our technician's access</li>
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-sm">check</span> Ask about our preventive maintenance packages</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-10 mb-16">
+        <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">payments</span>
+            Transparent Drain Unclogging Pricing
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 mb-6">We believe in fair, upfront pricing — even for emergencies.</p>
+
+        <!-- Compact Form with Error Message -->
+        <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl mb-8">
+            <div class="form-error-message" id="formError" style="display: none;">
+                <span class="material-symbols-outlined text-sm">error</span>
+                <span>Need immediate assistance? Call or text <a href="tel:+94758244216" class="font-bold underline">+94 75 824 4216</a> for instant response</span>
+            </div>
+            <form id="drainForm">
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <input type="text" placeholder="Your Name" class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                    <input type="tel" placeholder="Phone Number" class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                </div>
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <input type="text" placeholder="Your Suburb" class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                    <select class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                        <option>Toilet Unclog</option>
+                        <option>Sink Unclog</option>
+                        <option>Floor Trap</option>
+                        <option>Sewer Line</option>
+                        <option>Outdoor Drain</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-six7-navy text-white py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors">
+                    Get Free Quote
+                </button>
+            </form>
+        </div>
+
+        <div class="space-y-3 mb-6">
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Service Call</span>
+                <span><strong>LKR 1,500</strong> <span class="text-sm text-slate-500">(WAIVED with unclog)</span></span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Simple Unclog (toilet/sink/floor trap)</span>
+                <span class="font-bold">From LKR 2,000</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Kitchen Drain (grease/food)</span>
+                <span class="font-bold">From LKR 2,500</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Sewer/Main Line Unclog</span>
+                <span class="font-bold">From LKR 5,000</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>High-Pressure Jetting (add-on)</span>
+                <span class="font-bold">+LKR 2,000</span>
+            </div>
+            <div class="flex justify-between py-2">
+                <span>Camera Inspection (if needed)</span>
+                <span class="font-bold">+LKR 3,000</span>
+            </div>
+        </div>
+
+        <p class="mb-4"><strong>What Affects Price:</strong> ✓ Severity · ✓ Location · ✓ Method (plunger/rod vs. jetting/camera) · ✓ Parts if needed</p>
+
+        <div class="bg-primary/10 p-6 rounded-2xl text-center mb-4">
+            <span class="material-symbols-outlined text-primary align-middle">verified</span>
+            <span class="font-bold"> Price Match Promise:</span> Found a lower written quote for the same scope? We'll match it.
+        </div>
+
+        <p class="text-center">Need an exact price? <a href="https://wa.me/94758244216" class="text-primary font-semibold">WhatsApp photos to +94 75 824 4216</a> for instant estimate.</p>
+    </div>
+
+    <!-- Service Areas -->
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-10 mb-16">
+        <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">location_on</span>
+            We Cover All Colombo & Western Province
+        </h2>
+        <p class="mb-6">Our drain unclogging teams are stationed for fast arrival:</p>
+
+        <h3 class="font-bold mb-3">Colombo Core (15-30 min):</h3>
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Colombo 1-15</span>
+        </div>
+
+        <h3 class="font-bold mb-3">Greater Colombo (30-45 min):</h3>
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Kotte</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Sri Jayawardenepura</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Battaramulla</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Rajagiriya</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Nawala</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Nugegoda</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Maharagama</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Piliyandala</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Kottawa</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Malabe</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Thalawathugoda</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Boralesgamuwa</span>
+        </div>
+
+        <h3 class="font-bold mb-3">Southern Corridor (45-60 min):</h3>
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Dehiwala</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Mount Lavinia</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Wellawatte</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Bambalapitiya</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Moratuwa</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Panadura</span>
+        </div>
+
+        <h3 class="font-bold mb-3">Northern/Eastern (60-90 min):</h3>
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Kelaniya</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Ragama</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Negombo</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Homagama</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Angoda</span>
+        </div>
+
+        <p>Searching for "drain unclogging near me"? We're likely within 10km. <a href="tel:+94758244216" class="text-primary font-semibold">Call to confirm →</a></p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="mb-16">
+        <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-8">Drain Unclogging FAQs</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+                <h3 class="font-bold text-lg mb-2">How fast can you unclog my drain?</h3>
+                <p class="text-slate-600 dark:text-slate-400">Most simple unclogs completed within 30-45 minutes of arrival. Complex sewer jobs may take longer.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+                <h3 class="font-bold text-lg mb-2">Do you charge extra for nights or weekends?</h3>
+                <p class="text-slate-600 dark:text-slate-400">No. Same unclogging rates 24/7. Plumbing emergencies don't wait for business hours.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+                <h3 class="font-bold text-lg mb-2">Will unclogging damage my pipes?</h3>
+                <p class="text-slate-600 dark:text-slate-400">No. We use professional tools (rods, jetters) designed to clear blockages without harming pipes.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+                <h3 class="font-bold text-lg mb-2">What if the clog keeps coming back?</h3>
+                <p class="text-slate-600 dark:text-slate-400">Recurring clogs often signal deeper issues. We'll diagnose root cause and recommend permanent solution.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+                <h3 class="font-bold text-lg mb-2">Do you offer preventive drain maintenance?</h3>
+                <p class="text-slate-600 dark:text-slate-400">Yes — quarterly drain cleaning packages for homes and businesses. Reduces emergency calls.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+                <h3 class="font-bold text-lg mb-2">Can I get a quote over WhatsApp?</h3>
+                <p class="text-slate-600 dark:text-slate-400">For standard unclogs, yes — send photos/videos and we'll provide price range. Complex jobs need on-site.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="flex flex-wrap gap-4 justify-center mb-8">
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">handshake</span> Direct Work — No agency fees</span>
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">schedule</span> 45-min unclog guarantee</span>
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">receipt</span> Written quote first</span>
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">verified</span> 90-day warranty</span>
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">eco</span> Eco-friendly methods</span>
+    </div>
+
+    <!-- Why Choose -->
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-10 mb-16">
+        <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-6">Why Colombo Trusts SIX7 for Drain Unclogging</h2>
+        <div class="grid md:grid-cols-2 gap-3">
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> Direct Work Model — No agency fees</div>
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> 24/7 Human Answer — Real people at 1AM</div>
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> 45-Min Unclog Guarantee</div>
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> Written Quote First — No surprises</div>
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> Eco-Friendly, Pipe-Safe Methods</div>
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> 90-Day Unclog Warranty — Free call-back</div>
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> Local Expertise — Colombo drain systems</div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="bg-primary rounded-3xl p-8 md:p-12 text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-black text-six7-navy mb-4">Ready to Unclog Your Drain?</h2>
+        <p class="text-xl text-six7-navy/80 mb-6">Don't let a blocked drain disrupt your day. SIX7 Plumbing is ready to help — right now.</p>
+        <p class="text-3xl md:text-4xl font-black mb-4">
+            <a href="tel:+94758244216" class="text-six7-navy hover:underline">
+                +94 75 824 4216
+            </a>
+        </p>
+        <p class="text-lg mb-6">
+            <span class="material-symbols-outlined align-middle">bolt</span> Average Response: 45 minutes in Colombo · 
+            <a href="https://wa.me/94758244216" class="text-six7-navy font-semibold underline">Send Photos on WhatsApp</a>
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+            <span class="bg-six7-navy/20 px-5 py-3 rounded-full font-semibold">✅ No call-out fee with unclog</span>
+            <span class="bg-six7-navy/20 px-5 py-3 rounded-full font-semibold">✅ Written quote before work</span>
+            <span class="bg-six7-navy/20 px-5 py-3 rounded-full font-semibold">✅ 90-day warranty</span>
+        </div>
+    </div>
+
+    <!-- Related Links -->
+    <div class="text-center mb-12">
+        <p class="text-slate-600 dark:text-slate-400">
+            Related services: 
+            <a href="/services/emergency-leak-repair" class="text-primary hover:underline">Leak Repair</a> · 
+            <a href="/services/bathroom-renovation" class="text-primary hover:underline">Bathroom Renovation</a> · 
+            <a href="/services/water-tank-cleaning" class="text-primary hover:underline">Water Tank Cleaning</a> · 
+            <a href="/pricing" class="text-primary hover:underline">Pricing</a> · 
+            <a href="/areas" class="text-primary hover:underline">Areas</a>
+        </p>
+    </div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-six7-navy text-white pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-six7-navy">
+<span class="material-symbols-outlined text-xl">plumbing</span>
+</div>
+<h4 class="text-xl font-black">SIX7 PLUMBING</h4>
+</div>
+<p class="text-slate-400 text-sm">Colombo's most trusted emergency plumbing service.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a href="/" class="hover:text-primary">Home</a></li>
+<li><a href="/services" class="hover:text-primary">Services</a></li>
+<li><a href="/commercial-plumbing" class="hover:text-primary">Commercial</a></li>
+<li><a href="/areas" class="hover:text-primary">Areas</a></li>
+<li><a href="/pricing" class="hover:text-primary">Pricing</a></li>
+<li><a href="/faq" class="hover:text-primary">FAQ</a></li>
+<li><a href="/contact" class="hover:text-primary">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Contact</h4>
+<div class="space-y-2 text-sm text-slate-400">
+<a href="tel:+94758244216" class="flex items-center gap-2 hover:text-primary">
+<span class="material-symbols-outlined text-primary">call</span> +94 75 824 4216
+        </a>
+<a href="mailto:plumbing@six7.lk" class="flex items-center gap-2 hover:text-primary">
+<span class="material-symbols-outlined text-primary">mail</span> plumbing@six7.lk
+        </a>
+<a href="https://wa.me/94758244216" class="flex items-center gap-2 hover:text-primary">
+<span class="material-symbols-outlined text-primary">chat</span> WhatsApp
+        </a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-4">Service Areas</h4>
+<p class="text-sm text-slate-400">Colombo 01-15, Dehiwala, Mount Lavinia, Kotte, Nugegoda, Battaramulla, Rajagiriya, Kaduwela, Malabe, Moratuwa</p>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 text-center text-sm text-slate-500">
+<p>© 2026 SIX7 Plumbing. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+    document.getElementById('mobileMenu').classList.toggle('active');
+    document.getElementById('menuOverlay').classList.toggle('active');
+}
+
+// Form error message
+document.getElementById('drainForm')?.addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formError').style.display = 'flex';
+    document.getElementById('formError').scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+</script>
 </body>
 </html>
