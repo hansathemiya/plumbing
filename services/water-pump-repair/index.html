@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIX7 Plumbing | Water Pump Repair Colombo | Installation & Pressure Fix</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff8b4d",
+                        "six7-navy": "#0b3b4f",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23160f",
+                        "emergency": "#b13e3e",
+                        "whatsapp": "#25D366",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass { backdrop-filter: blur(12px); background-color: rgba(248, 246, 245, 0.8); }
+        .dark .glass { background-color: rgba(35, 22, 15, 0.8); }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            z-index: 9999;
+            transition: 0.3s ease-in-out;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+            padding: 80px 24px 24px;
+        }
+        .mobile-menu.active {
+            right: 0;
+        }
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9998;
+            display: none;
+        }
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+        .dark .mobile-menu {
+            background: #1a1a1a;
+        }
+        
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9997;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .float-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: 0.2s;
+            color: white;
+        }
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+        .float-btn.call {
+            background: #b13e3e;
+        }
+        .float-btn.wa {
+            background: #25D366;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+        
+        /* Form error message */
+        .form-error-message {
+            background: #fee2e2;
+            border: 1px solid #ef4444;
+            color: #b91c1c;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Service card styling */
+        .service-card {
+            transition: all 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px rgba(11,59,79,0.1);
+        }
+        
+        /* Step styling */
+        .step-item {
+            transition: all 0.2s;
+        }
+        .step-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Badge styling */
+        .badge {
+            transition: all 0.2s;
+        }
+        .badge:hover {
+            background: #0b3b4f;
+            color: white;
+        }
+    </style>
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://plumbing.six7.lk/"},
+        {"@type":"ListItem","position":2,"name":"Services","item":"https://plumbing.six7.lk/services"},
+        {"@type":"ListItem","position":3,"name":"Water Pump Repair","item":"https://plumbing.six7.lk/services/water-pump-repair"}
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Water Pump Repair & Installation",
+    "serviceType": "Plumbing",
+    "provider": {"@type": "Plumber", "name": "SIX7 Plumbing"},
+    "areaServed": ["Colombo","Kotte","Dehiwala","Nugegoda","Maharagama","Mount Lavinia","Kelaniya","Negombo"],
+    "offers": {
+        "@type": "Offer",
+        "price": "3500",
+        "priceCurrency": "LKR",
+        "priceRange": "₨3500-₨150000"
+    },
+    "description": "Expert water pump repair, installation, and pressure optimization in Colombo. All major brands serviced."
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {"@type":"Question","name":"Why is my water pump running but not pumping water?","acceptedAnswer":{"@type":"Answer","text":"Airlock, blocked foot valve, dry tank, or worn impeller. Most issues fixed within 90 minutes."}},
+        {"@type":"Question","name":"How much does water pump repair cost in Colombo?","acceptedAnswer":{"@type":"Answer","text":"Most repairs range LKR 3,500–12,000. Diagnostic LKR 1,500 (waived with repair). Written quote before work."}},
+        {"@type":"Question","name":"Which water pump brands do you service?","acceptedAnswer":{"@type":"Answer","text":"All major: Grundfos, Pedrollo, Shimge, Leo, Shimizu, local brands. Common spare parts in stock."}},
+        {"@type":"Question","name":"How often should I service my water pump?","acceptedAnswer":{"@type":"Answer","text":"Every 6–12 months. Includes electrical check, impeller cleaning, pressure calibration."}}
+    ]
+}
+</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<!-- Emergency Bar -->
+<div class="w-full bg-emergency py-2 px-4 text-center sticky top-0 z-50">
+<p class="text-white text-sm font-bold tracking-wide flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">emergency_home</span>
+        24/7 EMERGENCY SERVICE: <a class="underline hover:no-underline" href="tel:+94758244216">+94 75 824 4216</a>
+</p>
+</div>
+
+<!-- Sticky Header -->
+<header class="sticky top-[36px] z-40 glass border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-10 bg-six7-navy rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">plumbing</span>
+</div>
+<a href="/" class="text-2xl font-black text-six7-navy dark:text-slate-100 tracking-tight">SIX7<span class="text-primary">.</span>PLUMBING</a>
+</div>
+
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/">Home</a>
+<a class="text-sm font-semibold text-primary" href="/services">Services</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/commercial-plumbing">Commercial</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/areas">Areas</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/pricing">Pricing</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/faq">FAQ</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/contact">Contact</a>
+</nav>
+
+<!-- Desktop Actions -->
+<div class="hidden md:flex items-center gap-3">
+<a class="flex items-center gap-2 bg-whatsapp text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm hover:opacity-90 transition-all" href="https://wa.me/94758244216">
+<span class="material-symbols-outlined text-lg">chat</span>
+            WhatsApp
+        </a>
+<a class="flex items-center gap-2 bg-six7-navy text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm hover:bg-slate-800 transition-all" href="tel:+94758244216">
+<span class="material-symbols-outlined text-lg">call</span>
+            Call Now
+        </a>
+</div>
+
+<!-- Mobile Menu Button -->
+<button class="md:hidden p-2" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu-overlay" id="menuOverlay" onclick="toggleMobileMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+<div class="flex justify-end mb-8">
+<button onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-6">
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/" onclick="toggleMobileMenu()">Home</a>
+<a class="text-lg font-semibold text-primary" href="/services" onclick="toggleMobileMenu()">Services</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/commercial-plumbing" onclick="toggleMobileMenu()">Commercial</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/areas" onclick="toggleMobileMenu()">Areas</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/pricing" onclick="toggleMobileMenu()">Pricing</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/faq" onclick="toggleMobileMenu()">FAQ</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/contact" onclick="toggleMobileMenu()">Contact</a>
+<hr class="my-2 border-slate-200 dark:border-slate-700"/>
+<a class="flex items-center gap-2 bg-whatsapp text-white px-5 py-3 rounded-xl font-bold text-sm" href="https://wa.me/94758244216" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">chat</span> WhatsApp
+        </a>
+<a class="flex items-center gap-2 bg-six7-navy text-white px-5 py-3 rounded-xl font-bold text-sm" href="tel:+94758244216" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">call</span> Call Now
+        </a>
+</nav>
+</div>
+
+<!-- Floating Buttons -->
+<div class="floating-buttons md:hidden">
+<a href="tel:+94758244216" class="float-btn call">
+<span class="material-symbols-outlined">call</span>
+</a>
+<a href="https://wa.me/94758244216" class="float-btn wa">
+<span class="material-symbols-outlined">chat</span>
+</a>
+</div>
+
+<main>
+<!-- Breadcrumb -->
+<div class="max-w-7xl mx-auto px-6 pt-8">
+<div class="flex items-center gap-2 text-sm text-slate-500">
+<a href="/" class="hover:text-primary">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a href="/services" class="hover:text-primary">Services</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-slate-700 dark:text-slate-300">Water Pump Repair</span>
+</div>
+</div>
+
+<!-- Page Header -->
+<section class="pt-8 pb-12">
+<div class="max-w-7xl mx-auto px-6">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-six7-navy dark:text-slate-100 leading-tight tracking-tight mb-6">
+            Water Pump Repair & Installation in Colombo — Fast, Reliable & Affordable
+        </h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 max-w-4xl leading-relaxed">
+            Low water pressure? Pump making strange noises? SIX7 Plumbing provides expert water pump repair, installation, and pressure optimization services across Colombo and the Western Province. Whether you have an overhead tank pump, submersible pump, booster pump, or automatic pressure system, our direct-work team diagnoses and fixes issues fast — often same-day. We service all major brands (Grundfos, Pedrollo, Shimge, local models). Serving Colombo 1-15, Kotte, Dehiwala, Nugegoda, Maharagama, and all suburbs. Most repairs completed within 90 minutes. Free diagnosis with repair. Call <a href="tel:+94758244216" class="text-primary font-semibold">+94 75 824 4216</a> now — we answer 24/7.
+        </p>
+</div>
+</section>
+
+<div class="max-w-7xl mx-auto px-6">
+    <!-- What We Fix -->
+    <h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-8 flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary">water_pump</span>
+        What We Fix — Water Pump Services in Colombo
+    </h2>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-16">
+        <!-- Pump Not Starting -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">power_off</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Pump Not Starting / No Power</h3>
+            <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Electrical diagnosis: capacitor, switch, wiring</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Motor burnout assessment & replacement</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Control box repair for automatic pumps</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Safety cut-out reset & testing</li>
+            </ul>
+            <div class="flex items-center justify-between">
+                <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm font-semibold">From LKR 3,500</span>
+                <span class="text-sm text-slate-500 flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 60 min fix</span>
+            </div>
+        </div>
+
+        <!-- Low Pressure -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">speed</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Low Water Pressure / Weak Flow</h3>
+            <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Pressure switch calibration</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Impeller cleaning or replacement</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Pipe blockage inspection</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> System-wide pressure test</li>
+            </ul>
+            <div class="flex items-center justify-between">
+                <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm font-semibold">From LKR 4,000</span>
+            </div>
+        </div>
+
+        <!-- Running But Not Pumping -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">sync</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Pump Running But Not Pumping</h3>
+            <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Airlock removal & priming</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Suction line leak detection</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Foot valve & non-return valve check</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Tank level sensor calibration</li>
+            </ul>
+            <div class="flex items-center justify-between">
+                <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm font-semibold">From LKR 4,500</span>
+            </div>
+        </div>
+
+        <!-- Noisy/Overheating -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">volume_up</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Noisy, Vibrating or Overheating</h3>
+            <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Bearing inspection & lubrication</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Mounting bracket tightening</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Overload protection check</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Cooling system assessment</li>
+            </ul>
+            <div class="flex items-center justify-between">
+                <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm font-semibold">From LKR 3,800</span>
+            </div>
+        </div>
+
+        <!-- New Installation -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">build</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">New Pump Installation & Upgrade</h3>
+            <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Sizing consultation: 0.5HP to 1.5HP+</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Overhead, submersible, booster install</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Automatic pressure controller integration</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Old pump removal & disposal</li>
+            </ul>
+            <div class="flex items-center justify-between">
+                <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm font-semibold">Labor from LKR 5,000</span>
+            </div>
+        </div>
+
+        <!-- Preventive Maintenance -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">calendar_month</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Preventive Pump Maintenance</h3>
+            <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Quarterly inspection: electrical, mechanical</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Impeller & seal cleaning</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Lubrication & connection tightening</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Performance report + recommendations</li>
+            </ul>
+            <div class="flex items-center justify-between">
+                <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm font-semibold">From LKR 2,500/visit</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Steps -->
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-10 mb-16">
+        <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-8 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">bolt</span>
+            What to Do RIGHT NOW (If Your Pump Fails)
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="step-item bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl">
+                <div class="bg-primary text-six7-navy w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl mb-4">1</div>
+                <h3 class="font-bold text-lg mb-2">CHECK THE BASICS</h3>
+                <p class="text-slate-600 dark:text-slate-400">Power switch on? Water tank empty? Circuit breaker tripped?</p>
+            </div>
+            <div class="step-item bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl">
+                <div class="bg-primary text-six7-navy w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl mb-4">2</div>
+                <h3 class="font-bold text-lg mb-2">LISTEN FOR CLUES</h3>
+                <p class="text-slate-600 dark:text-slate-400">Humming? Clicking? Burning smell? Turn off power if unsafe.</p>
+            </div>
+            <div class="step-item bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl">
+                <div class="bg-primary text-six7-navy w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl mb-4">3</div>
+                <h3 class="font-bold text-lg mb-2">SHUT OFF POWER</h3>
+                <p class="text-slate-600 dark:text-slate-400">If you see sparks, smoke, or water near electrical parts — turn off immediately.</p>
+            </div>
+            <div class="step-item bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl">
+                <div class="bg-primary text-six7-navy w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl mb-4">4</div>
+                <h3 class="font-bold text-lg mb-2">CALL SIX7</h3>
+                <p class="text-slate-600 dark:text-slate-400"><a href="tel:+94758244216" class="text-primary font-semibold">+94 75 824 4216</a> or <a href="https://wa.me/94758244216" class="text-primary font-semibold">WhatsApp pump photo</a>. Tell us pump type, symptoms.</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-2xl">
+                <h3 class="text-emergency font-bold text-lg mb-3 flex items-center gap-2">
+                    <span class="material-symbols-outlined">cancel</span> DON'T
+                </h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-emergency text-sm">close</span> Run pump continuously if overheating</li>
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-emergency text-sm">close</span> Open motor housing without training</li>
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-emergency text-sm">close</span> Ignore small pressure drops</li>
+                </ul>
+            </div>
+            <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-2xl">
+                <h3 class="text-green-600 font-bold text-lg mb-3 flex items-center gap-2">
+                    <span class="material-symbols-outlined">check_circle</span> DO
+                </h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-sm">check</span> Take photo of pump nameplate (brand, HP, voltage)</li>
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-sm">check</span> Note when issue started & recent power cuts</li>
+                    <li class="flex items-start gap-2"><span class="material-symbols-outlined text-green-600 text-sm">check</span> Keep area clear for safe technician access</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-10 mb-16">
+        <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">payments</span>
+            Transparent Water Pump Pricing
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 mb-6">Fair, upfront pricing — with options for every budget.</p>
+
+        <!-- Compact Form with Error Message -->
+        <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl mb-8">
+            <div class="form-error-message" id="formError" style="display: none;">
+                <span class="material-symbols-outlined text-sm">error</span>
+                <span>Need immediate assistance? Call or text <a href="tel:+94758244216" class="font-bold underline">+94 75 824 4216</a> for instant response</span>
+            </div>
+            <form id="pumpForm">
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <input type="text" placeholder="Your Name" class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                    <input type="tel" placeholder="Phone Number" class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                </div>
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <input type="text" placeholder="Your Suburb" class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                    <select class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                        <option>Pump Not Starting</option>
+                        <option>Low Pressure</option>
+                        <option>Noisy Pump</option>
+                        <option>Pump Installation</option>
+                        <option>Maintenance</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-six7-navy text-white py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors">
+                    Get Free Quote
+                </button>
+            </form>
+        </div>
+
+        <div class="space-y-3 mb-6">
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Diagnostic Visit</span>
+                <span><strong>LKR 1,500</strong> <span class="text-sm text-slate-500">(WAIVED with repair)</span></span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Electrical Repair (capacitor, switch, wiring)</span>
+                <span class="font-bold">From LKR 3,500</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Mechanical Repair (impeller, seal, bearing)</span>
+                <span class="font-bold">From LKR 4,500</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Pressure System Calibration</span>
+                <span class="font-bold">From LKR 4,000</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Full Pump Replacement (Labor Only)</span>
+                <span class="font-bold">From LKR 5,000</span>
+            </div>
+            <div class="flex justify-between py-2">
+                <span>Preventive Maintenance Visit</span>
+                <span class="font-bold">From LKR 2,500</span>
+            </div>
+        </div>
+
+        <p class="mb-4"><strong>Pump Unit Pricing (optional — you choose):</strong><br>
+        <span class="text-sm">✓ Economy (Local Brands): LKR 18,000 – 35,000<br>
+        ✓ Mid-Range (Imported): LKR 36,000 – 75,000<br>
+        ✓ Premium (Grundfos, Pedrollo): LKR 76,000 – 150,000+</span></p>
+
+        <div class="bg-primary/10 p-6 rounded-2xl text-center mb-4">
+            <span class="material-symbols-outlined text-primary align-middle">verified</span>
+            <span class="font-bold"> Price Match Promise:</span> Found a lower written quote for the same pump model + labor scope? We'll match it.
+        </div>
+
+        <p class="text-center">Need an exact price? <a href="https://wa.me/94758244216" class="text-primary font-semibold">WhatsApp a photo of your pump nameplate to +94 75 824 4216</a> for instant estimate range.</p>
+    </div>
+
+    <!-- Service Areas -->
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-10 mb-16">
+        <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">location_on</span>
+            We Cover All Colombo & Western Province
+        </h2>
+        <p class="mb-6">Our pump repair teams are stationed for fast arrival:</p>
+
+        <h3 class="font-bold mb-3">Colombo Core (15-30 min):</h3>
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Colombo 1-15</span>
+        </div>
+
+        <h3 class="font-bold mb-3">Greater Colombo (30-45 min):</h3>
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Kotte</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Sri Jayawardenepura</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Battaramulla</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Rajagiriya</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Nawala</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Nugegoda</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Maharagama</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Piliyandala</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Kottawa</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Malabe</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Thalawathugoda</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Boralesgamuwa</span>
+        </div>
+
+        <h3 class="font-bold mb-3">Southern Corridor (45-60 min):</h3>
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Dehiwala</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Mount Lavinia</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Wellawatte</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Bambalapitiya</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Moratuwa</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Panadura</span>
+        </div>
+
+        <h3 class="font-bold mb-3">Northern/Eastern (60-90 min):</h3>
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Kelaniya</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Ragama</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Negombo</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Homagama</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Angoda</span>
+        </div>
+
+        <p>Searching for "water pump repair near me"? We're likely within 10km. <a href="tel:+94758244216" class="text-primary font-semibold">Call to confirm →</a></p>
+    </div>
+
+    <!-- Comprehensive FAQ -->
+    <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-8">Water Pump Repair FAQs</h2>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-16">
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">Why is my water pump running but not pumping water?</h3>
+            <p class="text-slate-600 dark:text-slate-400">Airlock, blocked foot valve, dry tank, or worn impeller. Most issues fixed within 90 minutes.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">How do I know if my pump capacitor is bad?</h3>
+            <p class="text-slate-600 dark:text-slate-400">Pump hums but won't start, trips breaker, or starts after manual spin. Capacitors cost LKR 800–2,500.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">What causes low water pressure even with a working pump?</h3>
+            <p class="text-slate-600 dark:text-slate-400">Clogged pipes, faulty pressure switch, leaking suction line, or undersized pump. We perform full pressure test.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">How much does water pump repair cost in Colombo?</h3>
+            <p class="text-slate-600 dark:text-slate-400">Most repairs range LKR 3,500–12,000. Diagnostic LKR 1,500 (waived with repair). Written quote before work.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">Is it cheaper to repair or replace a water pump?</h3>
+            <p class="text-slate-600 dark:text-slate-400">If motor burnt or pump >7 years old, replacement often better. Minor repairs save 60–80%.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">Which water pump brands do you service?</h3>
+            <p class="text-slate-600 dark:text-slate-400">All major: Grundfos, Pedrollo, Shimge, Leo, Shimizu, local brands. Common spare parts in stock.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">Do you repair submersible pumps?</h3>
+            <p class="text-slate-600 dark:text-slate-400">Yes. Specialized extraction tools available. Call for safe removal and diagnosis.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">Can you install an automatic pressure controller?</h3>
+            <p class="text-slate-600 dark:text-slate-400">Yes. Installation takes 2-3 hours. Labor from LKR 6,500 + controller cost.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">How often should I service my water pump?</h3>
+            <p class="text-slate-600 dark:text-slate-400">Every 6–12 months. Includes electrical check, impeller cleaning, pressure calibration.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">Why do pumps fail more during monsoon in Colombo?</h3>
+            <p class="text-slate-600 dark:text-slate-400">Humidity causes electrical corrosion, power fluctuations, and sediment in tanks. Ask about monsoon-prep checks.</p>
+        </div>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="flex flex-wrap gap-4 justify-center mb-8">
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">handshake</span> Direct Work — No agency fees</span>
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">schedule</span> 90-min repair guarantee</span>
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">receipt</span> Written quote first</span>
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">verified</span> 90-day warranty</span>
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">sell</span> All brands serviced</span>
+    </div>
+
+    <!-- Why Choose -->
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-10 mb-16">
+        <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-6">Why Colombo Trusts SIX7 for Water Pump Repair</h2>
+        <div class="grid md:grid-cols-2 gap-3">
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> Direct Work Model — No agency fees</div>
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> 24/7 Human Answer — Real people at 1AM</div>
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> 90-Min Repair Guarantee</div>
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> Written Quote First — No surprises</div>
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> All Brands Serviced — Local to Grundfos</div>
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> 90-Day Warranty — Free call-back</div>
+            <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> Local Expertise — Colombo voltage & monsoon issues</div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="bg-primary rounded-3xl p-8 md:p-12 text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-black text-six7-navy mb-4">Ready to Fix Your Water Pump?</h2>
+        <p class="text-xl text-six7-navy/80 mb-6">Don't let a failed pump leave your home without water. SIX7 Plumbing is ready to help — right now.</p>
+        <p class="text-3xl md:text-4xl font-black mb-4">
+            <a href="tel:+94758244216" class="text-six7-navy hover:underline">
+                +94 75 824 4216
+            </a>
+        </p>
+        <p class="text-lg mb-6">
+            <span class="material-symbols-outlined align-middle">bolt</span> Average Response: 90 minutes in Colombo · 
+            <a href="https://wa.me/94758244216" class="text-six7-navy font-semibold underline">Send Pump Photo on WhatsApp</a>
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+            <span class="bg-six7-navy/20 px-5 py-3 rounded-full font-semibold">✅ No diagnostic fee with repair</span>
+            <span class="bg-six7-navy/20 px-5 py-3 rounded-full font-semibold">✅ Written quote before work</span>
+            <span class="bg-six7-navy/20 px-5 py-3 rounded-full font-semibold">✅ 90-day warranty</span>
+        </div>
+    </div>
+
+    <!-- Related Links -->
+    <div class="text-center mb-12">
+        <p class="text-slate-600 dark:text-slate-400">
+            Related services: 
+            <a href="/services/emergency-leak-repair" class="text-primary hover:underline">Leak Repair</a> · 
+            <a href="/services/tap-installation" class="text-primary hover:underline">Tap Installation</a> · 
+            <a href="/services/bathroom-renovation" class="text-primary hover:underline">Bathroom Renovation</a> · 
+            <a href="/pricing" class="text-primary hover:underline">Pricing</a> · 
+            <a href="/areas" class="text-primary hover:underline">Areas</a> · 
+            <a href="/commercial-plumbing" class="text-primary hover:underline">Commercial</a>
+        </p>
+    </div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-six7-navy text-white pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-six7-navy">
+<span class="material-symbols-outlined text-xl">plumbing</span>
+</div>
+<h4 class="text-xl font-black">SIX7 PLUMBING</h4>
+</div>
+<p class="text-slate-400 text-sm">Colombo's most trusted emergency plumbing service.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a href="/" class="hover:text-primary">Home</a></li>
+<li><a href="/services" class="hover:text-primary">Services</a></li>
+<li><a href="/commercial-plumbing" class="hover:text-primary">Commercial</a></li>
+<li><a href="/areas" class="hover:text-primary">Areas</a></li>
+<li><a href="/pricing" class="hover:text-primary">Pricing</a></li>
+<li><a href="/faq" class="hover:text-primary">FAQ</a></li>
+<li><a href="/contact" class="hover:text-primary">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Contact</h4>
+<div class="space-y-2 text-sm text-slate-400">
+<a href="tel:+94758244216" class="flex items-center gap-2 hover:text-primary">
+<span class="material-symbols-outlined text-primary">call</span> +94 75 824 4216
+        </a>
+<a href="mailto:plumbing@six7.lk" class="flex items-center gap-2 hover:text-primary">
+<span class="material-symbols-outlined text-primary">mail</span> plumbing@six7.lk
+        </a>
+<a href="https://wa.me/94758244216" class="flex items-center gap-2 hover:text-primary">
+<span class="material-symbols-outlined text-primary">chat</span> WhatsApp
+        </a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-4">Service Areas</h4>
+<p class="text-sm text-slate-400">Colombo 01-15, Dehiwala, Mount Lavinia, Kotte, Nugegoda, Battaramulla, Rajagiriya, Kaduwela, Malabe, Moratuwa</p>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 text-center text-sm text-slate-500">
+<p>© 2026 SIX7 Plumbing. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+    document.getElementById('mobileMenu').classList.toggle('active');
+    document.getElementById('menuOverlay').classList.toggle('active');
+}
+
+// Form error message
+document.getElementById('pumpForm')?.addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formError').style.display = 'flex';
+    document.getElementById('formError').scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+</script>
+</body>
+</html>
