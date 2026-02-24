@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SIX7 Plumbing | Plumber in Kohuwala | 24/7 Emergency & Heritage Home Service</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff8b4d",
+                        "six7-navy": "#0b3b4f",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23160f",
+                        "emergency": "#b13e3e",
+                        "whatsapp": "#25D366",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass { backdrop-filter: blur(12px); background-color: rgba(248, 246, 245, 0.8); }
+        .dark .glass { background-color: rgba(35, 22, 15, 0.8); }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            z-index: 9999;
+            transition: 0.3s ease-in-out;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+            padding: 80px 24px 24px;
+        }
+        .mobile-menu.active {
+            right: 0;
+        }
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9998;
+            display: none;
+        }
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+        .dark .mobile-menu {
+            background: #1a1a1a;
+        }
+        
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9997;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .float-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: 0.2s;
+            color: white;
+        }
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+        .float-btn.call {
+            background: #b13e3e;
+        }
+        .float-btn.wa {
+            background: #25D366;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+        
+        /* Form error message */
+        .form-error-message {
+            background: #fee2e2;
+            border: 1px solid #ef4444;
+            color: #b91c1c;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Service card styling */
+        .service-card {
+            transition: all 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px rgba(11,59,79,0.1);
+        }
+        
+        /* Testimonial card styling */
+        .testimonial-card {
+            transition: all 0.2s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Badge styling */
+        .badge {
+            transition: all 0.2s;
+        }
+        .badge:hover {
+            background: #0b3b4f;
+            color: white;
+        }
+    </style>
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "SIX7 Plumbing",
+    "telephone": "+94758244216",
+    "email": "plumbing@six7.lk",
+    "url": "https://plumbing.six7.lk",
+    "areaServed": ["Kohuwala","Nugegoda","Narahenpita","Borella","Rajagiriya","Narahenpita Road"],
+    "description": "24/7 emergency plumbing in Kohuwala. Residential, heritage home, clinic & apartment services.",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kohuwala",
+        "addressRegion": "Western Province",
+        "addressCountry": "LK"
+    }
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {"@type":"Question","name":"How fast can you arrive in Kohuwala?","acceptedAnswer":{"@type":"Answer","text":"15-25 minutes for most locations. Technicians stationed near Narahenpita Road and Nugegoda border for rapid response."}},
+        {"@type":"Question","name":"Do you service heritage/colonial-era homes?","acceptedAnswer":{"@type":"Answer","text":"Yes. We specialize in careful, non-invasive repairs for 1940s-70s properties, preserving historical integrity. Ask about our heritage package."}},
+        {"@type":"Question","name":"Do you service clinics on Narahenpita Road?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. We offer sanitation-critical repairs, backflow prevention, and after-hours work to minimize patient disruption."}}
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {"@type": "Plumber", "name": "SIX7 Plumbing"},
+    "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+    "name": "Heritage home drain repair",
+    "author": "Chamali R., Kohuwala Heritage Home Owner"
+}
+</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<!-- Emergency Bar -->
+<div class="w-full bg-emergency py-2 px-4 text-center sticky top-0 z-50">
+<p class="text-white text-sm font-bold tracking-wide flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">emergency_home</span>
+        24/7 EMERGENCY SERVICE: <a class="underline hover:no-underline" href="tel:+94758244216">+94 75 824 4216</a>
+</p>
+</div>
+
+<!-- Sticky Header -->
+<header class="sticky top-[36px] z-40 glass border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-10 bg-six7-navy rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">plumbing</span>
+</div>
+<a href="/" class="text-2xl font-black text-six7-navy dark:text-slate-100 tracking-tight">SIX7<span class="text-primary">.</span>PLUMBING</a>
+</div>
+
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/">Home</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/services">Services</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/commercial-plumbing">Commercial</a>
+<a class="text-sm font-semibold text-primary" href="/areas">Areas</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/pricing">Pricing</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/faq">FAQ</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/contact">Contact</a>
+</nav>
+
+<!-- Desktop Actions -->
+<div class="hidden md:flex items-center gap-3">
+<a class="flex items-center gap-2 bg-whatsapp text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm hover:opacity-90 transition-all" href="https://wa.me/94758244216">
+<span class="material-symbols-outlined text-lg">chat</span>
+            WhatsApp
+        </a>
+<a class="flex items-center gap-2 bg-six7-navy text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm hover:bg-slate-800 transition-all" href="tel:+94758244216">
+<span class="material-symbols-outlined text-lg">call</span>
+            Call Now
+        </a>
+</div>
+
+<!-- Mobile Menu Button -->
+<button class="md:hidden p-2" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu-overlay" id="menuOverlay" onclick="toggleMobileMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+<div class="flex justify-end mb-8">
+<button onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-6">
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/" onclick="toggleMobileMenu()">Home</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/services" onclick="toggleMobileMenu()">Services</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/commercial-plumbing" onclick="toggleMobileMenu()">Commercial</a>
+<a class="text-lg font-semibold text-primary" href="/areas" onclick="toggleMobileMenu()">Areas</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/pricing" onclick="toggleMobileMenu()">Pricing</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/faq" onclick="toggleMobileMenu()">FAQ</a>
+<a class="text-lg font-semibold hover:text-primary transition-colors" href="/contact" onclick="toggleMobileMenu()">Contact</a>
+<hr class="my-2 border-slate-200 dark:border-slate-700"/>
+<a class="flex items-center gap-2 bg-whatsapp text-white px-5 py-3 rounded-xl font-bold text-sm" href="https://wa.me/94758244216" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">chat</span> WhatsApp
+        </a>
+<a class="flex items-center gap-2 bg-six7-navy text-white px-5 py-3 rounded-xl font-bold text-sm" href="tel:+94758244216" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">call</span> Call Now
+        </a>
+</nav>
+</div>
+
+<!-- Floating Buttons -->
+<div class="floating-buttons md:hidden">
+<a href="tel:+94758244216" class="float-btn call">
+<span class="material-symbols-outlined">call</span>
+</a>
+<a href="https://wa.me/94758244216" class="float-btn wa">
+<span class="material-symbols-outlined">chat</span>
+</a>
+</div>
+
+<main>
+<!-- Breadcrumb -->
+<div class="max-w-7xl mx-auto px-6 pt-8">
+<div class="flex items-center gap-2 text-sm text-slate-500">
+<a href="/" class="hover:text-primary">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a href="/areas" class="hover:text-primary">Areas</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-slate-700 dark:text-slate-300">Kohuwala</span>
+</div>
+</div>
+
+<!-- Page Header -->
+<section class="pt-8 pb-12">
+<div class="max-w-7xl mx-auto px-6">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-six7-navy dark:text-slate-100 leading-tight tracking-tight mb-6">
+            Plumber in Kohuwala — Fast, Affordable & 24/7 Emergency Service
+        </h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 max-w-4xl leading-relaxed">
+            Need a reliable plumber in Kohuwala? SIX7 Plumbing provides fast, affordable plumbing services across Kohuwala, Nugegoda, Narahenpita, Borella, and the greater Colombo corridor. Whether you have a burst pipe on Narahenpita Road, a blocked drain in your apartment complex, or need a bathroom upgrade in your heritage home, our direct-work team arrives quickly — often within 20 minutes. We serve homes, apartments, clinics, and businesses throughout Kohuwala. No call-out fee if you proceed with repair. Written quote before work starts. Call <a href="tel:+94758244216" class="text-primary font-semibold">+94 75 824 4216</a> now — we answer 24/7.
+        </p>
+</div>
+</section>
+
+<div class="max-w-7xl mx-auto px-6">
+    <!-- Local Emergency Banner -->
+    <div class="bg-emergency text-white rounded-3xl p-8 md:p-10 mb-12">
+        <h2 class="text-2xl md:text-3xl font-black mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined">emergency_home</span>
+            Emergency Plumbing in Kohuwala — We Arrive Fast
+        </h2>
+        <p class="mb-4">Kohuwala's central location between residential neighborhoods and commercial hubs like Nugegoda and Borella creates unique plumbing challenges: aging pipe systems in older colonial-era homes, high water demand from new apartment developments, monsoon flooding in low-lying zones near canal networks, and traffic-related access delays on Narahenpita Road. SIX7 Plumbing is locally stationed to respond immediately to emergencies:</p>
+        <ul class="grid md:grid-cols-2 gap-2 mb-4">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Burst pipes on Narahenpita Road or Kohuwala side streets</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Blocked drains in apartments, clinics, or shops</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Flooding in low-lying Kohuwala zones (canal-adjacent areas)</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> No water supply in heritage homes or new apartment complexes</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Sewage backup near canal-adjacent properties or shared drainage systems</li>
+        </ul>
+        <p class="text-lg"><strong>⚡ Average Arrival:</strong> 15-25 minutes for Kohuwala core · Same rates 24/7 · Heritage-Property Expertise · <a href="tel:+94758244216" class="text-white font-bold underline">Call now</a></p>
+    </div>
+
+    <!-- Services Grid -->
+    <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-8 flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary">build</span>
+        Plumbing Services We Offer in Kohuwala
+    </h2>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <!-- Residential (Heritage Homes & Modern Apartments) -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">home</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Residential (Heritage Homes & Modern Apartments)</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Leak detection & repair (hidden/exposed)</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Tap, toilet, shower installation & repair</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Bathroom & kitchen upgrades</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Water pump & tank servicing</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Heritage property plumbing (colonial-era care, 1940s-70s)</li>
+            </ul>
+        </div>
+
+        <!-- Apartment Complex & High-Density Living -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">apartment</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Apartment Complex & High-Density Living</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Plumbing coordination for new buildings</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Shared water tank & pump maintenance</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Pressure optimization for multi-story towers</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Emergency response for apartment-wide issues</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Landlord/property manager contracts</li>
+            </ul>
+        </div>
+
+        <!-- Clinic & Medical Office Plumbing -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">local_hospital</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Clinic & Medical Office Plumbing</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Sanitation-critical repairs for medical facilities</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Backflow prevention device testing</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Emergency response for clinic-adjacent properties</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> After-hours work to minimize patient disruption</li>
+            </ul>
+        </div>
+
+        <!-- Monsoon & Canal-Adjacent Area Services -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">flood</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Monsoon & Canal-Adjacent Area Services</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Monsoon-prep drain cleaning (low-lying zones)</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Flood-response plumbing & damage assessment</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Canal-adjacent property drainage upgrades</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Backflow prevention near waterways</li>
+            </ul>
+        </div>
+
+        <!-- Drain & Sewer Services -->
+        <div class="service-card bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 md:col-span-2">
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">cleaning_services</span>
+            <h3 class="text-2xl font-bold text-six7-navy dark:text-slate-100 mb-4">Drain & Sewer Services</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Unclog blocked drains (older homes & apartments)</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Sewer line inspection for canal-adjacent properties</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Floor trap cleaning for bathrooms & kitchens</li>
+                <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> High-pressure jetting for stubborn blockages</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Compact Form Section -->
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-10 mb-12">
+        <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-6 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">contact_support</span>
+            Need a Plumber in Kohuwala?
+        </h2>
+
+        <!-- Form with Error Message -->
+        <form id="areaForm">
+            <div class="form-error-message" id="formError" style="display: none;">
+                <span class="material-symbols-outlined text-sm">error</span>
+                <span>Need immediate assistance? Call or text <a href="tel:+94758244216" class="font-bold underline">+94 75 824 4216</a> for instant response</span>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <input type="text" placeholder="Your Name" required class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+                <input type="tel" placeholder="Phone Number" required class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <select required class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+                    <option value="">Select Location</option>
+                    <option>Narahenpita Road</option>
+                    <option>Kohuwala Town</option>
+                    <option>Canal-adjacent zones</option>
+                    <option>Heritage home clusters</option>
+                    <option>New apartment complexes</option>
+                </select>
+                <select required class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+                    <option value="">Service Needed</option>
+                    <option>Residential/Heritage</option>
+                    <option>Apartment Complex</option>
+                    <option>Clinic/Medical</option>
+                    <option>Drain Unclogging</option>
+                    <option>Emergency Leak</option>
+                </select>
+            </div>
+
+            <textarea rows="2" placeholder="Describe your plumbing issue" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 mb-4"></textarea>
+
+            <button type="submit" class="w-full bg-six7-navy text-white py-3 rounded-xl font-bold text-lg hover:bg-slate-800 transition-colors">
+                Request Local Plumber
+            </button>
+        </form>
+    </div>
+
+    <!-- Pricing -->
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-10 mb-12">
+        <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">payments</span>
+            Transparent Pricing for Kohuwala Residents & Businesses
+        </h2>
+        
+        <div class="space-y-3 mb-6">
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Service Call</span>
+                <span><strong>LKR 1,500</strong> <span class="text-sm text-slate-500">(WAIVED with repair)</span></span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Leak Repair (Simple)</span>
+                <span class="font-bold">From LKR 2,500</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Drain Unclogging</span>
+                <span class="font-bold">From LKR 2,000</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Tap Installation (Labor)</span>
+                <span class="font-bold">From LKR 1,000</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Heritage Home Plumbing Fix</span>
+                <span class="font-bold">From LKR 3,500</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Apartment Complex Fix</span>
+                <span class="font-bold">From LKR 3,500</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+                <span>Clinic/Medical Office Fix</span>
+                <span class="font-bold">From LKR 4,000</span>
+            </div>
+            <div class="flex justify-between py-2">
+                <span>Bathroom Refresh Package</span>
+                <span class="font-bold">From LKR 18,000</span>
+            </div>
+        </div>
+
+        <p class="mb-4"><strong>Why Our Prices Are Fair:</strong> Direct work = no agency fees · Local Kohuwala team = lower travel costs · Heritage/clinic expertise · Transparent quotes · Property manager discounts available.</p>
+
+        <div class="bg-primary/10 p-6 rounded-2xl text-center">
+            <span class="material-symbols-outlined text-primary align-middle">verified</span>
+            <span class="font-bold"> Price Match Promise:</span> Found a lower written quote from a licensed plumber in Kohuwala? We'll match it.
+        </div>
+    </div>
+
+    <!-- Local Area Coverage -->
+    <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-4">Areas We Cover in & Around Kohuwala</h2>
+    
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 mb-12">
+        <h3 class="font-bold mb-3">Kohuwala Core (15-20 min):</h3>
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Narahenpita Road</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Kohuwala Town</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Canal-adjacent zones</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Heritage home clusters</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">New apartment complexes</span>
+        </div>
+        
+        <h3 class="font-bold mb-3">Greater Kohuwala (20-30 min):</h3>
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Nugegoda</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Narahenpita</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Borella</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Rajagiriya</span>
+        </div>
+        
+        <h3 class="font-bold mb-3">Nearby Suburbs (30-40 min):</h3>
+        <div class="flex flex-wrap gap-2">
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Kotte</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Nawala</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Battaramulla</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Dehiwala</span>
+            <span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Mount Lavinia</span>
+        </div>
+    </div>
+
+    <!-- Hyper-Local FAQ -->
+    <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-8">Kohuwala Plumbing FAQs</h2>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">How fast can you arrive in Kohuwala?</h3>
+            <p class="text-slate-600 dark:text-slate-400">15-25 minutes for most locations. Technicians stationed near Narahenpita Road and Nugegoda border for rapid response.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">Do you service heritage/colonial-era homes?</h3>
+            <p class="text-slate-600 dark:text-slate-400">Yes. We specialize in careful, non-invasive repairs for 1940s-70s properties, preserving historical integrity. Ask about our heritage package.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">Do you service clinics on Narahenpita Road?</h3>
+            <p class="text-slate-600 dark:text-slate-400">Absolutely. We offer sanitation-critical repairs, backflow prevention, and after-hours work to minimize patient disruption.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">Why do drains block frequently during monsoon?</h3>
+            <p class="text-slate-600 dark:text-slate-400">High-density living + older drainage + canal geography = frequent blockages. Preventive drain cleaning (LKR 2,000) available.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">Do you charge extra for heritage homes?</h3>
+            <p class="text-slate-600 dark:text-slate-400">No. Specialized care at standard rates. Heritage properties welcome.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <h3 class="font-bold text-lg mb-2">Do you offer monsoon-prep checks for canal-area homes?</h3>
+            <p class="text-slate-600 dark:text-slate-400">Yes. LKR 2,500 drain & gutter inspections specific to canal-adjacent properties — includes backflow check and flood-risk report.</p>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-8">What Kohuwala Residents & Business Owners Say</h2>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <div class="testimonial-card bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <div class="flex text-primary mb-2">★★★★★</div>
+            <p class="mb-3">"Called at 7PM for a blocked drain in our heritage home near Narahenpita Road. They arrived in 20 minutes, understood our colonial-era plumbing, and fixed it without damaging original fixtures. Highly professional."</p>
+            <p class="font-semibold">— Chamali R., Kohuwala Heritage Home Owner</p>
+        </div>
+        <div class="testimonial-card bg-white dark:bg-slate-800 p-6 rounded-2xl">
+            <div class="flex text-primary mb-2">★★★★★</div>
+            <p class="mb-3">"Renovated our clinic bathroom with SIX7. They worked around our patient schedule, used quality parts, and stayed on budget. Great for Kohuwala medical facilities!"</p>
+            <p class="font-semibold">— Dr. Priyantha K., Clinic Owner</p>
+        </div>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="flex flex-wrap gap-4 justify-center mb-12">
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">handshake</span> Direct work — no agency fees</span>
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">schedule</span> 15-25 min arrival</span>
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">receipt</span> Written quote first</span>
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">verified</span> 90-day warranty</span>
+        <span class="badge bg-slate-100 dark:bg-slate-800 px-5 py-3 rounded-full font-semibold flex items-center gap-2"><span class="material-symbols-outlined text-primary">account_balance</span> Heritage experts</span>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="bg-primary rounded-3xl p-8 md:p-12 text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-six7-navy mb-4">Ready to Fix Your Kohuwala Plumbing?</h2>
+        <p class="text-xl text-six7-navy/80 mb-6">Don't let a plumbing problem disrupt your home, apartment, or business in Kohuwala.</p>
+        <p class="text-3xl md:text-4xl font-black mb-4">
+            <a href="tel:+94758244216" class="text-six7-navy hover:underline">
+                +94 75 824 4216
+            </a>
+        </p>
+        <p class="text-lg mb-6">
+            💬 <a href="https://wa.me/94758244216?text=Hi%20SIX7%2C%20I%20need%20a%20plumber%20in%20Kohuwala%20[Heritage%20Home%2FApartment%2FNarahenpita%20Road%2FClinic%2Fetc.]%20-%20" class="text-six7-navy font-semibold underline">Send Photos on WhatsApp (include "Kohuwala")</a>
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+            <span class="bg-six7-navy/20 px-5 py-3 rounded-full font-semibold">✅ No call-out fee with repair</span>
+            <span class="bg-six7-navy/20 px-5 py-3 rounded-full font-semibold">✅ Written quote before work</span>
+            <span class="bg-six7-navy/20 px-5 py-3 rounded-full font-semibold">✅ 90-day warranty</span>
+        </div>
+    </div>
+
+    <!-- Related Links -->
+    <div class="text-center mb-12">
+        <p class="text-slate-600 dark:text-slate-400">
+            Nearby areas: <a href="/areas/nugegoda" class="text-primary hover:underline">Nugegoda</a> · <a href="/areas/narahenpita" class="text-primary hover:underline">Narahenpita</a> · <a href="/areas/borella" class="text-primary hover:underline">Borella</a> · <a href="/areas/rajagiriya" class="text-primary hover:underline">Rajagiriya</a><br>
+            Related services: <a href="/services/emergency-leak-repair" class="text-primary hover:underline">Leak Repair</a> · <a href="/services/drain-unclogging" class="text-primary hover:underline">Drain Unclogging</a> · <a href="/commercial-plumbing" class="text-primary hover:underline">Commercial</a> · <a href="/services/bathroom-renovation" class="text-primary hover:underline">Bathroom Renovation</a> · <a href="/pricing" class="text-primary hover:underline">Pricing</a>
+        </p>
+    </div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-six7-navy text-white pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-six7-navy">
+<span class="material-symbols-outlined text-xl">plumbing</span>
+</div>
+<h4 class="text-xl font-black">SIX7 PLUMBING</h4>
+</div>
+<p class="text-slate-400 text-sm">Colombo's most trusted emergency plumbing service.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a href="/" class="hover:text-primary">Home</a></li>
+<li><a href="/services" class="hover:text-primary">Services</a></li>
+<li><a href="/commercial-plumbing" class="hover:text-primary">Commercial</a></li>
+<li><a href="/areas" class="hover:text-primary">Areas</a></li>
+<li><a href="/pricing" class="hover:text-primary">Pricing</a></li>
+<li><a href="/faq" class="hover:text-primary">FAQ</a></li>
+<li><a href="/contact" class="hover:text-primary">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Contact</h4>
+<div class="space-y-2 text-sm text-slate-400">
+<a href="tel:+94758244216" class="flex items-center gap-2 hover:text-primary">
+<span class="material-symbols-outlined text-primary">call</span> +94 75 824 4216
+        </a>
+<a href="mailto:plumbing@six7.lk" class="flex items-center gap-2 hover:text-primary">
+<span class="material-symbols-outlined text-primary">mail</span> plumbing@six7.lk
+        </a>
+<a href="https://wa.me/94758244216" class="flex items-center gap-2 hover:text-primary">
+<span class="material-symbols-outlined text-primary">chat</span> WhatsApp
+        </a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-4">Service Areas</h4>
+<p class="text-sm text-slate-400">Colombo 01-15, Dehiwala, Mount Lavinia, Kotte, Nugegoda, Battaramulla, Rajagiriya, Kaduwela, Malabe, Moratuwa, Piliyandala, Maharagama, Boralesgamuwa, Nawala, Kottawa, Attidiya, Kohuwala</p>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 text-center text-sm text-slate-500">
+<p>© 2026 SIX7 Plumbing. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+    document.getElementById('mobileMenu').classList.toggle('active');
+    document.getElementById('menuOverlay').classList.toggle('active');
+}
+
+// Form error message
+document.getElementById('areaForm')?.addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formError').style.display = 'flex';
+    document.getElementById('formError').scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+</script>
+</body>
+</html>
