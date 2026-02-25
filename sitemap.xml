@@ -1,46 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Root -->
+  <!--  Main Pages  -->
   <url>
     <loc>https://plumbing.six7.lk/</loc>
     <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-24</lastmod>
   </url>
-
-  <!-- Services -->
-  <url><loc>https://plumbing.six7.lk/services/</loc></url>
-  <url><loc>https://plumbing.six7.lk/services/leak-detection-repair/</loc></url>
-  <url><loc>https://plumbing.six7.lk/services/drain-unclogging/</loc></url>
-  <url><loc>https://plumbing.six7.lk/services/tap-installation</loc></url>
-  <url><loc>https://plumbing.six7.lk/services/water-pump-repair/</loc></url>
-  <url><loc>https://plumbing.six7.lk/services/bathroom-renovation/</loc></url>
-
-  <!-- Commercial -->
-  <url><loc>https://plumbing.six7.lk/commercial-plumbing/</loc></url>
-
-  <!-- Areas -->
-  <url><loc>https://plumbing.six7.lk/areas/kotte/</loc></url>
-  <url><loc>https://plumbing.six7.lk/areas/mt-lavinia</loc></url>
-  <url><loc>https://plumbing.six7.lk/areas/nugegoda/</loc></url>
-  <url><loc>https://plumbing.six7.lk/areas/dehiwala</loc></url>
-  <url><loc>https://plumbing.six7.lk/areas/maharagama/</loc></url>
-  <url><loc>https://plumbing.six7.lk/areas/moratuwa/</loc></url>
-  <url><loc>https://plumbing.six7.lk/areas/piliyandala/</loc></url>
-  <url><loc>https://plumbing.six7.lk/areas/attidiya/</loc></url>
-  <url><loc>https://plumbing.six7.lk/areas/kottawa/</loc></url>
-  <url><loc>https://plumbing.six7.lk/areas/kohuwala/</loc></url>
-
-  <!-- Pricing -->
-  <url><loc>https://plumbing.six7.lk/pricing/</loc></url>
-
-  <!-- FAQ -->
-  <url><loc>https://plumbing.six7.lk/faq/</loc></url>
-
-  <!-- Contact -->
-  <url><loc>https://plumbing.six7.lk/contact/</loc></url>
-
-  <!-- Direct Call / WhatsApp -->
-  <url><loc>https://plumbing.six7.lk/call/</loc></url>
-  <url><loc>https://plumbing.six7.lk/whatsapp/</loc></url>
-
+  
+  <!--  Service Pages  -->
+  <url>
+    <loc>https://plumbing.six7.lk/services/</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/services/leak-detection-repair/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/services/drain-unclogging/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/services/tap-installation/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/services/water-pump-repair/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/services/bathroom-renovation/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  
+  <!--  Commercial Plumbing  -->
+  <url>
+    <loc>https://plumbing.six7.lk/commercial-plumbing/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  
+  <!--  Service Areas  -->
+  <url>
+    <loc>https://plumbing.six7.lk/areas/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/areas/kotte/</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/areas/mt-lavinia/</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/areas/nugegoda/</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/areas/dehiwala/</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/areas/maharagama/</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/areas/moratuwa/</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/areas/piliyandala/</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/areas/attidiya/</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/areas/kottawa/</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/areas/kohuwala/</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  
+  <!--  Information Pages  -->
+  <url>
+    <loc>https://plumbing.six7.lk/pricing/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/faq/</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/contact/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  
+  <!--  Conversion Pages  -->
+  <url>
+    <loc>https://plumbing.six7.lk/call/</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://plumbing.six7.lk/whatsapp/</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+    <lastmod>2026-02-24</lastmod>
+  </url>
 </urlset>
