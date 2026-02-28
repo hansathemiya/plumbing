@@ -2,7 +2,7 @@
 <html class="light" lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" name="viewport"/>
 <title>SIX7 Plumbing | Emergency Plumber Colombo | 24/7 & Commercial</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
@@ -43,7 +43,7 @@
         }
     </script>
 <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; width: 100%; }
         .glass { backdrop-filter: blur(12px); background-color: rgba(248, 246, 245, 0.8); }
         .dark .glass { background-color: rgba(35, 22, 15, 0.8); }
         
@@ -52,13 +52,14 @@
             position: fixed;
             top: 0;
             right: -100%;
-            width: 280px;
+            width: 85%;
+            max-width: 320px;
             height: 100vh;
             background: white;
             z-index: 9999;
             transition: 0.3s ease-in-out;
             box-shadow: -5px 0 30px rgba(0,0,0,0.1);
-            padding: 80px 24px 24px;
+            padding: 80px 20px 24px;
         }
         .mobile-menu.active {
             right: 0;
@@ -83,16 +84,16 @@
         /* Floating Buttons */
         .floating-buttons {
             position: fixed;
-            bottom: 24px;
-            right: 24px;
+            bottom: 20px;
+            right: 16px;
             z-index: 9997;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
         .float-btn {
-            width: 56px;
-            height: 56px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -101,9 +102,6 @@
             transition: 0.2s;
             color: white;
         }
-        .float-btn:hover {
-            transform: scale(1.1);
-        }
         .float-btn.call {
             background: #b13e3e;
         }
@@ -111,9 +109,24 @@
             background: #25D366;
         }
         
-        @media (max-width: 768px) {
-            body {
-                padding-bottom: 0;
+        /* Fix horizontal scroll */
+        .max-w-7xl {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Container padding for mobile */
+        @media (max-width: 640px) {
+            .px-6 {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2 !important;
+            }
+            h2 {
+                font-size: 1.875rem !important;
             }
         }
         
@@ -134,18 +147,69 @@
         /* Service card styling */
         .service-card {
             transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 16px 12px !important;
         }
-        .service-card:hover {
-            transform: translateY(-4px);
+        @media (max-width: 480px) {
+            .service-card span:last-child {
+                font-size: 0.875rem;
+            }
         }
         
-        /* Area pill styling */
+        /* Area pill styling - make them wrap better */
         .area-pill {
             transition: all 0.2s;
+            display: inline-block;
+            margin: 4px;
+            padding: 8px 16px;
+            font-size: 0.875rem;
+            white-space: nowrap;
         }
-        .area-pill:hover {
-            background: #0b3b4f;
-            color: white;
+        
+        .flex-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 4px;
+        }
+        
+        /* Fix grid for mobile */
+        @media (max-width: 480px) {
+            .grid-cols-2 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Make tables/containers not overflow */
+        .bg-white, .dark\:bg-slate-800 {
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Fix stat display on small screens */
+        .flex.gap-8 {
+            gap: 1.5rem;
+        }
+        @media (max-width: 360px) {
+            .flex.gap-8 {
+                gap: 0.75rem;
+            }
+        }
+        
+        /* Ensure buttons don't overflow */
+        .flex-wrap.gap-4 {
+            gap: 0.75rem;
+        }
+        .flex-wrap.gap-4 a {
+            flex: 1 1 auto;
+            min-width: 140px;
         }
     </style>
 
@@ -183,23 +247,23 @@
 }
 </script>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300 overflow-x-hidden w-full">
 <!-- Emergency Bar -->
-<div class="w-full bg-emergency py-2 px-4 text-center sticky top-0 z-50">
-<p class="text-white text-sm font-bold tracking-wide flex items-center justify-center gap-2">
+<div class="w-full bg-emergency py-2 px-3 text-center sticky top-0 z-50">
+<p class="text-white text-xs sm:text-sm font-bold tracking-wide flex items-center justify-center gap-1 sm:gap-2">
 <span class="material-symbols-outlined text-sm">emergency_home</span>
-        24/7 EMERGENCY SERVICE: <a class="underline hover:no-underline" href="tel:+94758244216">+94 75 824 4216</a>
+        24/7 EMERGENCY: <a class="underline hover:no-underline font-bold" href="tel:+94758244216">+94 75 824 4216</a>
 </p>
 </div>
 
 <!-- Sticky Header -->
-<header class="sticky top-[36px] z-40 glass border-b border-slate-200 dark:border-slate-800">
-<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-<div class="flex items-center gap-2">
-<div class="size-10 bg-six7-navy rounded-lg flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-2xl">plumbing</span>
+<header class="sticky top-[34px] sm:top-[36px] z-40 glass border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+<div class="flex items-center gap-1 sm:gap-2">
+<div class="size-8 sm:size-10 bg-six7-navy rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl sm:text-2xl">plumbing</span>
 </div>
-<a href="/" class="text-2xl font-black text-six7-navy dark:text-slate-100 tracking-tight">SIX7<span class="text-primary">.</span>PLUMBING</a>
+<a href="/" class="text-xl sm:text-2xl font-black text-six7-navy dark:text-slate-100 tracking-tight">SIX7<span class="text-primary">.</span>PLUMBING</a>
 </div>
 
 <!-- Desktop Navigation -->
@@ -227,7 +291,7 @@
 
 <!-- Mobile Menu Button -->
 <button class="md:hidden p-2" onclick="toggleMobileMenu()">
-<span class="material-symbols-outlined text-3xl">menu</span>
+<span class="material-symbols-outlined text-2xl sm:text-3xl">menu</span>
 </button>
 </div>
 </header>
@@ -237,10 +301,10 @@
 <div class="mobile-menu" id="mobileMenu">
 <div class="flex justify-end mb-8">
 <button onclick="toggleMobileMenu()">
-<span class="material-symbols-outlined">close</span>
+<span class="material-symbols-outlined text-2xl">close</span>
 </button>
 </div>
-<nav class="flex flex-col gap-6">
+<nav class="flex flex-col gap-5">
 <a class="text-lg font-semibold text-primary" href="/" onclick="toggleMobileMenu()">Home</a>
 <a class="text-lg font-semibold hover:text-primary transition-colors" href="/services" onclick="toggleMobileMenu()">Services</a>
 <a class="text-lg font-semibold hover:text-primary transition-colors" href="/commercial-plumbing" onclick="toggleMobileMenu()">Commercial</a>
@@ -248,7 +312,7 @@
 <a class="text-lg font-semibold hover:text-primary transition-colors" href="/pricing" onclick="toggleMobileMenu()">Pricing</a>
 <a class="text-lg font-semibold hover:text-primary transition-colors" href="/faq" onclick="toggleMobileMenu()">FAQ</a>
 <a class="text-lg font-semibold hover:text-primary transition-colors" href="/contact" onclick="toggleMobileMenu()">Contact</a>
-<hr class="my-2 border-slate-200 dark:border-slate-700"/>
+<hr class="my-3 border-slate-200 dark:border-slate-700"/>
 <a class="flex items-center gap-2 bg-whatsapp text-white px-5 py-3 rounded-xl font-bold text-sm" href="https://wa.me/94758244216" onclick="toggleMobileMenu()">
 <span class="material-symbols-outlined">chat</span> WhatsApp
         </a>
@@ -261,63 +325,63 @@
 <!-- Floating Buttons -->
 <div class="floating-buttons md:hidden">
 <a href="tel:+94758244216" class="float-btn call">
-<span class="material-symbols-outlined">call</span>
+<span class="material-symbols-outlined text-2xl">call</span>
 </a>
 <a href="https://wa.me/94758244216" class="float-btn wa">
-<span class="material-symbols-outlined">chat</span>
+<span class="material-symbols-outlined text-2xl">chat</span>
 </a>
 </div>
 
-<main>
+<main class="w-full overflow-x-hidden">
 <!-- Hero Section -->
-<section class="pt-12 pb-8">
-<div class="max-w-7xl mx-auto px-6">
-<div class="flex flex-col lg:flex-row items-center gap-12">
-<div class="flex-1">
-<div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full font-bold text-sm mb-6">
+<section class="pt-8 sm:pt-12 pb-6 sm:pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="flex flex-col lg:flex-row items-center gap-8 sm:gap-12">
+<div class="flex-1 w-full">
+<div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm mb-4 sm:mb-6">
 <span class="material-symbols-outlined text-sm">bolt</span>
                 60-min arrival guarantee
             </div>
-<h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-six7-navy dark:text-slate-100 leading-tight tracking-tight mb-6">
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-six7-navy dark:text-slate-100 leading-tight tracking-tight mb-4 sm:mb-6">
                 Emergency plumber, <span class="text-primary">anytime</span> — even 1AM.
             </h1>
-<p class="text-xl text-slate-600 dark:text-slate-400 mb-8">
+<p class="text-base sm:text-xl text-slate-600 dark:text-slate-400 mb-6 sm:mb-8">
                 Colombo's most direct & fair-priced plumbing. We handle everything from tap leaks to large commercial projects.
             </p>
 
 <!-- Stats -->
-<div class="flex gap-8 mb-8">
+<div class="flex gap-4 sm:gap-8 mb-6 sm:mb-8">
 <div>
-<div class="text-3xl font-black text-six7-navy">4.9</div>
-<div class="text-sm text-slate-500">rated</div>
+<div class="text-2xl sm:text-3xl font-black text-six7-navy">4.9</div>
+<div class="text-xs sm:text-sm text-slate-500">rated</div>
 </div>
 <div>
-<div class="text-3xl font-black text-six7-navy">24/7</div>
-<div class="text-sm text-slate-500">live answer</div>
+<div class="text-2xl sm:text-3xl font-black text-six7-navy">24/7</div>
+<div class="text-xs sm:text-sm text-slate-500">live answer</div>
 </div>
 <div>
-<div class="text-3xl font-black text-six7-navy">100+</div>
-<div class="text-sm text-slate-500">commercial clients</div>
+<div class="text-2xl sm:text-3xl font-black text-six7-navy">100+</div>
+<div class="text-xs sm:text-sm text-slate-500">commercial clients</div>
 </div>
 </div>
 
 <!-- Hero Actions -->
-<div class="flex flex-wrap gap-4">
-<a href="tel:+94758244216" class="bg-primary text-white px-8 py-4 rounded-xl font-black text-lg shadow-xl shadow-primary/20 hover:scale-105 transition-transform flex items-center gap-3">
-<span class="material-symbols-outlined">call</span>
+<div class="flex flex-wrap gap-3 sm:gap-4">
+<a href="tel:+94758244216" class="bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-black text-base sm:text-lg shadow-xl shadow-primary/20 hover:scale-105 transition-transform flex items-center gap-2 sm:gap-3">
+<span class="material-symbols-outlined text-lg sm:text-xl">call</span>
                 Emergency Call
             </a>
-<a href="https://wa.me/94758244216" class="border-2 border-six7-navy dark:border-slate-700 px-8 py-4 rounded-xl font-black text-lg text-six7-navy dark:text-slate-100 hover:bg-six7-navy/5 transition-colors flex items-center gap-3">
-<span class="material-symbols-outlined">chat</span>
+<a href="https://wa.me/94758244216" class="border-2 border-six7-navy dark:border-slate-700 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-black text-base sm:text-lg text-six7-navy dark:text-slate-100 hover:bg-six7-navy/5 transition-colors flex items-center gap-2 sm:gap-3">
+<span class="material-symbols-outlined text-lg sm:text-xl">chat</span>
                 Free Quote
             </a>
 </div>
 </div>
 
 <!-- Hero Image -->
-<div class="flex-1 flex justify-center">
-<div class="bg-six7-navy/5 p-16 rounded-full">
-<span class="material-symbols-outlined text-9xl text-six7-navy/30">plumbing</span>
+<div class="flex-1 flex justify-center mt-6 lg:mt-0">
+<div class="bg-six7-navy/5 p-8 sm:p-16 rounded-full">
+<span class="material-symbols-outlined text-7xl sm:text-9xl text-six7-navy/30">plumbing</span>
 </div>
 </div>
 </div>
@@ -325,9 +389,9 @@
 </section>
 
 <!-- Quick Quote Card -->
-<section class="max-w-7xl mx-auto px-6 py-8">
-<div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-10 shadow-xl border border-slate-100 dark:border-slate-700">
-<h2 class="text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-6 flex items-center gap-2">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+<div class="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl border border-slate-100 dark:border-slate-700">
+<h2 class="text-xl sm:text-2xl md:text-3xl font-black text-six7-navy dark:text-slate-100 mb-4 sm:mb-6 flex items-center gap-2">
 <span class="material-symbols-outlined text-primary">bolt</span>
             Get free estimate — reply within 15 min
         </h2>
@@ -336,17 +400,17 @@
 <form id="leadForm">
 <div class="form-error-message" id="formError" style="display: none;">
 <span class="material-symbols-outlined text-sm">error</span>
-<span>Need immediate assistance? Call or text <a href="tel:+94758244216" class="font-bold underline">+94 75 824 4216</a> for instant response</span>
+<span>Need immediate assistance? Call <a href="tel:+94758244216" class="font-bold underline">+94 75 824 4216</a></span>
 </div>
 
-<div class="grid md:grid-cols-2 gap-4 mb-4">
-<input type="text" placeholder="Your name" required class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
-<input type="tel" placeholder="Phone (emergency)" required class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
+<input type="text" placeholder="Your name" required class="px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm sm:text-base">
+<input type="tel" placeholder="Phone (emergency)" required class="px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm sm:text-base">
 </div>
 
-<div class="grid md:grid-cols-2 gap-4 mb-4">
-<input type="text" placeholder="Suburb (e.g., Colombo 3, Kotte)" required class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
-<select class="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
+<input type="text" placeholder="Suburb (e.g., Colombo 3, Kotte)" required class="px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm sm:text-base">
+<select class="px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm sm:text-base">
 <option>Service needed?</option>
 <option>Emergency leak / flood</option>
 <option>Drain unclog</option>
@@ -356,236 +420,236 @@
 </select>
 </div>
 
-<textarea rows="2" placeholder="Tell us more or just write '1AM emergency' ..." class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 mb-4"></textarea>
+<textarea rows="2" placeholder="Tell us more or just write '1AM emergency' ..." class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm sm:text-base mb-3 sm:mb-4"></textarea>
 
-<button type="submit" class="w-full bg-six7-navy text-white py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
+<button type="submit" class="w-full bg-six7-navy text-white py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
 <span class="material-symbols-outlined">send</span>
             Request urgent callback
         </button>
 </form>
 
-<div class="mt-4 bg-slate-100 dark:bg-slate-700 p-4 rounded-xl text-center text-sm">
-<span class="material-symbols-outlined text-sm align-middle">dark_mode</span> 1AM? We answer: <strong class="text-six7-navy dark:text-white">+94 75 824 4216</strong> (direct line)
+<div class="mt-3 sm:mt-4 bg-slate-100 dark:bg-slate-700 p-3 sm:p-4 rounded-xl text-center text-xs sm:text-sm">
+<span class="material-symbols-outlined text-sm align-middle">dark_mode</span> 1AM? We answer: <strong class="text-six7-navy dark:text-white">+94 75 824 4216</strong>
         </div>
 </div>
 </section>
 
 <!-- Services Grid -->
-<section class="max-w-7xl mx-auto px-6 py-16">
-<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-8 flex items-center gap-3">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-5 sm:mb-8 flex items-center gap-2 sm:gap-3">
 <span class="material-symbols-outlined text-primary">build</span>
         What needs fixing?
     </h2>
 
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-<a href="/services/emergency-leak-repair" class="service-card bg-white dark:bg-slate-800 p-6 rounded-2xl text-center hover:shadow-lg border border-slate-100 dark:border-slate-700">
-<span class="material-symbols-outlined text-4xl text-six7-navy mb-2">water_damage</span>
-<span class="font-semibold">Leak repair</span>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4">
+<a href="/services/emergency-leak-repair" class="service-card bg-white dark:bg-slate-800 p-3 sm:p-6 rounded-xl sm:rounded-2xl text-center hover:shadow-lg border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-2xl sm:text-4xl text-six7-navy mb-1 sm:mb-2">water_damage</span>
+<span class="font-semibold text-xs sm:text-base">Leak repair</span>
 </a>
-<a href="/services/drain-unclogging" class="service-card bg-white dark:bg-slate-800 p-6 rounded-2xl text-center hover:shadow-lg border border-slate-100 dark:border-slate-700">
-<span class="material-symbols-outlined text-4xl text-six7-navy mb-2">cleaning_services</span>
-<span class="font-semibold">Unclog drains</span>
+<a href="/services/drain-unclogging" class="service-card bg-white dark:bg-slate-800 p-3 sm:p-6 rounded-xl sm:rounded-2xl text-center hover:shadow-lg border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-2xl sm:text-4xl text-six7-navy mb-1 sm:mb-2">cleaning_services</span>
+<span class="font-semibold text-xs sm:text-base">Unclog drains</span>
 </a>
-<a href="/services/tap-installation" class="service-card bg-white dark:bg-slate-800 p-6 rounded-2xl text-center hover:shadow-lg border border-slate-100 dark:border-slate-700">
-<span class="material-symbols-outlined text-4xl text-six7-navy mb-2">shower</span>
-<span class="font-semibold">Tap/shower install</span>
+<a href="/services/tap-installation" class="service-card bg-white dark:bg-slate-800 p-3 sm:p-6 rounded-xl sm:rounded-2xl text-center hover:shadow-lg border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-2xl sm:text-4xl text-six7-navy mb-1 sm:mb-2">shower</span>
+<span class="font-semibold text-xs sm:text-base">Tap install</span>
 </a>
-<a href="/services/water-pump-repair" class="service-card bg-white dark:bg-slate-800 p-6 rounded-2xl text-center hover:shadow-lg border border-slate-100 dark:border-slate-700">
-<span class="material-symbols-outlined text-4xl text-six7-navy mb-2">water_pump</span>
-<span class="font-semibold">Pump/tank repair</span>
+<a href="/services/water-pump-repair" class="service-card bg-white dark:bg-slate-800 p-3 sm:p-6 rounded-xl sm:rounded-2xl text-center hover:shadow-lg border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-2xl sm:text-4xl text-six7-navy mb-1 sm:mb-2">water_pump</span>
+<span class="font-semibold text-xs sm:text-base">Pump repair</span>
 </a>
-<a href="/commercial-plumbing" class="service-card bg-white dark:bg-slate-800 p-6 rounded-2xl text-center hover:shadow-lg border border-slate-100 dark:border-slate-700">
-<span class="material-symbols-outlined text-4xl text-six7-navy mb-2">business_center</span>
-<span class="font-semibold">Commercial projects</span>
+<a href="/commercial-plumbing" class="service-card bg-white dark:bg-slate-800 p-3 sm:p-6 rounded-xl sm:rounded-2xl text-center hover:shadow-lg border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-2xl sm:text-4xl text-six7-navy mb-1 sm:mb-2">business_center</span>
+<span class="font-semibold text-xs sm:text-base">Commercial</span>
 </a>
-<a href="/services/bathroom-renovation" class="service-card bg-white dark:bg-slate-800 p-6 rounded-2xl text-center hover:shadow-lg border border-slate-100 dark:border-slate-700">
-<span class="material-symbols-outlined text-4xl text-six7-navy mb-2">bathroom</span>
-<span class="font-semibold">Budget renovations</span>
+<a href="/services/bathroom-renovation" class="service-card bg-white dark:bg-slate-800 p-3 sm:p-6 rounded-xl sm:rounded-2xl text-center hover:shadow-lg border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-2xl sm:text-4xl text-six7-navy mb-1 sm:mb-2">bathroom</span>
+<span class="font-semibold text-xs sm:text-base">Renovations</span>
 </a>
 </div>
 </section>
 
 <!-- Service Areas -->
-<section class="max-w-7xl mx-auto px-6 py-16">
-<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-8 flex items-center gap-3">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-5 sm:mb-8 flex items-center gap-2 sm:gap-3">
 <span class="material-symbols-outlined text-primary">location_on</span>
-        Plumbers near you in Colombo
+        Plumbers near you
     </h2>
 
-<div class="flex flex-wrap gap-3 mb-6">
-<a href="/areas/colombo-1" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 1</a>
-<a href="/areas/colombo-2" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 2</a>
-<a href="/areas/colombo-3" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 3</a>
-<a href="/areas/colombo-4" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 4</a>
-<a href="/areas/colombo-5" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 5</a>
-<a href="/areas/colombo-6" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 6</a>
-<a href="/areas/colombo-7" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 7</a>
-<a href="/areas/kotte" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Kotte</a>
-<a href="/areas/dehiwala" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Dehiwala</a>
-<a href="/areas/mt-lavinia" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Mt Lavinia</a>
-<a href="/areas/nugegoda" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Nugegoda</a>
-<a href="/areas/maharagama" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Maharagama</a>
-<a href="/areas/battaramulla" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Battaramulla</a>
-<a href="/areas/rajagiriya" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Rajagiriya</a>
-<a href="/areas/moratuwa" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Moratuwa</a>
-<a href="/areas/kelaniya" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Kelaniya</a>
-<a href="/areas/negombo" class="area-pill bg-white dark:bg-slate-800 px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Negombo</a>
+<div class="flex flex-wrap gap-1.5 sm:gap-3 mb-4 sm:mb-6 justify-start">
+<a href="/areas/colombo-1" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 1</a>
+<a href="/areas/colombo-2" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 2</a>
+<a href="/areas/colombo-3" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 3</a>
+<a href="/areas/colombo-4" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 4</a>
+<a href="/areas/colombo-5" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 5</a>
+<a href="/areas/colombo-6" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 6</a>
+<a href="/areas/colombo-7" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Colombo 7</a>
+<a href="/areas/kotte" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Kotte</a>
+<a href="/areas/dehiwala" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Dehiwala</a>
+<a href="/areas/mt-lavinia" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Mt Lavinia</a>
+<a href="/areas/nugegoda" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Nugegoda</a>
+<a href="/areas/maharagama" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Maharagama</a>
+<a href="/areas/battaramulla" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Battaramulla</a>
+<a href="/areas/rajagiriya" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Rajagiriya</a>
+<a href="/areas/moratuwa" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Moratuwa</a>
+<a href="/areas/kelaniya" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Kelaniya</a>
+<a href="/areas/negombo" class="area-pill bg-white dark:bg-slate-800 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 hover:bg-six7-navy hover:text-white transition-colors">Negombo</a>
 </div>
 
 <div class="text-right">
-<a href="/areas" class="text-primary font-semibold hover:underline inline-flex items-center gap-1">
+<a href="/areas" class="text-primary font-semibold hover:underline inline-flex items-center gap-1 text-sm sm:text-base">
             All suburbs <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </a>
 </div>
 </section>
 
 <!-- Pricing Section -->
-<section class="max-w-7xl mx-auto px-6 py-16">
-<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-8 flex items-center gap-3">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-5 sm:mb-8 flex items-center gap-2 sm:gap-3">
 <span class="material-symbols-outlined text-primary">payments</span>
         Fair pricing — no surprises
     </h2>
 
-<div class="grid md:grid-cols-3 gap-6 mb-8">
-<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl text-center">
-<span class="material-symbols-outlined text-4xl text-six7-navy mb-4">handshake</span>
-<h3 class="text-xl font-bold mb-2">Direct work</h3>
-<p class="text-slate-600 dark:text-slate-400">No agency fees, just our team. You pay less.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+<div class="bg-white dark:bg-slate-800 p-5 sm:p-8 rounded-xl sm:rounded-2xl text-center">
+<span class="material-symbols-outlined text-3xl sm:text-4xl text-six7-navy mb-2 sm:mb-4">handshake</span>
+<h3 class="text-base sm:text-xl font-bold mb-1 sm:mb-2">Direct work</h3>
+<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">No agency fees, just our team. You pay less.</p>
 </div>
-<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl text-center">
-<span class="material-symbols-outlined text-4xl text-six7-navy mb-4">tune</span>
-<h3 class="text-xl font-bold mb-2">Economy or premium</h3>
-<p class="text-slate-600 dark:text-slate-400">Choose local or imported parts — you decide.</p>
+<div class="bg-white dark:bg-slate-800 p-5 sm:p-8 rounded-xl sm:rounded-2xl text-center">
+<span class="material-symbols-outlined text-3xl sm:text-4xl text-six7-navy mb-2 sm:mb-4">tune</span>
+<h3 class="text-base sm:text-xl font-bold mb-1 sm:mb-2">Economy or premium</h3>
+<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Choose local or imported parts — you decide.</p>
 </div>
-<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl text-center">
-<span class="material-symbols-outlined text-4xl text-six7-navy mb-4">receipt</span>
-<h3 class="text-xl font-bold mb-2">Written quote</h3>
-<p class="text-slate-600 dark:text-slate-400">Know the cost before we start. No hidden fees.</p>
+<div class="bg-white dark:bg-slate-800 p-5 sm:p-8 rounded-xl sm:rounded-2xl text-center">
+<span class="material-symbols-outlined text-3xl sm:text-4xl text-six7-navy mb-2 sm:mb-4">receipt</span>
+<h3 class="text-base sm:text-xl font-bold mb-1 sm:mb-2">Written quote</h3>
+<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Know the cost before we start. No hidden fees.</p>
 </div>
 </div>
 
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl mb-6">
-<ul class="space-y-3">
-<li class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+<div class="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl mb-4 sm:mb-6">
+<ul class="space-y-2 sm:space-y-3">
+<li class="flex justify-between py-1 sm:py-2 border-b border-slate-100 dark:border-slate-700 text-sm sm:text-base">
 <span>Service Call</span>
-<span><strong>From LKR 1,500</strong> <span class="text-sm text-slate-500">(waived if work done)</span></span>
+<span><strong>From LKR 1,500</strong> <span class="text-xs sm:text-sm text-slate-500">(waived if work done)</span></span>
 </li>
-<li class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+<li class="flex justify-between py-1 sm:py-2 border-b border-slate-100 dark:border-slate-700 text-sm sm:text-base">
 <span>Leak Repair</span>
 <span><strong>From LKR 2,500</strong></span>
 </li>
-<li class="flex justify-between py-2">
+<li class="flex justify-between py-1 sm:py-2 text-sm sm:text-base">
 <span>Tap Installation</span>
 <span><strong>From LKR 1,000</strong></span>
 </li>
 </ul>
-<p class="text-sm text-slate-500 mt-4"><span class="material-symbols-outlined text-sm align-middle">info</span> Prices vary by parts & complexity. Free quote always.</p>
+<p class="text-xs sm:text-sm text-slate-500 mt-3 sm:mt-4"><span class="material-symbols-outlined text-sm align-middle">info</span> Prices vary by parts & complexity. Free quote always.</p>
 </div>
 
-<div class="bg-primary/10 p-6 rounded-2xl text-center font-semibold">
+<div class="bg-primary/10 p-4 sm:p-6 rounded-xl sm:rounded-2xl text-center font-semibold text-sm sm:text-base">
 <span class="material-symbols-outlined text-primary align-middle">verified</span>
         Found a cheaper quote? We'll match it.
     </div>
 </section>
 
 <!-- Commercial Banner -->
-<section class="max-w-7xl mx-auto px-6 py-8">
-<div class="bg-six7-navy text-white rounded-3xl p-8 md:p-12">
-<span class="material-symbols-outlined text-5xl mb-4 text-primary">hard_hat</span>
-<h2 class="text-3xl md:text-4xl font-black mb-4">We handle large commercial projects</h2>
-<p class="text-xl text-slate-300 mb-4">Offices · Apartments · Hotels · Construction sites</p>
-<p class="mb-6">Dedicated crews, bulk pricing, single point of contact.</p>
-<a href="/commercial-plumbing" class="inline-block bg-primary text-six7-navy px-8 py-4 rounded-xl font-black text-lg hover:bg-primary/90 transition-colors">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+<div class="bg-six7-navy text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12">
+<span class="material-symbols-outlined text-3xl sm:text-5xl mb-3 sm:mb-4 text-primary">hard_hat</span>
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-black mb-2 sm:mb-4">We handle large commercial projects</h2>
+<p class="text-base sm:text-xl text-slate-300 mb-3 sm:mb-4">Offices · Apartments · Hotels · Construction sites</p>
+<p class="text-sm sm:text-base mb-4 sm:mb-6">Dedicated crews, bulk pricing, single point of contact.</p>
+<a href="/commercial-plumbing" class="inline-block bg-primary text-six7-navy px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-black text-base sm:text-lg hover:bg-primary/90 transition-colors">
         Enquire for commercial work <span class="material-symbols-outlined align-middle">arrow_forward</span>
 </a>
 </div>
 </section>
 
 <!-- FAQ Section -->
-<section class="max-w-7xl mx-auto px-6 py-16">
-<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-8 flex items-center gap-3">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-5 sm:mb-8 flex items-center gap-2 sm:gap-3">
 <span class="material-symbols-outlined text-primary">help</span>
-        Quick answers for Colombo plumbing
+        Quick answers
     </h2>
 
-<div class="grid md:grid-cols-2 gap-6">
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
-<div class="flex items-start gap-3 mb-2">
-<span class="material-symbols-outlined text-primary">schedule</span>
-<h3 class="font-bold text-lg">Do you really answer at 1AM?</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+<div class="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl">
+<div class="flex items-start gap-2 sm:gap-3 mb-1 sm:mb-2">
+<span class="material-symbols-outlined text-primary text-lg sm:text-xl">schedule</span>
+<h3 class="font-bold text-sm sm:text-base">Do you really answer at 1AM?</h3>
 </div>
-<p class="text-slate-600 dark:text-slate-400 ml-10">Yes — 24/7 hotline: +94 75 824 4216. Night teams for bursts/floods.</p>
-</div>
-
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
-<div class="flex items-start gap-3 mb-2">
-<span class="material-symbols-outlined text-primary">business_center</span>
-<h3 class="font-bold text-lg">Can you handle a full office renovation?</h3>
-</div>
-<p class="text-slate-600 dark:text-slate-400 ml-10">Absolutely. We've done projects for banks, hotels, offices. Ask for commercial manager.</p>
+<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 ml-6 sm:ml-10">Yes — 24/7 hotline: +94 75 824 4216. Night teams for bursts/floods.</p>
 </div>
 
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
-<div class="flex items-start gap-3 mb-2">
-<span class="material-symbols-outlined text-primary">sell</span>
-<h3 class="font-bold text-lg">Are you cheaper than other plumbers?</h3>
+<div class="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl">
+<div class="flex items-start gap-2 sm:gap-3 mb-1 sm:mb-2">
+<span class="material-symbols-outlined text-primary text-lg sm:text-xl">business_center</span>
+<h3 class="font-bold text-sm sm:text-base">Can you handle a full office renovation?</h3>
 </div>
-<p class="text-slate-600 dark:text-slate-400 ml-10">Direct work = no middlemen. We'll match any written quote. Transparent pricing.</p>
-</div>
-
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
-<div class="flex items-start gap-3 mb-2">
-<span class="material-symbols-outlined text-primary">handyman</span>
-<h3 class="font-bold text-lg">Do you use local or imported parts?</h3>
-</div>
-<p class="text-slate-600 dark:text-slate-400 ml-10">Both. You choose economy (local) or premium (imported) based on budget.</p>
+<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 ml-6 sm:ml-10">Absolutely. We've done projects for banks, hotels, offices. Ask for commercial manager.</p>
 </div>
 
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
-<div class="flex items-start gap-3 mb-2">
-<span class="material-symbols-outlined text-primary">water_damage</span>
-<h3 class="font-bold text-lg">How do you detect hidden leaks?</h3>
+<div class="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl">
+<div class="flex items-start gap-2 sm:gap-3 mb-1 sm:mb-2">
+<span class="material-symbols-outlined text-primary text-lg sm:text-xl">sell</span>
+<h3 class="font-bold text-sm sm:text-base">Are you cheaper than other plumbers?</h3>
 </div>
-<p class="text-slate-600 dark:text-slate-400 ml-10">Acoustic detection & thermal imaging. Success rate over 95%.</p>
+<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 ml-6 sm:ml-10">Direct work = no middlemen. We'll match any written quote. Transparent pricing.</p>
 </div>
 
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
-<div class="flex items-start gap-3 mb-2">
-<span class="material-symbols-outlined text-primary">verified</span>
-<h3 class="font-bold text-lg">Are your plumbers insured?</h3>
+<div class="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl">
+<div class="flex items-start gap-2 sm:gap-3 mb-1 sm:mb-2">
+<span class="material-symbols-outlined text-primary text-lg sm:text-xl">handyman</span>
+<h3 class="font-bold text-sm sm:text-base">Do you use local or imported parts?</h3>
 </div>
-<p class="text-slate-600 dark:text-slate-400 ml-10">Yes, fully licensed & insured. Background-checked team.</p>
+<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 ml-6 sm:ml-10">Both. You choose economy (local) or premium (imported) based on budget.</p>
+</div>
+
+<div class="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl">
+<div class="flex items-start gap-2 sm:gap-3 mb-1 sm:mb-2">
+<span class="material-symbols-outlined text-primary text-lg sm:text-xl">water_damage</span>
+<h3 class="font-bold text-sm sm:text-base">How do you detect hidden leaks?</h3>
+</div>
+<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 ml-6 sm:ml-10">Acoustic detection & thermal imaging. Success rate over 95%.</p>
+</div>
+
+<div class="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl">
+<div class="flex items-start gap-2 sm:gap-3 mb-1 sm:mb-2">
+<span class="material-symbols-outlined text-primary text-lg sm:text-xl">verified</span>
+<h3 class="font-bold text-sm sm:text-base">Are your plumbers insured?</h3>
+</div>
+<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 ml-6 sm:ml-10">Yes, fully licensed & insured. Background-checked team.</p>
 </div>
 </div>
 </section>
 
 <!-- Testimonials -->
-<section class="max-w-7xl mx-auto px-6 py-16">
-<div class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-10">
-<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-8">Trusted by Colombo homeowners & businesses</h2>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+<div class="bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10">
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-5 sm:mb-8">Trusted by Colombo</h2>
 
-<div class="space-y-4">
-<div class="flex gap-4 pb-4 border-b border-slate-100 dark:border-slate-700">
-<span class="material-symbols-outlined text-primary text-3xl">format_quote</span>
+<div class="space-y-3 sm:space-y-4">
+<div class="flex gap-3 sm:gap-4 pb-3 sm:pb-4 border-b border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary text-2xl sm:text-3xl">format_quote</span>
 <div>
-<p>"Fixed burst pipe at 1AM, fast and fair." – <strong>Nimal, Cinnamon Gardens</strong></p>
-<div class="flex text-primary">★★★★★</div>
-</div>
-</div>
-
-<div class="flex gap-4 pb-4 border-b border-slate-100 dark:border-slate-700">
-<span class="material-symbols-outlined text-primary text-3xl">format_quote</span>
-<div>
-<p>"Handled our office plumbing project, great communication." – <strong>Hemas, C2</strong></p>
-<div class="flex text-primary">★★★★★</div>
+<p class="text-sm sm:text-base">"Fixed burst pipe at 1AM, fast and fair." – <strong>Nimal, Cinnamon Gardens</strong></p>
+<div class="flex text-primary text-sm">★★★★★</div>
 </div>
 </div>
 
-<div class="flex gap-4">
-<span class="material-symbols-outlined text-primary text-3xl">format_quote</span>
+<div class="flex gap-3 sm:gap-4 pb-3 sm:pb-4 border-b border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary text-2xl sm:text-3xl">format_quote</span>
 <div>
-<p>"Saved me 40% on bathroom renovation vs other quotes." – <strong>Kamal, Kotte</strong></p>
-<div class="flex text-primary">★★★★★</div>
+<p class="text-sm sm:text-base">"Handled our office plumbing project, great communication." – <strong>Hemas, C2</strong></p>
+<div class="flex text-primary text-sm">★★★★★</div>
+</div>
+</div>
+
+<div class="flex gap-3 sm:gap-4">
+<span class="material-symbols-outlined text-primary text-2xl sm:text-3xl">format_quote</span>
+<div>
+<p class="text-sm sm:text-base">"Saved me 40% on bathroom renovation vs other quotes." – <strong>Kamal, Kotte</strong></p>
+<div class="flex text-primary text-sm">★★★★★</div>
 </div>
 </div>
 </div>
@@ -594,21 +658,21 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-six7-navy text-white pt-16 pb-8">
-<div class="max-w-7xl mx-auto px-6">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<footer class="bg-six7-navy text-white pt-12 sm:pt-16 pb-6 sm:pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
 <div>
-<div class="flex items-center gap-2 mb-4">
-<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-six7-navy">
-<span class="material-symbols-outlined text-xl">plumbing</span>
+<div class="flex items-center gap-2 mb-3 sm:mb-4">
+<div class="size-7 sm:size-8 bg-primary rounded-lg flex items-center justify-center text-six7-navy">
+<span class="material-symbols-outlined text-base sm:text-xl">plumbing</span>
 </div>
-<h4 class="text-xl font-black">SIX7 PLUMBING</h4>
+<h4 class="text-base sm:text-xl font-black">SIX7 PLUMBING</h4>
 </div>
-<p class="text-slate-400 text-sm">Colombo's most trusted emergency plumbing service.</p>
+<p class="text-xs sm:text-sm text-slate-400">Colombo's most trusted emergency plumbing service.</p>
 </div>
 <div>
-<h4 class="font-bold mb-4">Quick Links</h4>
-<ul class="space-y-2 text-sm text-slate-400">
+<h4 class="font-bold text-sm sm:text-base mb-3 sm:mb-4">Quick Links</h4>
+<ul class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-slate-400">
 <li><a href="/" class="hover:text-primary">Home</a></li>
 <li><a href="/services" class="hover:text-primary">Services</a></li>
 <li><a href="/commercial-plumbing" class="hover:text-primary">Commercial</a></li>
@@ -619,25 +683,25 @@
 </ul>
 </div>
 <div>
-<h4 class="font-bold mb-4">Contact</h4>
-<div class="space-y-2 text-sm text-slate-400">
+<h4 class="font-bold text-sm sm:text-base mb-3 sm:mb-4">Contact</h4>
+<div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-slate-400">
 <a href="tel:+94758244216" class="flex items-center gap-2 hover:text-primary">
-<span class="material-symbols-outlined text-primary">call</span> +94 75 824 4216
+<span class="material-symbols-outlined text-primary text-sm sm:text-base">call</span> +94 75 824 4216
         </a>
 <a href="mailto:plumbing@six7.lk" class="flex items-center gap-2 hover:text-primary">
-<span class="material-symbols-outlined text-primary">mail</span> plumbing@six7.lk
+<span class="material-symbols-outlined text-primary text-sm sm:text-base">mail</span> plumbing@six7.lk
         </a>
 <a href="https://wa.me/94758244216" class="flex items-center gap-2 hover:text-primary">
-<span class="material-symbols-outlined text-primary">chat</span> WhatsApp
+<span class="material-symbols-outlined text-primary text-sm sm:text-base">chat</span> WhatsApp
         </a>
 </div>
 </div>
 <div>
-<h4 class="font-bold mb-4">Service Areas</h4>
-<p class="text-sm text-slate-400">Colombo 01-15, Dehiwala, Mount Lavinia, Kotte, Nugegoda, Battaramulla, Rajagiriya, Kaduwela, Malabe, Moratuwa</p>
+<h4 class="font-bold text-sm sm:text-base mb-3 sm:mb-4">Service Areas</h4>
+<p class="text-xs sm:text-sm text-slate-400">Colombo 01-15, Dehiwala, Mount Lavinia, Kotte, Nugegoda, Battaramulla, Rajagiriya, Kaduwela, Malabe, Moratuwa</p>
 </div>
 </div>
-<div class="border-t border-white/10 pt-8 text-center text-sm text-slate-500">
+<div class="border-t border-white/10 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-slate-500">
 <p>© 2026 SIX7 Plumbing. All rights reserved.</p>
 </div>
 </div>
@@ -654,6 +718,13 @@ document.getElementById('leadForm')?.addEventListener('submit', function(e){
     e.preventDefault();
     document.getElementById('formError').style.display = 'flex';
     document.getElementById('formError').scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        toggleMobileMenu();
+    });
 });
 </script>
 </body>
