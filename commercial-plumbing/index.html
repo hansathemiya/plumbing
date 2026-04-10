@@ -1,813 +1,376 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SIX7 Plumbing | Commercial Plumbing Colombo | Industrial & Office Services</title>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Six7 Plumbing | Commercial Plumbing Services Colombo | Industrial & Office Plumbing</title>
+<meta name="description" content="Professional commercial plumbing services for offices, hotels, restaurants, factories, and industrial zones in Colombo. Maintenance contracts, emergency response, project-based solutions."/>
+<!-- Tailwind + Fonts -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Open Graph Meta Tags -->
-<meta property="og:title" content="SIX7 Plumbing | Commercial Plumbing Colombo | Industrial & Office Services"/>
-<meta property="og:description" content="Professional plumbing solutions for offices, factories, and industrial zones in Colombo. Trusted expertise, reliable service, and scalable operations."/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://six7.lk/plumbing"/>
-<meta property="og:image" content="https://six7.lk/assets/plumbing-preview.jpg"/>
-<meta property="og:site_name" content="SIX7 Plumbing"/>
-<meta property="og:locale" content="en_LK"/>
-
-<!-- Schema -->
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Commercial Plumbing Services",
-    "serviceType": "Plumbing",
-    "provider": {"@type": "Plumber", "name": "SIX7 Plumbing"},
-    "areaServed": ["Colombo","Kotte","Dehiwala","Mount Lavinia","Nugegoda","Maharagama","Kelaniya","Negombo","Industrial Zones"],
-    "offers": {"@type": "Offer", "price": "8000", "priceCurrency": "LKR", "priceRange": "₨8000-₨500000"}
-}
-</script>
-  <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#ff8b4d",
-                        "six7-navy": "#0b3b4f",
-                        "background-light": "#f8f6f5",
-                        "background-dark": "#23160f",
-                        "emergency": "#b13e3e",
-                        "whatsapp": "#25D366",
-                    },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                },
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#3de273",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-container": "#fffbff",
+              "secondary": "#006d2f",
+              "primary-fixed-dim": "#ffb3b1",
+              "surface-variant": "#dbe1ff",
+              "on-tertiary": "#ffffff",
+              "outline-variant": "#e4bebc",
+              "on-surface-variant": "#5b403f",
+              "on-secondary-fixed": "#002109",
+              "on-tertiary-fixed": "#271900",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#ffba27",
+              "on-background": "#111a36",
+              "secondary-fixed": "#66ff8e",
+              "inverse-surface": "#262f4c",
+              "on-surface": "#111a36",
+              "surface-container-highest": "#dbe1ff",
+              "secondary-container": "#5dfd8a",
+              "surface-tint": "#bb152c",
+              "tertiary-fixed": "#ffdea9",
+              "surface-dim": "#d0d9fd",
+              "tertiary-container": "#996c00",
+              "error": "#ba1a1a",
+              "on-primary-container": "#fffbff",
+              "on-secondary-container": "#007232",
+              "outline": "#8f6f6e",
+              "surface-bright": "#faf8ff",
+              "on-error": "#ffffff",
+              "surface": "#faf8ff",
+              "on-primary-fixed-variant": "#92001c",
+              "on-tertiary-fixed-variant": "#5e4100",
+              "on-secondary": "#ffffff",
+              "surface-container": "#ebedff",
+              "error-container": "#ffdad6",
+              "inverse-on-surface": "#eff0ff",
+              "inverse-primary": "#ffb3b1",
+              "on-secondary-fixed-variant": "#005322",
+              "primary-fixed": "#ffdad8",
+              "on-primary-fixed": "#410007",
+              "tertiary": "#7a5500",
+              "background": "#faf8ff",
+              "primary-container": "#db313f",
+              "surface-container-low": "#f2f3ff",
+              "surface-container-high": "#e3e7ff",
+              "primary": "#b7102a"
             },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem"
+            },
+            fontFamily: {
+              headline: ["Inter"],
+              body: ["Inter"],
+              label: ["Inter"]
+            }
+          }
         }
+      }
     </script>
 <style>
-        body { font-family: 'Inter', sans-serif; }
-        .glass { backdrop-filter: blur(12px); background-color: rgba(248, 246, 245, 0.8); }
-        .dark .glass { background-color: rgba(35, 22, 15, 0.8); }
-        
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 280px;
-            height: 100vh;
-            background: white;
-            z-index: 9999;
-            transition: 0.3s ease-in-out;
-            box-shadow: -5px 0 30px rgba(0,0,0,0.1);
-            padding: 80px 24px 24px;
-        }
-        .mobile-menu.active {
-            right: 0;
-        }
-        .mobile-menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 9998;
-            display: none;
-        }
-        .mobile-menu-overlay.active {
-            display: block;
-        }
-        .dark .mobile-menu {
-            background: #1a1a1a;
-        }
-        
-        /* Floating Buttons */
-        .floating-buttons {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 9997;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .float-btn {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: 0.2s;
-            color: white;
-        }
-        .float-btn:hover {
-            transform: scale(1.1);
-        }
-        .float-btn.call {
-            background: #b13e3e;
-        }
-        .float-btn.wa {
-            background: #25D366;
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                padding-bottom: 0;
-            }
-        }
-        
-        /* Form error message */
-        .form-error-message {
-            background: #fee2e2;
-            border: 1px solid #ef4444;
-            color: #b91c1c;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 0.875rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      .hero-pattern { background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 24px 24px; }
+      .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 10000; display: flex; align-items: center; justify-content: center; visibility: hidden; opacity: 0; transition: 0.2s ease; }
+      .modal-overlay.active { visibility: visible; opacity: 1; }
+      .modal-card { max-width: 420px; background: white; border-radius: 1.5rem; padding: 1.75rem; text-align: center; }
+      .dark .modal-card { background: #1e293b; color: white; }
+      .sticky-footer-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: #b7102a; color: white; z-index: 999; padding: 10px 16px; text-align: center; font-size: 0.75rem; font-weight: 600; transform: translateY(100%); transition: transform 0.25s ease; backdrop-filter: blur(4px); }
+      .sticky-footer-banner.show { transform: translateY(0); }
+      .mobile-menu { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: white; z-index: 9999; transition: 0.3s ease-in-out; box-shadow: -5px 0 30px rgba(0,0,0,0.1); padding: 80px 24px 24px; }
+      .mobile-menu.active { right: 0; }
+      .mobile-menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9998; display: none; }
+      .mobile-menu-overlay.active { display: block; }
+      .dark .mobile-menu { background: #1a1a1a; }
+      .floating-buttons { position: fixed; bottom: 24px; right: 24px; z-index: 9997; display: flex; flex-direction: column; gap: 12px; }
+      .float-btn { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: 0.2s; color: white; }
+      .float-btn:hover { transform: scale(1.08); }
+      .float-btn.call { background: #b13e3e; }
+      .float-btn.wa { background: #25D366; }
+      .glass-nav { background: rgba(248, 246, 245, 0.92); backdrop-filter: blur(12px); }
+      .dark .glass-nav { background: rgba(35, 22, 15, 0.94); backdrop-filter: blur(12px); }
+      .location-btn { transition: all 0.2s ease; }
+      .location-btn:active { transform: scale(0.97); }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<body class="bg-background text-on-background font-body antialiased">
+
 <!-- Emergency Bar -->
-<div class="w-full bg-emergency py-2 px-4 text-center sticky top-0 z-50">
-<p class="text-white text-sm font-bold tracking-wide flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-sm">emergency_home</span>
-        24/7 EMERGENCY SERVICE: <a class="underline hover:no-underline" href="tel:+94758244216">+94 75 824 4216</a>
-</p>
+<div class="w-full bg-[#b13e3e] py-2 px-4 text-center sticky top-0 z-50">
+  <p class="text-white text-sm font-bold tracking-wide flex items-center justify-center gap-2">
+    <span class="material-symbols-outlined text-sm">emergency_home</span>
+    24/7 EMERGENCY SERVICE: <a class="underline hover:no-underline" href="tel:+94758244216">+94 75 824 4216</a>
+  </p>
 </div>
 
 <!-- Sticky Header -->
-<header class="sticky top-[36px] z-40 glass border-b border-slate-200 dark:border-slate-800">
-<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-<div class="flex items-center gap-2">
-<div class="size-10 bg-six7-navy rounded-lg flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-2xl">plumbing</span>
-</div>
-<a href="/" class="text-2xl font-black text-six7-navy dark:text-slate-100 tracking-tight">SIX7<span class="text-primary">.</span>PLUMBING</a>
-</div>
-
-<!-- Desktop Navigation -->
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-semibold hover:text-primary transition-colors" href="/">Home</a>
-<a class="text-sm font-semibold hover:text-primary transition-colors" href="/services">Services</a>
-<a class="text-sm font-semibold text-primary" href="/commercial-plumbing">Commercial</a>
-<a class="text-sm font-semibold hover:text-primary transition-colors" href="/areas">Areas</a>
-<a class="text-sm font-semibold hover:text-primary transition-colors" href="/pricing">Pricing</a>
-<a class="text-sm font-semibold hover:text-primary transition-colors" href="/contact">Contact</a>
-</nav>
-
-<!-- Desktop Actions -->
-<div class="hidden md:flex items-center gap-3">
-<a class="flex items-center gap-2 bg-whatsapp text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm hover:opacity-90 transition-all" href="https://wa.me/94758244216">
-<span class="material-symbols-outlined text-lg">chat</span>
-            WhatsApp
-        </a>
-<a class="flex items-center gap-2 bg-six7-navy text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm hover:bg-slate-800 transition-all" href="tel:+94758244216">
-<span class="material-symbols-outlined text-lg">call</span>
-            Call Now
-        </a>
-</div>
-
-<!-- Mobile Menu Button -->
-<button class="md:hidden p-2" onclick="toggleMobileMenu()">
-<span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-</div>
+<header class="sticky top-[36px] z-40 glass-nav border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-10 h-10 bg-[#0b3b4f] rounded-lg flex items-center justify-center text-white">
+        <span class="material-symbols-outlined text-2xl">plumbing</span>
+      </div>
+      <a href="/" class="text-2xl font-black text-[#0b3b4f] dark:text-slate-100 tracking-tight">SIX7<span class="text-primary">.</span>PLUMBING</a>
+    </div>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="text-sm font-semibold hover:text-primary transition-colors" href="/">Home</a>
+      <a class="text-sm font-semibold hover:text-primary transition-colors" href="/services">Services</a>
+      <a class="text-sm font-semibold text-primary" href="/commercial-plumbing">Commercial</a>
+      <a class="text-sm font-semibold hover:text-primary transition-colors" href="/areas">Areas</a>
+      <a class="text-sm font-semibold hover:text-primary transition-colors" href="/pricing">Pricing</a>
+      <a class="text-sm font-semibold hover:text-primary transition-colors" href="/contact">Contact</a>
+    </nav>
+    <div class="hidden md:flex items-center gap-3">
+      <a class="flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm hover:opacity-90 transition-all" href="https://wa.me/94758244216"><span class="material-symbols-outlined text-lg">chat</span> WhatsApp</a>
+      <a class="flex items-center gap-2 bg-[#0b3b4f] text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm hover:bg-slate-800 transition-all" href="tel:+94758244216"><span class="material-symbols-outlined text-lg">call</span> Call Now</a>
+    </div>
+    <button class="md:hidden p-2" onclick="toggleMobileMenu()"><span class="material-symbols-outlined text-3xl">menu</span></button>
+  </div>
 </header>
 
 <!-- Mobile Menu -->
 <div class="mobile-menu-overlay" id="menuOverlay" onclick="toggleMobileMenu()"></div>
 <div class="mobile-menu" id="mobileMenu">
-<div class="flex justify-end mb-8">
-<button onclick="toggleMobileMenu()">
-<span class="material-symbols-outlined">close</span>
-</button>
-</div>
-<nav class="flex flex-col gap-6">
-<a class="text-lg font-semibold hover:text-primary transition-colors" href="/" onclick="toggleMobileMenu()">Home</a>
-<a class="text-lg font-semibold hover:text-primary transition-colors" href="/services" onclick="toggleMobileMenu()">Services</a>
-<a class="text-lg font-semibold text-primary" href="/commercial-plumbing" onclick="toggleMobileMenu()">Commercial</a>
-<a class="text-lg font-semibold hover:text-primary transition-colors" href="/areas" onclick="toggleMobileMenu()">Areas</a>
-<a class="text-lg font-semibold hover:text-primary transition-colors" href="/pricing" onclick="toggleMobileMenu()">Pricing</a>
-<a class="text-lg font-semibold hover:text-primary transition-colors" href="/contact" onclick="toggleMobileMenu()">Contact</a>
-<hr class="my-2 border-slate-200 dark:border-slate-700"/>
-<a class="flex items-center gap-2 bg-whatsapp text-white px-5 py-3 rounded-xl font-bold text-sm" href="https://wa.me/94758244216" onclick="toggleMobileMenu()">
-<span class="material-symbols-outlined">chat</span> WhatsApp
-        </a>
-<a class="flex items-center gap-2 bg-six7-navy text-white px-5 py-3 rounded-xl font-bold text-sm" href="tel:+94758244216" onclick="toggleMobileMenu()">
-<span class="material-symbols-outlined">call</span> Call Now
-        </a>
-</nav>
+  <div class="flex justify-end mb-8"><button onclick="toggleMobileMenu()"><span class="material-symbols-outlined">close</span></button></div>
+  <nav class="flex flex-col gap-6">
+    <a class="text-lg font-semibold hover:text-primary" href="/" onclick="toggleMobileMenu()">Home</a>
+    <a class="text-lg font-semibold hover:text-primary" href="/services" onclick="toggleMobileMenu()">Services</a>
+    <a class="text-lg font-semibold text-primary" href="/commercial-plumbing" onclick="toggleMobileMenu()">Commercial</a>
+    <a class="text-lg font-semibold hover:text-primary" href="/areas" onclick="toggleMobileMenu()">Areas</a>
+    <a class="text-lg font-semibold hover:text-primary" href="/pricing" onclick="toggleMobileMenu()">Pricing</a>
+    <a class="text-lg font-semibold hover:text-primary" href="/contact" onclick="toggleMobileMenu()">Contact</a>
+    <hr class="border-slate-200 dark:border-slate-700"/>
+    <a class="flex items-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-xl font-bold text-sm" href="https://wa.me/94758244216" onclick="toggleMobileMenu()"><span class="material-symbols-outlined">chat</span> WhatsApp</a>
+    <a class="flex items-center gap-2 bg-[#0b3b4f] text-white px-5 py-3 rounded-xl font-bold text-sm" href="tel:+94758244216" onclick="toggleMobileMenu()"><span class="material-symbols-outlined">call</span> Call Now</a>
+  </nav>
 </div>
 
-<!-- Floating Buttons -->
+<!-- Floating Buttons Mobile -->
 <div class="floating-buttons md:hidden">
-<a href="tel:+94758244216" class="float-btn call">
-<span class="material-symbols-outlined">call</span>
-</a>
-<a href="https://wa.me/94758244216" class="float-btn wa">
-<span class="material-symbols-outlined">chat</span>
-</a>
+  <a href="tel:+94758244216" class="float-btn call"><span class="material-symbols-outlined">call</span></a>
+  <a href="https://wa.me/94758244216" class="float-btn wa"><span class="material-symbols-outlined">chat</span></a>
 </div>
 
 <main>
 <!-- Breadcrumb -->
 <div class="max-w-7xl mx-auto px-6 pt-8">
-<div class="flex items-center gap-2 text-sm text-slate-500">
-<a href="/" class="hover:text-primary">Home</a>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-<span class="text-slate-700 dark:text-slate-300">Commercial Plumbing</span>
-</div>
+  <div class="flex items-center gap-2 text-sm text-slate-500">
+    <a href="/" class="hover:text-primary">Home</a>
+    <span class="material-symbols-outlined text-sm">chevron_right</span>
+    <span class="text-slate-700 dark:text-slate-300">Commercial Plumbing</span>
+  </div>
 </div>
 
 <!-- Page Header -->
 <section class="pt-12 pb-8">
-<div class="max-w-7xl mx-auto px-6">
-<h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-six7-navy dark:text-slate-100 leading-tight tracking-tight mb-6">
-            Commercial Plumbing Services in Colombo
-        </h1>
-<p class="text-xl text-slate-600 dark:text-slate-400 max-w-4xl leading-relaxed">
-            Running a business? Don't let plumbing issues disrupt your operations. SIX7 Plumbing provides dedicated commercial and industrial plumbing services across Colombo and the Western Province. From office building maintenance contracts to hotel bathroom renovations, restaurant kitchen plumbing, and factory pipe systems — our direct-work model delivers professional results at transparent, bulk-friendly pricing. We serve businesses of all sizes: startups, SMEs, hotels, hospitals, schools, and industrial facilities. After-hours work available to minimize downtime. Written proposals before project start. Call <a href="tel:+94758244216" class="text-primary font-semibold">+94 75 824 4216</a> or email <a href="mailto:plumbing@six7.lk" class="text-primary font-semibold">plumbing@six7.lk</a> for a business consultation.
-        </p>
-</div>
+  <div class="max-w-7xl mx-auto px-6">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#0b3b4f] dark:text-slate-100 leading-tight tracking-tight mb-6">Commercial Plumbing Services in Colombo</h1>
+    <p class="text-xl text-slate-600 dark:text-slate-400 max-w-4xl leading-relaxed">Running a business? Don't let plumbing issues disrupt your operations. SIX7 Plumbing provides dedicated commercial and industrial plumbing services across Colombo and the Western Province. From office building maintenance contracts to hotel bathroom renovations, restaurant kitchen plumbing, and factory pipe systems — our direct-work model delivers professional results at transparent, bulk-friendly pricing. We serve businesses of all sizes: startups, SMEs, hotels, hospitals, schools, and industrial facilities. After-hours work available to minimize downtime. Written proposals before project start. Call <a href="tel:+94758244216" class="text-primary font-semibold">+94 75 824 4216</a> or email <a href="mailto:plumbing@six7.lk" class="text-primary font-semibold">plumbing@six7.lk</a> for a business consultation.</p>
+  </div>
 </section>
 
-<!-- Industries We Serve -->
+<!-- Industries We Serve (8 categories) -->
 <section class="py-16">
-<div class="max-w-7xl mx-auto px-6">
-<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-12">Industries We Serve — Commercial Plumbing Solutions</h2>
-<div class="grid md:grid-cols-2 gap-8">
-<!-- Office Buildings -->
-<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
-<div class="size-14 bg-six7-navy/5 text-six7-navy rounded-xl flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-3xl">business_center</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Office Buildings & Corporate Spaces</h3>
-<ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4">
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Maintenance contracts (monthly/quarterly)</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Emergency response for leaks/clogs</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Restroom fixture upgrades</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>After-hours work to avoid disruption</span>
-</li>
-</ul>
-<p class="text-sm text-slate-500 italic">Ideal for co-working, banks, corporate HQs</p>
-</div>
-
-<!-- Hotels & Hospitality -->
-<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
-<div class="size-14 bg-six7-navy/5 text-six7-navy rounded-xl flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-3xl">hotel</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Hotels, Resorts & Hospitality</h3>
-<ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4">
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Guest bathroom repairs & renovations</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Kitchen & laundry maintenance</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Water heater & boiler servicing</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>24/7 emergency response</span>
-</li>
-</ul>
-<p class="text-sm text-slate-500 italic">Minimal guest disruption guaranteed</p>
-</div>
-
-<!-- Restaurants & Food Service -->
-<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
-<div class="size-14 bg-six7-navy/5 text-six7-navy rounded-xl flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-3xl">restaurant</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Restaurants, Cafes & Food Service</h3>
-<ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4">
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Grease trap installation & maintenance</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Commercial kitchen sink & drainage</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Health-code compliant inspections</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Emergency unclogging during peak hours</span>
-</li>
-</ul>
-<p class="text-sm text-slate-500 italic">Fast response — every minute counts</p>
-</div>
-
-<!-- Healthcare -->
-<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
-<div class="size-14 bg-six7-navy/5 text-six7-navy rounded-xl flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-3xl">local_hospital</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Hospitals, Clinics & Healthcare</h3>
-<ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4">
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Sanitation-critical repairs</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Backflow prevention & testing</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Infection-control compliant upgrades</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Scheduled maintenance</span>
-</li>
-</ul>
-<p class="text-sm text-slate-500 italic">Trusted for reliability & compliance</p>
-</div>
-
-<!-- Educational -->
-<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
-<div class="size-14 bg-six7-navy/5 text-six7-navy rounded-xl flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-3xl">school</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Schools, Universities & Institutions</h3>
-<ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4">
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Dormitory & classroom maintenance</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Sports facility & locker room support</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Water conservation upgrades</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Emergency response during terms</span>
-</li>
-</ul>
-<p class="text-sm text-slate-500 italic">Flexible scheduling around holidays</p>
-</div>
-
-<!-- Retail & Malls -->
-<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
-<div class="size-14 bg-six7-navy/5 text-six7-navy rounded-xl flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-3xl">shopping_bag</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Retail, Malls & Commercial Centers</h3>
-<ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4">
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Public restroom rapid repair</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Food court plumbing support</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Seasonal maintenance</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Tenant coordination for multi-units</span>
-</li>
-</ul>
-<p class="text-sm text-slate-500 italic">Scalable for single shops to large malls</p>
-</div>
-
-<!-- Industrial -->
-<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
-<div class="size-14 bg-six7-navy/5 text-six7-navy rounded-xl flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-3xl">factory</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Industrial & Manufacturing</h3>
-<ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4">
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Pipe welding & fabrication</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>High-pressure supply & drainage</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Boiler & cooling tower support</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Fire sprinkler integration</span>
-</li>
-</ul>
-<p class="text-sm text-slate-500 italic">Experienced with complex specs</p>
-</div>
-
-<!-- Construction -->
-<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
-<div class="size-14 bg-six7-navy/5 text-six7-navy rounded-xl flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-3xl">construction</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Construction & Property Development</h3>
-<ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4">
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>New-build rough-ins & fit-outs</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Subcontractor coordination</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Quality assurance testing</span>
-</li>
-<li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-primary text-sm">check</span>
-<span>Defect liability support</span>
-</li>
-</ul>
-<p class="text-sm text-slate-500 italic">Reliable partner for developers</p>
-</div>
-</div>
-</div>
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-black text-[#0b3b4f] dark:text-slate-100 mb-12">Industries We Serve — Commercial Plumbing Solutions</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Office Buildings -->
+      <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+        <div class="w-14 h-14 bg-[#0b3b4f]/5 text-[#0b3b4f] rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-3xl">business_center</span></div>
+        <h3 class="text-2xl font-bold mb-4">Office Buildings & Corporate Spaces</h3>
+        <ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4"><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Maintenance contracts (monthly/quarterly)</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Emergency response for leaks/clogs</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Restroom fixture upgrades</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>After-hours work to avoid disruption</span></li></ul>
+        <p class="text-sm text-slate-500 italic">Ideal for co-working, banks, corporate HQs</p>
+      </div>
+      <!-- Hotels -->
+      <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+        <div class="w-14 h-14 bg-[#0b3b4f]/5 text-[#0b3b4f] rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-3xl">hotel</span></div>
+        <h3 class="text-2xl font-bold mb-4">Hotels, Resorts & Hospitality</h3>
+        <ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4"><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Guest bathroom repairs & renovations</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Kitchen & laundry maintenance</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Water heater & boiler servicing</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>24/7 emergency response</span></li></ul>
+        <p class="text-sm text-slate-500 italic">Minimal guest disruption guaranteed</p>
+      </div>
+      <!-- Restaurants -->
+      <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+        <div class="w-14 h-14 bg-[#0b3b4f]/5 text-[#0b3b4f] rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-3xl">restaurant</span></div>
+        <h3 class="text-2xl font-bold mb-4">Restaurants, Cafes & Food Service</h3>
+        <ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4"><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Grease trap installation & maintenance</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Commercial kitchen sink & drainage</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Health-code compliant inspections</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Emergency unclogging during peak hours</span></li></ul>
+        <p class="text-sm text-slate-500 italic">Fast response — every minute counts</p>
+      </div>
+      <!-- Healthcare -->
+      <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+        <div class="w-14 h-14 bg-[#0b3b4f]/5 text-[#0b3b4f] rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-3xl">local_hospital</span></div>
+        <h3 class="text-2xl font-bold mb-4">Hospitals, Clinics & Healthcare</h3>
+        <ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4"><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Sanitation-critical repairs</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Backflow prevention & testing</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Infection-control compliant upgrades</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Scheduled maintenance</span></li></ul>
+        <p class="text-sm text-slate-500 italic">Trusted for reliability & compliance</p>
+      </div>
+      <!-- Educational -->
+      <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+        <div class="w-14 h-14 bg-[#0b3b4f]/5 text-[#0b3b4f] rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-3xl">school</span></div>
+        <h3 class="text-2xl font-bold mb-4">Schools, Universities & Institutions</h3>
+        <ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4"><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Dormitory & classroom maintenance</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Sports facility & locker room support</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Water conservation upgrades</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Emergency response during terms</span></li></ul>
+        <p class="text-sm text-slate-500 italic">Flexible scheduling around holidays</p>
+      </div>
+      <!-- Retail -->
+      <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+        <div class="w-14 h-14 bg-[#0b3b4f]/5 text-[#0b3b4f] rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-3xl">shopping_bag</span></div>
+        <h3 class="text-2xl font-bold mb-4">Retail, Malls & Commercial Centers</h3>
+        <ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4"><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Public restroom rapid repair</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Food court plumbing support</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Seasonal maintenance</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Tenant coordination for multi-units</span></li></ul>
+        <p class="text-sm text-slate-500 italic">Scalable for single shops to large malls</p>
+      </div>
+      <!-- Industrial -->
+      <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+        <div class="w-14 h-14 bg-[#0b3b4f]/5 text-[#0b3b4f] rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-3xl">factory</span></div>
+        <h3 class="text-2xl font-bold mb-4">Industrial & Manufacturing</h3>
+        <ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4"><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Pipe welding & fabrication</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>High-pressure supply & drainage</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Boiler & cooling tower support</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Fire sprinkler integration</span></li></ul>
+        <p class="text-sm text-slate-500 italic">Experienced with complex specs</p>
+      </div>
+      <!-- Construction -->
+      <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+        <div class="w-14 h-14 bg-[#0b3b4f]/5 text-[#0b3b4f] rounded-xl flex items-center justify-center mb-6"><span class="material-symbols-outlined text-3xl">construction</span></div>
+        <h3 class="text-2xl font-bold mb-4">Construction & Property Development</h3>
+        <ul class="space-y-3 text-slate-600 dark:text-slate-400 mb-4"><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>New-build rough-ins & fit-outs</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Subcontractor coordination</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Quality assurance testing</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span><span>Defect liability support</span></li></ul>
+        <p class="text-sm text-slate-500 italic">Reliable partner for developers</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Service Models -->
+<!-- Service Models + Quote Form with Geolocation -->
 <section class="py-16 bg-white dark:bg-slate-900/50">
-<div class="max-w-7xl mx-auto px-6">
-<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-12">Our Commercial Service Models</h2>
-<div class="grid md:grid-cols-2 gap-8">
-<div class="p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
-<div class="size-12 bg-six7-navy/5 text-six7-navy rounded-xl flex items-center justify-center mb-4">
-<span class="material-symbols-outlined text-2xl">calendar_month</span>
-</div>
-<h3 class="text-xl font-bold mb-3">Preventive Maintenance Contracts</h3>
-<p class="text-slate-600 dark:text-slate-400">Scheduled inspections, priority response, discounted rates, detailed reports. Save up to 40% vs. reactive repairs.</p>
-</div>
-<div class="p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
-<div class="size-12 bg-six7-navy/5 text-six7-navy rounded-xl flex items-center justify-center mb-4">
-<span class="material-symbols-outlined text-2xl">edit_note</span>
-</div>
-<h3 class="text-xl font-bold mb-3">Project-Based Plumbing</h3>
-<p class="text-slate-600 dark:text-slate-400">One-off renovations, fixed-price quotes, dedicated project manager, timeline guarantees.</p>
-</div>
-<div class="p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
-<div class="size-12 bg-six7-navy/5 text-six7-navy rounded-xl flex items-center justify-center mb-4">
-<span class="material-symbols-outlined text-2xl">security</span>
-</div>
-<h3 class="text-xl font-bold mb-3">Emergency Response Retainers</h3>
-<p class="text-slate-600 dark:text-slate-400">Guaranteed SLA (2h/4h), dedicated contact line, pre-negotiated rates. Peace of mind for critical facilities.</p>
-</div>
-<div class="p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
-<div class="size-12 bg-six7-navy/5 text-six7-navy rounded-xl flex items-center justify-center mb-4">
-<span class="material-symbols-outlined text-2xl">assignment</span>
-</div>
-<h3 class="text-xl font-bold mb-3">Consultation & Compliance Audits</h3>
-<p class="text-slate-600 dark:text-slate-400">System assessments, water efficiency audits, health & safety reviews, cost-benefit analysis.</p>
-</div>
-</div>
-</div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-black text-[#0b3b4f] dark:text-slate-100 mb-8">Our Commercial Service Models</h2>
+        <div class="space-y-4">
+          <div class="p-6 rounded-2xl border border-slate-100 dark:border-slate-700"><div class="flex items-center gap-3 mb-3"><span class="material-symbols-outlined text-primary">calendar_month</span><h3 class="text-xl font-bold">Preventive Maintenance Contracts</h3></div><p class="text-slate-600 dark:text-slate-400">Scheduled inspections, priority response, discounted rates, detailed reports. Save up to 40 per cent vs. reactive repairs.</p></div>
+          <div class="p-6 rounded-2xl border border-slate-100 dark:border-slate-700"><div class="flex items-center gap-3 mb-3"><span class="material-symbols-outlined text-primary">edit_note</span><h3 class="text-xl font-bold">Project-Based Plumbing</h3></div><p class="text-slate-600 dark:text-slate-400">One-off renovations, fixed-price quotes, dedicated project manager, timeline guarantees.</p></div>
+          <div class="p-6 rounded-2xl border border-slate-100 dark:border-slate-700"><div class="flex items-center gap-3 mb-3"><span class="material-symbols-outlined text-primary">security</span><h3 class="text-xl font-bold">Emergency Response Retainers</h3></div><p class="text-slate-600 dark:text-slate-400">Guaranteed SLA (2h/4h), dedicated contact line, pre-negotiated rates. Peace of mind for critical facilities.</p></div>
+          <div class="p-6 rounded-2xl border border-slate-100 dark:border-slate-700"><div class="flex items-center gap-3 mb-3"><span class="material-symbols-outlined text-primary">assignment</span><h3 class="text-xl font-bold">Consultation & Compliance Audits</h3></div><p class="text-slate-600 dark:text-slate-400">System assessments, water efficiency audits, health and safety reviews, cost-benefit analysis.</p></div>
+        </div>
+      </div>
+      <!-- Formspree Quote Form -->
+      <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-xl border-t-4 border-primary">
+        <h3 class="text-2xl font-bold mb-5">Request Commercial Quote</h3>
+        <form id="commercialForm" action="https://formspree.io/f/xwvebvzd" method="POST">
+          <div class="space-y-4">
+            <input type="text" name="business_name" placeholder="Business Name" required class="w-full border rounded-xl px-4 py-3 dark:bg-slate-900">
+            <input type="text" name="contact_name" placeholder="Contact Person" required class="w-full border rounded-xl px-4 py-3 dark:bg-slate-900">
+            <input type="tel" name="phone" placeholder="Phone Number" required class="w-full border rounded-xl px-4 py-3 dark:bg-slate-900">
+            <input type="email" name="email" placeholder="Email Address" required class="w-full border rounded-xl px-4 py-3 dark:bg-slate-900">
+            <input type="text" name="address" id="commercialAddress" placeholder="Service Address" class="w-full border rounded-xl px-4 py-3 dark:bg-slate-900">
+            
+            <!-- Geolocation -->
+            <div class="bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl">
+              <div class="flex items-center justify-between flex-wrap gap-3 mb-3">
+                <span class="text-sm font-bold flex items-center gap-1"><span class="material-symbols-outlined text-primary text-base">location_searching</span> Precise Location (Lat/Long)</span>
+                <button type="button" id="getCommercialLocation" class="location-btn text-xs bg-primary/20 hover:bg-primary/30 text-primary font-bold px-3 py-1.5 rounded-full transition flex items-center gap-1"><span class="material-symbols-outlined text-sm">gps_fixed</span> Get Location</button>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <input type="text" name="latitude" id="commercialLat" placeholder="Latitude" readonly class="w-full border rounded-lg px-3 py-2 text-sm bg-gray-100 dark:bg-slate-800">
+                <input type="text" name="longitude" id="commercialLng" placeholder="Longitude" readonly class="w-full border rounded-lg px-3 py-2 text-sm bg-gray-100 dark:bg-slate-800">
+              </div>
+              <div id="commercialLocationStatus" class="text-xs mt-2 text-amber-600 hidden"></div>
+            </div>
+            
+            <select name="service_interest" required class="w-full border rounded-xl px-4 py-3 dark:bg-slate-900"><option>Maintenance Contract</option><option>Project Based</option><option>Emergency Retainer</option><option>Consultation</option></select>
+            <textarea name="message" placeholder="Tell us about your commercial plumbing needs" rows="3" class="w-full border rounded-xl px-4 py-3 dark:bg-slate-900"></textarea>
+            <button type="submit" id="commercialSubmitBtn" class="w-full bg-primary text-white font-black py-3 rounded-xl text-lg flex items-center justify-center gap-2 hover:bg-primary-container transition"><span class="material-symbols-outlined">send</span> REQUEST QUOTE</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Why Choose -->
+<!-- Pricing Table & Why Choose -->
 <section class="py-16">
-<div class="max-w-7xl mx-auto px-6">
-<div class="bg-six7-navy text-white rounded-3xl p-8 md:p-12">
-<h2 class="text-3xl md:text-4xl font-black mb-8">Why Businesses Choose SIX7 Plumbing</h2>
-<div class="grid md:grid-cols-2 gap-4">
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary">check_circle</span>
-<span>Direct Work Model — No agency markups</span>
-</div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary">check_circle</span>
-<span>Business-Friendly Terms — Invoicing, POs, Net-15/30</span>
-</div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary">check_circle</span>
-<span>After-Hours & Weekend Work — Minimize disruption</span>
-</div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary">check_circle</span>
-<span>Scalable Pricing — Bulk discounts for multi-site</span>
-</div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary">check_circle</span>
-<span>Dedicated Account Manager — Single point of contact</span>
-</div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary">check_circle</span>
-<span>Local Compliance Knowledge — Codes & regulations</span>
-</div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary">check_circle</span>
-<span>Transparent Reporting — Digital reports with photos</span>
-</div>
-<div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary">check_circle</span>
-<span>Fully Insured — For commercial worksites</span>
-</div>
-</div>
-</div>
-</div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="bg-[#0b3b4f] text-white rounded-3xl p-8 md:p-12 mb-12">
+      <h2 class="text-3xl md:text-4xl font-black mb-8">Why Businesses Choose SIX7 Plumbing</h2>
+      <div class="grid md:grid-cols-2 gap-4"><div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span>Direct Work Model — No agency markups</span></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span>Business-Friendly Terms — Invoicing, POs, Net-15/30</span></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span>After-Hours & Weekend Work — Minimize disruption</span></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span>Scalable Pricing — Bulk discounts for multi-site</span></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span>Dedicated Account Manager — Single point of contact</span></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span>Local Compliance Knowledge — Codes and regulations</span></div></div>
+    </div>
+    
+    <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm">
+      <h2 class="text-3xl font-black mb-6">Transparent Commercial Pricing</h2>
+      <div class="space-y-3 mb-8"><div class="flex justify-between py-2 border-b"><span>Small Office (1-2 restrooms)</span><span class="font-bold">From LKR 8,000/month</span></div><div class="flex justify-between py-2 border-b"><span>Restaurant/Cafe</span><span class="font-bold">From LKR 15,000/month</span></div><div class="flex justify-between py-2 border-b"><span>Hotel (20 rooms)</span><span class="font-bold">From LKR 45,000/month</span></div><div class="flex justify-between py-2 border-b"><span>Office Bathroom Renovation (per unit)</span><span class="font-bold">From LKR 65,000</span></div><div class="flex justify-between py-2 border-b"><span>Commercial Kitchen Plumbing Upgrade</span><span class="font-bold">From LKR 120,000</span></div></div>
+      <div class="bg-primary/10 p-5 rounded-2xl text-center"><span class="material-symbols-outlined text-primary align-middle">verified</span> <span class="font-bold">Price Match Promise:</span> Found a lower written quote for the same scope? We will match it.</div>
+    </div>
+  </div>
 </section>
 
-<!-- Pricing -->
-<section class="py-16">
-<div class="max-w-7xl mx-auto px-6">
-<div class="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-3xl shadow-sm">
-<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-4">Transparent Commercial Pricing</h2>
-<p class="text-slate-600 dark:text-slate-400 mb-8">Flexible pricing models tailored to business needs.</p>
-
-<!-- Compact Form with Error Message -->
-<div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl mb-8">
-<div class="form-error-message">
-<span class="material-symbols-outlined text-sm">error</span>
-<span>Need immediate assistance? Call or text <a href="tel:+94758244216" class="font-bold underline">+94 75 824 4216</a> for instant response</span>
-</div>
-<form class="grid md:grid-cols-2 gap-4">
-<input type="text" placeholder="Business Name" class="px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm">
-<input type="email" placeholder="Email" class="px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm">
-<input type="tel" placeholder="Phone" class="px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm">
-<select class="px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm">
-<option>Select Service Type</option>
-<option>Maintenance Contract</option>
-<option>Project Based</option>
-<option>Emergency Retainer</option>
-</select>
-<button class="md:col-span-2 bg-six7-navy text-white py-2 rounded-lg font-bold text-sm hover:bg-slate-800 transition-colors">
-Request Quote
-</button>
-</form>
-</div>
-
-<h3 class="text-xl font-bold mb-4">Maintenance Contract Examples</h3>
-<div class="space-y-3 mb-6">
-<div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
-<span>Small Office (1-2 restrooms)</span>
-<span class="font-bold">From LKR 8,000/month</span>
-</div>
-<div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
-<span>Restaurant/Cafe</span>
-<span class="font-bold">From LKR 15,000/month</span>
-</div>
-<div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
-<span>Hotel (20 rooms)</span>
-<span class="font-bold">From LKR 45,000/month</span>
-</div>
-</div>
-
-<h3 class="text-xl font-bold mb-4">Project-Based Pricing</h3>
-<div class="space-y-3 mb-6">
-<div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
-<span>Office Bathroom Renovation (per unit)</span>
-<span class="font-bold">From LKR 65,000</span>
-</div>
-<div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
-<span>Commercial Kitchen Plumbing Upgrade</span>
-<span class="font-bold">From LKR 120,000</span>
-</div>
-<div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
-<span>Industrial Pipe Welding (per meter)</span>
-<span class="font-bold">From LKR 4,500</span>
-</div>
-</div>
-
-<div class="bg-primary/10 p-6 rounded-2xl text-center mb-6">
-<span class="material-symbols-outlined text-primary align-middle">verified</span>
-<span class="font-bold"> Price Match Promise:</span> Found a lower written quote for the same scope and service level? We'll match it.
-</div>
-
-<p class="text-center text-slate-600 dark:text-slate-400">
-Need a custom business quote? Email <a href="mailto:plumbing@six7.lk" class="text-primary font-semibold">plumbing@six7.lk</a> or call <a href="tel:+94758244216" class="text-primary font-semibold">+94 75 824 4216</a>.
-</p>
-</div>
-</div>
-</section>
-
-<!-- Service Areas -->
+<!-- Service Areas & FAQ -->
 <section class="py-16 bg-white dark:bg-slate-900/50">
-<div class="max-w-7xl mx-auto px-6">
-<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-4">Commercial Service Coverage — Colombo & Western Province</h2>
-<p class="text-slate-600 dark:text-slate-400 mb-8">Our commercial teams serve businesses across the region:</p>
-
-<div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm">
-<h3 class="font-bold mb-4">Colombo Business Districts (30-min):</h3>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Colombo 1-15</span>
-</div>
-
-<h3 class="font-bold mb-4">Greater Colombo Hubs (45-min):</h3>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Kotte</span>
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Sri Jayawardenepura</span>
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Battaramulla</span>
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Rajagiriya</span>
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Nawala</span>
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Nugegoda</span>
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Maharagama</span>
-</div>
-
-<h3 class="font-bold mb-4">Southern Corridor (60-min):</h3>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Dehiwala</span>
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Mount Lavinia</span>
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Moratuwa</span>
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Panadura</span>
-</div>
-
-<h3 class="font-bold mb-4">Northern/Eastern Industrial (90-min):</h3>
-<div class="flex flex-wrap gap-2">
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Kelaniya</span>
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Ragama</span>
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Negombo</span>
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Homagama</span>
-<span class="bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full text-sm">Angoda</span>
-</div>
-
-<p class="mt-8">Island-Wide Projects available. <a href="tel:+94758244216" class="text-primary font-semibold">Ask about multi-site discounts →</a></p>
-</div>
-</div>
-</section>
-
-<!-- FAQ -->
-<section class="py-16">
-<div class="max-w-7xl mx-auto px-6">
-<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-12">Commercial Plumbing FAQs</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
-<h3 class="font-bold text-lg mb-2">Do you offer invoicing and PO payment terms?</h3>
-<p class="text-slate-600 dark:text-slate-400">Yes. Formal invoices, accept POs, Net-15/30 terms for contract clients.</p>
-</div>
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
-<h3 class="font-bold text-lg mb-2">Can you work after hours to avoid disruption?</h3>
-<p class="text-slate-600 dark:text-slate-400">Absolutely. After-hours, weekends, holidays standard for commercial clients.</p>
-</div>
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
-<h3 class="font-bold text-lg mb-2">Do you provide service reports for facility records?</h3>
-<p class="text-slate-600 dark:text-slate-400">Yes. Digital reports with photos, work performed, parts used, recommendations.</p>
-</div>
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
-<h3 class="font-bold text-lg mb-2">What if we have multiple locations?</h3>
-<p class="text-slate-600 dark:text-slate-400">Multi-site contracts with consolidated billing, volume discounts, one account manager.</p>
-</div>
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
-<h3 class="font-bold text-lg mb-2">Are you familiar with health regulations?</h3>
-<p class="text-slate-600 dark:text-slate-400">Yes. Trained on Sri Lankan food service, healthcare, public facility regulations.</p>
-</div>
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl">
-<h3 class="font-bold text-lg mb-2">Can you handle large industrial projects?</h3>
-<p class="text-slate-600 dark:text-slate-400">Yes. Dedicated project manager, coordination with engineering team.</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Case Studies -->
-<section class="py-16 bg-white dark:bg-slate-900/50">
-<div class="max-w-7xl mx-auto px-6">
-<h2 class="text-3xl md:text-4xl font-black text-six7-navy dark:text-slate-100 mb-12">Case Studies — Commercial Success Stories</h2>
-<div class="grid md:grid-cols-2 gap-8">
-<div class="bg-six7-navy text-white p-8 rounded-2xl">
-<h3 class="text-xl font-bold text-primary mb-3">Hotel Chain Bathroom Upgrade</h3>
-<p>3 locations, 45 guest bathrooms. Phased after-hours work, 30% water savings, completed 2 weeks ahead of schedule.</p>
-</div>
-<div class="bg-six7-navy text-white p-8 rounded-2xl">
-<h3 class="text-xl font-bold text-primary mb-3">Restaurant Kitchen Overhaul</h3>
-<p>Recurring drainage issues. Weekend work, new grease trap & drainage. Zero blockages since, passed health inspection.</p>
-</div>
-</div>
-<p class="text-center mt-8">Want a case study relevant to your industry? <a href="mailto:plumbing@six7.lk" class="text-primary font-semibold">Email us</a></p>
-</div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div><h2 class="text-2xl font-black mb-6">Commercial Service Coverage</h2><div class="space-y-4"><div><h3 class="font-bold">Colombo Business Districts (30 min)</h3><div class="flex flex-wrap gap-2 mt-2"><span class="bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full text-sm">Colombo 1-15</span></div></div><div><h3 class="font-bold">Greater Colombo Hubs (45 min)</h3><div class="flex flex-wrap gap-2 mt-2"><span class="bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full text-sm">Kotte</span><span class="bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full text-sm">Battaramulla</span><span class="bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full text-sm">Nugegoda</span><span class="bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full text-sm">Maharagama</span></div></div><div><h3 class="font-bold">Industrial Zones</h3><div class="flex flex-wrap gap-2 mt-2"><span class="bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full text-sm">Kelaniya</span><span class="bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full text-sm">Ragama</span><span class="bg-slate-100 dark:bg-slate-700 px-3 py-1 rounded-full text-sm">Negombo</span></div></div><p class="mt-4"><a href="tel:+94758244216" class="text-primary font-semibold">Call for multi-site discounts →</a></p></div></div>
+      <div><h2 class="text-2xl font-black mb-6">Commercial FAQs</h2><div class="space-y-4"><div><h3 class="font-bold">Do you offer invoicing and PO payment terms?</h3><p class="text-sm text-slate-600">Yes. Formal invoices, accept POs, Net-15/30 terms for contract clients.</p></div><div><h3 class="font-bold">Can you work after hours to avoid disruption?</h3><p class="text-sm text-slate-600">Absolutely. After-hours, weekends, holidays standard for commercial clients.</p></div><div><h3 class="font-bold">What if we have multiple locations?</h3><p class="text-sm text-slate-600">Multi-site contracts with consolidated billing, volume discounts, one account manager.</p></div></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- Final CTA -->
 <section class="py-16">
-<div class="max-w-7xl mx-auto px-6">
-<div class="bg-primary rounded-3xl p-8 md:p-12 text-center">
-<h2 class="text-3xl md:text-4xl font-black text-six7-navy mb-4">Ready to Discuss Your Commercial Plumbing Needs?</h2>
-<p class="text-xl text-six7-navy/80 mb-6">Don't let plumbing issues impact your business operations. SIX7 Plumbing is ready to partner with you.</p>
-<p class="text-3xl md:text-4xl font-black mb-4">
-<a href="tel:+94758244216" class="text-six7-navy hover:underline">
-+94 75 824 4216
-</a>
-</p>
-<p class="text-lg">
-Email: <a href="mailto:plumbing@six7.lk" class="text-six7-navy font-semibold underline">plumbing@six7.lk</a> · 
-<a href="https://wa.me/94758244216" class="text-six7-navy font-semibold underline">WhatsApp</a>
-</p>
-<div class="flex flex-wrap gap-4 justify-center mt-8">
-<span class="bg-six7-navy/20 px-4 py-2 rounded-full text-sm font-semibold">Free initial consultation</span>
-<span class="bg-six7-navy/20 px-4 py-2 rounded-full text-sm font-semibold">Custom proposals</span>
-<span class="bg-six7-navy/20 px-4 py-2 rounded-full text-sm font-semibold">Dedicated account manager</span>
-</div>
-</div>
-</div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="bg-primary rounded-3xl p-8 md:p-12 text-center"><h2 class="text-3xl md:text-4xl font-black text-[#0b3b4f] mb-4">Ready to Discuss Your Commercial Plumbing Needs?</h2><p class="text-xl text-[#0b3b4f]/80 mb-6">Don't let plumbing issues impact your business operations. SIX7 Plumbing is ready to partner with you.</p><p class="text-3xl md:text-4xl font-black mb-4"><a href="tel:+94758244216" class="text-[#0b3b4f] hover:underline">+94 75 824 4216</a></p><p class="text-lg">Email: <a href="mailto:plumbing@six7.lk" class="text-[#0b3b4f] font-semibold underline">plumbing@six7.lk</a> · <a href="https://wa.me/94758244216" class="text-[#0b3b4f] font-semibold underline">WhatsApp</a></p><div class="flex flex-wrap gap-4 justify-center mt-8"><span class="bg-[#0b3b4f]/20 px-4 py-2 rounded-full text-sm font-semibold">Free initial consultation</span><span class="bg-[#0b3b4f]/20 px-4 py-2 rounded-full text-sm font-semibold">Custom proposals</span><span class="bg-[#0b3b4f]/20 px-4 py-2 rounded-full text-sm font-semibold">Dedicated account manager</span></div></div>
+  </div>
 </section>
-
-<!-- Related Links -->
-<div class="max-w-7xl mx-auto px-6 py-8 text-center border-t border-slate-200 dark:border-slate-800">
-<p class="text-slate-600 dark:text-slate-400">
-Related services: 
-<a href="/services/emergency-leak-repair" class="text-primary hover:underline">Emergency Leak</a> · 
-<a href="/services/bathroom-renovation" class="text-primary hover:underline">Bathroom Renovation</a> · 
-<a href="/services/drain-unclogging" class="text-primary hover:underline">Drain Unclogging</a> · 
-<a href="/pricing" class="text-primary hover:underline">Pricing</a> · 
-<a href="/areas" class="text-primary hover:underline">Areas</a>
-</p>
-</div>
 </main>
 
 <!-- Footer -->
-<footer class="bg-six7-navy text-white pt-16 pb-8">
-<div class="max-w-7xl mx-auto px-6">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-<div>
-<div class="flex items-center gap-2 mb-4">
-<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-six7-navy">
-<span class="material-symbols-outlined text-xl">plumbing</span>
-</div>
-<h4 class="text-xl font-black">SIX7 PLUMBING</h4>
-</div>
-<p class="text-slate-400 text-sm">Colombo's most trusted emergency plumbing service.</p>
-</div>
-<div>
-<h4 class="font-bold mb-4">Quick Links</h4>
-<ul class="space-y-2 text-sm text-slate-400">
-<li><a href="/" class="hover:text-primary">Home</a></li>
-<li><a href="/services" class="hover:text-primary">Services</a></li>
-<li><a href="/commercial-plumbing" class="hover:text-primary">Commercial</a></li>
-<li><a href="/areas" class="hover:text-primary">Areas</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold mb-4">Contact</h4>
-<div class="space-y-2 text-sm text-slate-400">
-<a href="tel:+94758244216" class="flex items-center gap-2 hover:text-primary">
-<span class="material-symbols-outlined text-primary">call</span> +94 75 824 4216
-</a>
-<a href="mailto:plumbing@six7.lk" class="flex items-center gap-2 hover:text-primary">
-<span class="material-symbols-outlined text-primary">mail</span> plumbing@six7.lk
-</a>
-</div>
-</div>
-<div>
-<h4 class="font-bold mb-4">Service Areas</h4>
-<p class="text-sm text-slate-400">Colombo 01-15, Dehiwala, Mount Lavinia, Kotte, Nugegoda, Battaramulla, Rajagiriya, Kaduwela, Malabe, Moratuwa</p>
-</div>
-</div>
-<div class="border-t border-white/10 pt-8 text-center text-sm text-slate-500">
-<p>© 2026 SIX7 Plumbing. All rights reserved.</p>
-</div>
-</div>
+<footer class="bg-[#0b3b4f] text-white pt-12 pb-8">
+  <div class="max-w-7xl mx-auto px-6 text-center"><p>© 2026 SIX7 Plumbing. All rights reserved. Commercial plumbing specialists.</p></div>
 </footer>
 
+<!-- Mobile Bottom Nav -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-3 px-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg md:hidden z-50 rounded-t-2xl"><a class="flex flex-col items-center text-primary" href="tel:+94758244216"><span class="material-symbols-outlined">call</span><span class="text-xs font-bold uppercase">Call Now</span></a><div class="h-8 w-px bg-slate-200"></div><a class="flex flex-col items-center text-slate-500" href="https://wa.me/94758244216"><span class="material-symbols-outlined">chat</span><span class="text-xs font-bold uppercase">WhatsApp</span></a></nav>
+
+<!-- Modal & Scripts -->
+<div id="responseModal" class="modal-overlay"><div class="modal-card"><span class="material-symbols-outlined text-5xl text-green-600">check_circle</span><h3 class="text-xl font-bold mt-2">Request received</h3><p id="modalMessage" class="my-3">Your commercial quote request has been submitted. A representative will contact you within 24 hours.</p><button onclick="closeModal()" class="bg-primary text-white px-5 py-2 rounded-full font-bold">Close</button></div></div>
+<div id="stickyFooterBanner" class="sticky-footer-banner"><span class="material-symbols-outlined text-sm align-middle">warning</span> REMINDER: Commercial pricing is project-specific. All work is quoted upfront with written proposals. <button onclick="dismissBanner()" class="underline ml-2">Dismiss</button></div>
+
 <script>
-function toggleMobileMenu() {
-    document.getElementById('mobileMenu').classList.toggle('active');
-    document.getElementById('menuOverlay').classList.toggle('active');
-}
+  function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('active'); document.getElementById('menuOverlay').classList.toggle('active'); }
+  const modal = document.getElementById('responseModal'); function closeModal() { modal.classList.remove('active'); } window.closeModal = closeModal;
+  const banner = document.getElementById('stickyFooterBanner'); function dismissBanner() { banner.classList.remove('show'); localStorage.setItem('commercialBannerDismissed', 'true'); }
+  setTimeout(() => { if(!localStorage.getItem('commercialBannerDismissed')) banner.classList.add('show'); }, 2000);
+  
+  // Geolocation for commercial form
+  const getLocBtn = document.getElementById('getCommercialLocation');
+  const latInput = document.getElementById('commercialLat');
+  const lngInput = document.getElementById('commercialLng');
+  const statusDiv = document.getElementById('commercialLocationStatus');
+  if(getLocBtn) {
+    getLocBtn.addEventListener('click', function() {
+      statusDiv.classList.remove('hidden'); statusDiv.textContent = 'Fetching location...'; statusDiv.classList.add('text-amber-600');
+      if(!navigator.geolocation) { statusDiv.textContent = 'Geolocation not supported. Please enter address manually.'; statusDiv.classList.add('text-red-600'); return; }
+      navigator.geolocation.getCurrentPosition(function(pos) { latInput.value = pos.coords.latitude.toFixed(6); lngInput.value = pos.coords.longitude.toFixed(6); statusDiv.textContent = 'Location captured successfully.'; statusDiv.classList.remove('text-amber-600'); statusDiv.classList.add('text-green-600'); }, function(err) { statusDiv.textContent = 'Location error. Please enter address manually.'; statusDiv.classList.add('text-red-600'); }, { enableHighAccuracy: true });
+    });
+  }
+  
+  const commercialForm = document.getElementById('commercialForm');
+  if(commercialForm) {
+    commercialForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('commercialSubmitBtn');
+      btn.disabled = true; btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Sending...';
+      const fd = new FormData(commercialForm);
+      try {
+        const res = await fetch('https://formspree.io/f/xwvebvzd', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
+        if(res.ok) { document.getElementById('modalMessage').innerHTML = 'Commercial quote request submitted. Reference #' + Date.now() + '. A representative will contact you within 24 hours.'; modal.classList.add('active'); commercialForm.reset(); latInput.value = ''; lngInput.value = ''; }
+        else { document.getElementById('modalMessage').innerHTML = 'Submission error. Please call +94 75 824 4216 for immediate assistance.'; modal.classList.add('active'); }
+      } catch(err) { document.getElementById('modalMessage').innerHTML = 'Network error. Please call us directly.'; modal.classList.add('active'); }
+      finally { btn.disabled = false; btn.innerHTML = '<span class="material-symbols-outlined">send</span> REQUEST QUOTE'; }
+    });
+  }
 </script>
 </body>
 </html>
